@@ -1,41 +1,40 @@
 <?php
 
-ini_set('display_errors', 0);
-error_reporting(E_ALL);
+use Illuminate\Contracts\Http\Kernel;
+use Illuminate\Http\Request;
 
-require __DIR__ . '/../vendor/autoload.php';
+define('LARAVEL_START', microtime(true));
 
-$app = require_once __DIR__ . '/../bootstrap/app.php';
+/*
+|--------------------------------------------------------------------------
+| Check If The Application Is Under Maintenance
+|--------------------------------------------------------------------------
+*/
 
-/**
- * IMPORTANT:
- * Vercel cuma ngizinin write di /tmp
- */
-$app->useStoragePath('/tmp/storage');
-
-/**
- * Pastikan semua folder penting ada
- */
-$paths = [
-    '/tmp/storage/framework/views',
-    '/tmp/storage/framework/cache',
-    '/tmp/storage/framework/sessions',
-    '/tmp/storage/bootstrap/cache',
-];
-
-foreach ($paths as $path) {
-    if (!is_dir($path)) {
-        mkdir($path, 0755, true);
-    }
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
 }
 
-/**
- * Handle request Laravel
- */
-$kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+/*
+|--------------------------------------------------------------------------
+| Register The Auto Loader
+|--------------------------------------------------------------------------
+*/
 
-$request = Illuminate\Http\Request::capture();
-$response = $kernel->handle($request);
+require __DIR__.'/../vendor/autoload.php';
 
-$response->send();
+/*
+|--------------------------------------------------------------------------
+| Run The Application
+|--------------------------------------------------------------------------
+*/
+
+$app = require_once __DIR__.'/../bootstrap/app.php';
+
+$kernel = $app->make(Kernel::class);
+
+$response = $kernel->handle(
+    $request = Request::capture()
+)->send();
+
 $kernel->terminate($request, $response);
