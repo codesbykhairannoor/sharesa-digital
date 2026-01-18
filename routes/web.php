@@ -31,6 +31,15 @@ Route::get('/portfolios', function () {
     
     return view('pages.portfolios', compact('portfolios')); 
 })->name('portfolios');
+
+// Pastikan use App\Models\Portfolio; ada di paling atas file
+
+Route::get('/', function () {
+    // Ambil 2 Portfolio TERBARU saja
+    $featured_portfolios = \App\Models\Portfolio::latest()->take(2)->get();
+    
+    return view('pages.home', compact('featured_portfolios'));
+})->name('home');
 // Switch Language
 Route::get('lang/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'id'])) {

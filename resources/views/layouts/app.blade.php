@@ -128,107 +128,123 @@
 <body>
 
     {{-- ================= HEADER ================= --}}
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-sharesa fixed-top">
+   <header>
+        <nav class="navbar navbar-expand-lg navbar-sharesa fixed-top py-3" style="background-color: var(--sharesa-dark); transition: all 0.3s;">
             <div class="container">
 
-                {{-- LOGO --}}
+                {{-- LOGO BRANDING --}}
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <img src="{{ asset('images/logoku.png') }}" alt="Sharesa Logo" height="35">
-                    <span class="navbar-logo-text ms-2 fw-bold">Sharesa<span style="color: var(--sharesa-green)">.</span></span>
+                    {{-- Ganti logoku.png dengan logo asli kalau ada, sementara pakai Icon Code --}}
+                    <div class="bg-white rounded-circle p-1 d-flex align-items-center justify-content-center me-2" style="width: 35px; height: 35px;">
+                        <i class="bi bi-code-slash text-dark fs-5"></i>
+                    </div>
+                    <span class="navbar-logo-text fw-bold text-white fs-4" style="letter-spacing: -0.5px;">
+                        Sharesa<span style="color: var(--sharesa-green)">.</span>
+                    </span>
                 </a>
 
-                {{-- TOGGLER --}}
-                <button class="navbar-toggler" type="button" 
+                {{-- TOGGLER (MOBILE) --}}
+                <button class="navbar-toggler border-0" type="button" 
                         data-bs-toggle="collapse" 
-                        data-bs-target="#navbarNav"
-                        style="border-color: rgba(255,255,255,0.3);">
-                    <i class="bi bi-list text-white fs-2"></i>
+                        data-bs-target="#navbarNav">
+                    <i class="bi bi-list text-white fs-1"></i>
                 </button>
 
                 {{-- NAVBAR CONTENT --}}
-                {{-- NAVBAR CONTENT --}}
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto align-items-center">
+                    
+                    {{-- MENU UTAMA (Centered / Left Aligned) --}}
+                    <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-4">
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50 fw-medium {{ request()->is('/') ? 'active text-white fw-bold' : '' }}" 
+                               href="{{ url('/') }}">{{ __('messages.home') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50 fw-medium {{ request()->is('about*') ? 'active text-white fw-bold' : '' }}" 
+                               href="{{ url('/about') }}">{{ __('messages.about') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50 fw-medium {{ request()->is('services*') ? 'active text-white fw-bold' : '' }}" 
+                               href="{{ url('/services') }}">{{ __('messages.services') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50 fw-medium {{ request()->is('portfolios*') ? 'active text-white fw-bold' : '' }}" 
+                               href="{{ url('/portfolios') }}">{{ __('messages.portfolios') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-white-50 fw-medium {{ request()->is('contact*') ? 'active text-white fw-bold' : '' }}" 
+                               href="{{ url('/contact') }}">{{ __('messages.contact') }}</a>
+                        </li>
+                    </ul>
 
-                        {{-- === LANGUAGE SWITCHER (ID | EN) === --}}
-                        <li class="nav-item dropdown me-lg-3">
-                            <a class="nav-link dropdown-toggle font-monospace d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
-                                <i class="bi bi-globe me-1"></i> {{ strtoupper(App::getLocale()) }}
+                    {{-- BAGIAN KANAN (LANG & ADMIN PROFILE) --}}
+                    <ul class="navbar-nav align-items-center gap-3">
+                        
+                        {{-- PEMBATAS VERTICAL (Desktop Only) --}}
+                        <li class="d-none d-lg-block">
+                            <div class="vr bg-white opacity-25" style="height: 25px;"></div>
+                        </li>
+
+                        {{-- LANGUAGE SWITCHER (Simple Icon) --}}
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white d-flex align-items-center gap-1" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-globe"></i> 
+                                <span class="small font-monospace text-uppercase">{{ App::getLocale() }}</span>
                             </a>
-                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2" style="min-width: auto;">
+                            <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2" style="min-width: 120px;">
                                 <li>
-                                    <a class="dropdown-item d-flex justify-content-between align-items-center {{ App::getLocale() == 'id' ? 'active bg-success' : '' }}" href="{{ route('lang.switch', 'id') }}">
+                                    <a class="dropdown-item d-flex justify-content-between {{ App::getLocale() == 'id' ? 'active bg-success' : '' }}" href="{{ route('lang.switch', 'id') }}">
                                         <span>Indonesian</span> <span>🇮🇩</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item d-flex justify-content-between align-items-center {{ App::getLocale() == 'en' ? 'active bg-success' : '' }}" href="{{ route('lang.switch', 'en') }}">
+                                    <a class="dropdown-item d-flex justify-content-between {{ App::getLocale() == 'en' ? 'active bg-success' : '' }}" href="{{ route('lang.switch', 'en') }}">
                                         <span>English</span> <span>🇬🇧</span>
                                     </a>
                                 </li>
                             </ul>
                         </li>
 
-                        {{-- === MENU UTAMA AGENCY === --}}
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">{{ __('messages.home') }}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/services') }}">{{ __('messages.services') }}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/portfolios') }}">{{ __('messages.portfolios') }}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/about') }}">{{ __('messages.about') }}</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{ url('/contact') }}">{{ __('messages.contact') }}</a></li>
-
-                        <div class="vr mx-3 d-none d-lg-block bg-white opacity-25"></div>
-
-                        {{-- 
-                            BAGIAN GUEST KITA HAPUS
-                            (Karena Agency tidak butuh user umum Login/Register)
-                        --}}
-
-                        {{-- ========== KHUSUS ADMIN (Hanya muncul kalau lu udah Login) ========== --}}
+                        {{-- ADMIN PROFILE (HANYA MUNCUL KALAU LOGIN) --}}
                         @auth
-                            <li class="nav-item dropdown ms-lg-2">
-                                <a class="nav-link dropdown-toggle d-flex align-items-center profile-trigger mt-2 mt-lg-0"
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle d-flex align-items-center gap-2 p-1 pe-3 rounded-pill bg-white bg-opacity-10 border border-white border-opacity-10" 
                                    href="#" role="button" data-bs-toggle="dropdown">
-                                    {{-- Avatar --}}
-                                    <img src="{{ Auth::user()->avatar
-                                            ? asset('storage/' . Auth::user()->avatar)
-                                            : 'https://ui-avatars.com/api/?name='.urlencode(Auth::user()->name).'&background=00ff8c&color=1e2a39&bold=true' }}"
-                                     class="rounded-circle me-2" width="32" height="32" style="object-fit: cover;">
-                                    
-                                    {{-- Nama --}}
-                                    <span class="fw-bold small">{{ explode(' ', Auth::user()->name)[0] }}</span>
+                                    <img src="{{ Auth::user()->avatar ? asset('storage/' . Auth::user()->avatar) : 'https://ui-avatars.com/api/?name='.urlencode(Auth::user()->name).'&background=00ff8c&color=1e2a39&bold=true' }}"
+                                         class="rounded-circle" width="30" height="30" style="object-fit: cover;">
+                                    <span class="text-white small fw-bold">{{ explode(' ', Auth::user()->name)[0] }}</span>
                                 </a>
 
-                                <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 rounded-3">
+                                <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 mt-3 rounded-3 p-2" style="width: 200px;">
+                                    <li><h6 class="dropdown-header text-uppercase small fw-bold text-muted">Admin Access</h6></li>
                                     <li>
-                                        <h6 class="dropdown-header fw-bold" style="color: var(--sharesa-dark)">
-                                            {{ __('messages.welcome') }}, Admin!
-                                        </h6>
-                                    </li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    
-                                    <li>
-                                        <a class="dropdown-item fw-bold text-primary" href="{{ route('admin.dashboard') }}">
-                                            <i class="bi bi-grid-fill me-2"></i>{{ __('messages.dashboard') }}
+                                        <a class="dropdown-item rounded-2 mb-1" href="{{ route('admin.dashboard') }}">
+                                            <i class="bi bi-speedometer2 me-2 text-primary"></i>Dashboard
                                         </a>
                                     </li>
-
                                     <li>
-                                        <a class="dropdown-item" href="{{ route('profile') }}">
-                                            <i class="bi bi-person-gear me-2"></i>{{ __('messages.settings') }}
+                                        <a class="dropdown-item rounded-2 mb-1" href="{{ route('admin.portfolios.create') }}">
+                                            <i class="bi bi-plus-lg me-2 text-success"></i>New Project
                                         </a>
                                     </li>
-
-                                    <li><hr class="dropdown-divider"></li>
+                                    <li><hr class="dropdown-divider my-2"></li>
                                     <li>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
-                                            <button type="submit" class="dropdown-item text-danger">
-                                                <i class="bi bi-box-arrow-right me-2"></i>{{ __('messages.logout') }}
+                                            <button type="submit" class="dropdown-item rounded-2 text-danger fw-bold">
+                                                <i class="bi bi-box-arrow-right me-2"></i>Logout
                                             </button>
                                         </form>
                                     </li>
                                 </ul>
+                            </li>
+                        @else
+                            {{-- KALAU BELUM LOGIN (Tombol "Hire Us" Biasa) --}}
+                            <li class="nav-item d-none d-lg-block ms-2">
+                                <a href="{{ url('/contact') }}" class="btn btn-sm text-dark fw-bold rounded-pill px-4 hover-scale" 
+                                   style="background-color: var(--sharesa-green);">
+                                    Let's Talk
+                                </a>
                             </li>
                         @endauth
 

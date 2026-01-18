@@ -12,85 +12,151 @@ return [
     'dashboard' => 'Dashboard',
     'settings' => 'Settings',
     'logout' => 'Logout',
-    'welcome' => 'Hi',
-    'footer_text' => 'Transforming ideas into exceptional digital experiences. Your trusted partner in UI/UX and Web Development.',
+    'welcome' => 'Hello',
+    'footer_text' => 'Turning ideas into exceptional digital experiences. Your trusted partner in UI/UX Design and Web Development.',
     'rights' => 'All rights reserved.',
-
+    
     // HOME PAGE
     'hero_badge' => '🚀 Level Up Your Business',
-    'hero_title' => 'We Build Digital Experiences That Matter.',
-    'hero_desc' => 'Sharesa is a creative digital agency focused on UI/UX Design, Web Development, and Branding. We help businesses grow in the digital era.',
-    'hero_cta' => 'Start Your Project',
-    'hero_secondary' => 'View Our Work',
-    
-    'stats_projects' => 'Projects Completed',
+    'hero_title' => 'I Build Digital Experiences That Matter.',
+    'hero_desc' => 'Sharesa is an independent digital studio focused on UI/UX Design, Web Development, and Branding. I help businesses thrive in the digital era with a personal touch.',
+    'hero_cta' => 'Start a Project',
+    'hero_secondary' => 'View My Work',
+
+    'stats_projects' => 'Projects Done',
     'stats_clients' => 'Happy Clients',
     'stats_exp' => 'Years Experience',
 
     'why_title' => 'Why Choose Sharesa?',
-    'why_subtitle' => 'We don\'t just code, we provide solutions.',
-    'why_1_title' => 'Modern Design',
-    'why_1_desc' => 'Aesthetically pleasing designs that prioritize user experience.',
+    'why_subtitle' => 'Not just coding, but providing thoughtful solutions.',
+    'why_1_title' => 'Personal Touch',
+    'why_1_desc' => 'Direct communication with the creator, no confusing middlemen.',
     'why_2_title' => 'Clean Code',
-    'why_2_desc' => 'Optimized, secure, and scalable code structure.',
-    'why_3_title' => 'Fast Delivery',
-    'why_3_desc' => 'We respect your time and deliver projects on schedule.',
+    'why_2_desc' => 'Optimized, secure, and scalable code structure for future growth.',
+    'why_3_title' => 'On Time Delivery',
+    'why_3_desc' => 'I value your time and commit to the agreed schedule.',
 
-    'cta_title' => 'Ready to Transform Your Idea?',
+    'cta_title' => 'Ready to Realize Your Idea?',
     'cta_desc' => 'Let\'s collaborate and build something amazing together.',
     'cta_btn' => 'Consult Now',
-
-    // SERVICES PAGE
-    'serv_header_title' => 'Our Expertise',
-    'serv_header_desc' => 'Comprehensive digital solutions tailored to your business needs.',
     
+    'featured_title' => 'Selected Works',
+    'featured_desc' => 'A glimpse of what I have created.',
+    
+    'testi_title' => 'What They Say',
+    'testi_desc' => 'Trusted by innovative clients to bring their vision to life.',
+    'testi_1_quote' => "Sharesa transformed my vision into a stunning reality. The attention to detail is unmatched.",
+    'testi_1_author' => 'Sarah Johnson, Owner of TechFlow',
+    'testi_2_quote' => "Professional, timely, and incredibly creative. Our new website has boosted our business credibility.",
+    'testi_2_author' => 'Michael Chen, Founder of StartUp X',
+   
+    // SERVICES PAGE
+    'serv_header_title' => 'My Expertise',
+    'serv_header_desc' => 'Comprehensive digital solutions crafted with full dedication for your business.',
+
     'serv_ui_title' => 'UI/UX Design',
-    'serv_ui_desc' => 'User-centric interfaces that look great and work perfectly. We design mobile apps, websites, and dashboards.',
+    'serv_ui_desc' => 'Crafting intuitive and engaging interfaces, focusing on your user\'s comfort.',
     'serv_web_title' => 'Web Development',
-    'serv_web_desc' => 'Robust and scalable websites using Laravel, React, or WordPress. From landing pages to complex web apps.',
+    'serv_web_desc' => 'Building robust websites using Laravel or React. From landing pages to complex systems.',
     'serv_brand_title' => 'Branding & Identity',
-    'serv_brand_desc' => 'Create a lasting impression with a unique logo, color palette, and brand guidelines.',
-    'serv_seo_title' => 'SEO & Optimization',
-    'serv_seo_desc' => 'Improve your visibility on Google and ensure your website loads instantly.',
+    'serv_brand_desc' => 'Creating a strong visual impression through logos and consistent style guides.',
+    'serv_seo_title' => 'SEO Optimization',
+    'serv_seo_desc' => 'Improving website performance to ensure fast access and better visibility on Google.',
 
-    'process_title' => 'How We Work',
+    // Process
+    'process_title' => 'Workflow',
     'process_1' => 'Discovery',
-    'process_1_desc' => 'We discuss your goals and requirements.',
-    'process_2' => 'Strategy',
-    'process_2_desc' => 'Planning the roadmap and tech stack.',
-    'process_3' => 'Design & Dev',
-    'process_3_desc' => 'Crafting the visuals and writing code.',
+    'process_1_desc' => 'I listen deeply to your needs and business goals.',
+    'process_2' => 'Design',
+    'process_2_desc' => 'Creating sketches and visual designs for mutual agreement.',
+    'process_3' => 'Development',
+    'process_3_desc' => 'Writing code with clean, efficient, and industry-standard practices.',
     'process_4' => 'Launch',
-    'process_4_desc' => 'Testing, deployment, and handover.',
+    'process_4_desc' => 'Deploying your website and ensuring everything runs smoothly.',
 
-    // ... (kode sebelumnya)
+    // NEW SECTIONS
+    'tech_title' => 'Technology Stack',
+    'tech_desc' => 'Using modern tools to ensure the best quality results.',
+    
+    'price_title' => 'Investment Estimate',
+    'price_desc' => 'Choose a plan that fits your development needs.',
+    'price_1_name' => 'Starter',
+    'price_1_feat' => 'For Landing Pages',
+    'price_2_name' => 'Professional',
+    'price_2_feat' => 'For Company Profiles',
+    'price_3_name' => 'Custom',
+    'price_3_feat' => 'For Complex Apps',
+    'price_btn' => 'Contact Me',
 
+    'faq_title' => 'Common Questions',
+    'faq_1_q' => 'How long does a project take?',
+    'faq_1_a' => 'Depends on complexity, typically 1-4 weeks for standard websites.',
+    'faq_2_q' => 'Is there a warranty?',
+    'faq_2_a' => 'Yes, I provide a 1-month bug fix warranty after launch.',
+   
     // ABOUT PAGE
     'about_title' => 'About Sharesa',
-    'about_hero_title' => 'We Are Creators, Thinkers, and Explorers.',
-    'about_hero_desc' => 'Born from a passion for technology, Sharesa has grown into a full-service digital agency delivering excellence across the globe.',
-    'vision_title' => 'Our Vision',
-    'vision_desc' => 'To be the most reliable digital partner for businesses aiming for global success.',
-    'mission_title' => 'Our Mission',
-    'mission_1' => 'Deliver pixel-perfect designs.',
-    'mission_2' => 'Write clean, secure, and scalable code.',
-    'mission_3' => 'Provide data-driven strategies.',
+    'about_hero_title' => 'One Mind, Infinite Possibilities.',
+    'about_hero_desc' => 'Sharesa is my professional identity, Khairan Noor. Founded on a passion for technology, I am dedicated to helping businesses build a strong digital presence without the bureaucracy of large agencies.',
     
-    // TEAM & CONTACT PAGE
-    'team_title' => 'Meet The Squad',
-    'team_subtitle' => 'The brilliant minds behind every pixel and line of code.',
-    'contact_title' => 'Get In Touch',
-    'contact_subtitle' => 'Ready to start a project? Or just want to say hi? We are all ears.',
-    'contact_addr' => 'Office Address',
-    'contact_email' => 'Email Inquiry',
-    'contact_wa' => 'WhatsApp Support',
-    'btn_wa' => 'Chat on WhatsApp',
+    'vision_title' => 'Vision',
+    'vision_desc' => 'To become the most reliable independent digital partner, delivering big-agency quality with a personal touch.',
+    'mission_title' => 'Mission',
+    'mission_1' => 'Deliver precise and detailed work.',
+    'mission_2' => 'Write clean and maintainable code.',
+    'mission_3' => 'Build honest and transparent communication.',
+
+    'values_title' => 'Work Principles',
+    'val_1_title' => 'Continuous Learning',
+    'val_1_desc' => 'Technology changes fast, I always update my skills.',
+    'val_2_title' => 'Integrity',
+    'val_2_desc' => 'Transparent about pricing, timeline, and technical capabilities.',
+    'val_3_title' => 'Passion',
+    'val_3_desc' => 'I treat every project as if it were my own.',
+
+    'team_title' => 'Behind The Scenes',
+    'team_desc' => 'Meet the person who will be working on your project.',
+    'team_1_role' => 'Founder & Fullstack Dev',
+    
+    'milestone_title' => 'My Journey',
+    'mile_1_year' => '2024',
+    'mile_1_desc' => 'Started the journey as a Freelance Web Developer.',
+    'mile_2_year' => '2025',
+    'mile_2_desc' => 'Established Sharesa as a professional service brand.',
+    'mile_3_year' => '2026',
+    'mile_3_desc' => 'Focusing on developing digital products and expanding client reach.',
+
+    // CONTACT PAGE
+    'contact_header' => 'Let\'s Discuss',
+    'contact_desc' => 'Have a wild idea or specific need? I am ready to listen and provide the best technical solution.',
+    
+    // CEO Section
+    'ceo_badge' => 'CREATIVE DEVELOPER',
+    'ceo_quote' => 'Code is functional art. Let\'s make something useful and beautiful.',
+    'ceo_name' => 'Khairan Noor F.',
+    'ceo_role' => 'Founder of Sharesa',
+
+    // Form Section
+    'form_title' => 'Send a Message',
+    'form_name' => 'Your Name',
+    'form_email' => 'Your Email',
+    'form_subject' => 'Subject',
+    'form_msg' => 'Tell me about your project',
+    'form_btn' => 'Send Message',
+
+    // Office Section
+    'office_title' => 'Work Location',
+    'office_subtitle' => 'Based in Jakarta, serving clients from anywhere.',
+    'addr_title' => 'Address',
+    'email_title' => 'Email',
+    'phone_title' => 'WhatsApp',
+    'contact_wa' => 'Chat on WhatsApp',
+    'btn_wa' => 'Contact via WA',
 
     // PORTFOLIO PAGE
-    'port_header' => 'Our Masterpieces',
-    'port_title' => 'Selected Portfolios',
-    'port_desc' => 'Explore our latest projects and see how we help our clients achieve their digital goals.',
+    'port_header' => 'Selected Works',
+    'port_title' => 'Portfolio Highlights',
+    'port_desc' => 'A collection of projects I have worked on with full dedication.',
     'port_client' => 'Client',
-    'port_empty' => 'No projects uploaded yet. Check back soon!',
-
+    'port_empty' => 'No projects displayed yet. Coming soon!',
 ];
