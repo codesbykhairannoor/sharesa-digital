@@ -8,38 +8,27 @@ use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
+    /**
+     * Seed the application's database.
+     */
     public function run(): void
     {
-        // --- 1. USER SEEDER (SAMA SEPERTI SEBELUMNYA) ---
+        // ==========================================
+        // SINGLE ADMIN ACCOUNT (AKUN SAKTI)
+        // ==========================================
+        
+        // Kita bikin satu user aja untuk akses Dashboard
         User::create([
-            'name' => 'Komandan Zined (Police)',
-            'email' => 'police@team.com', 
-            'password' => Hash::make('password123'),
-            'role' => 'superadmin',
-            'last_login_at' => now(),
+            'name'              => 'Sharesa Admin',
+            'email'             => 'admin@sharesa.id', // Email Login
+            'password'          => Hash::make('password123'), // Password Login
+            'role'              => 'admin', // Role kunci buat tembus middleware
+            'email_verified_at' => now(),
+            'created_at'        => now(),
+            'updated_at'        => now(),
         ]);
 
-        User::create([
-            'name' => 'Staff Agus (Admin)',
-            'email' => 'admin@team.com',
-            'password' => Hash::make('password123'),
-            'role' => 'admin',
-            'last_login_at' => now(),
-        ]);
-        
-        User::create([
-            'name' => 'Pengunjung Toko',
-            'email' => 'user@gmail.com',
-            'password' => Hash::make('password123'),
-            'role' => 'user',
-            'last_login_at' => now(),
-        ]);
-
-        // Pastikan UserSeeder jalan duluan biar ada User-nya
-        // $this->call(UserSeeder::class); 
-        
-        // Panggil Seeder Order yang baru kita buat
-        $this->call(OrderSeeder::class);
-        
+        // HAPUS ORDER SEEDER LAMA (Karena kita udah bukan toko dimsum)
+        // $this->call(OrderSeeder::class); 
     }
 }

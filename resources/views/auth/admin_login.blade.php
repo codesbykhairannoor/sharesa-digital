@@ -1,72 +1,60 @@
 @extends('layouts.app')
 
+@section('title', 'Admin Login')
+
 @section('content')
-
-{{-- 1. SCRIPT WAJIB RECAPTCHA (Taro disini aja aman) --}}
-{!! NoCaptcha::renderJs() !!}
-
-<div class="container">
-    <div class="row justify-content-center">
+<div class="container py-5" style="min-height: 80vh; display: flex; align-items: center;">
+    <div class="row justify-content-center w-100">
         <div class="col-md-5">
-            <div class="card shadow-lg border-0">
-                <div class="card-header bg-danger text-white text-center py-4">
-                    <h4 class="mb-0 fw-bold"><i class="bi bi-shield-lock-fill me-2"></i>ADMINISTRATOR ACCESS</h4>
-                    <small>Hanya untuk Staff & Police</small>
+            <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
+                
+                {{-- Header --}}
+                <div class="card-header text-white text-center py-4" style="background-color: var(--sharesa-dark);">
+                    <div class="mb-3">
+                        <i class="bi bi-shield-lock-fill" style="font-size: 3rem; color: var(--sharesa-green);"></i>
+                    </div>
+                    <h4 class="mb-0 fw-bold">Sharesa Admin</h4>
+                    <small class="text-white-50">Secure Access Only</small>
                 </div>
 
-                <div class="card-body p-4">
+                {{-- Body --}}
+                <div class="card-body p-5 bg-white">
                     @if (session('error'))
-                        <div class="alert alert-danger" role="alert">
-                            {{ session('error') }}
+                        <div class="alert alert-danger text-center" role="alert">
+                            <i class="bi bi-exclamation-triangle-fill me-2"></i> {{ session('error') }}
                         </div>
                     @endif
 
                     <form method="POST" action="{{ route('admin.login.submit') }}">
                         @csrf
 
-                        <div class="mb-3">
-                            <label for="email" class="form-label fw-bold">Email Admin</label>
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus placeholder="admin@team.com">
-                            @error('email')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        <div class="mb-3">
-                            <label for="password" class="form-label fw-bold">Password</label>
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password" placeholder="********">
-                            @error('password')
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $message }}</strong>
-                                </span>
-                            @enderror
-                        </div>
-
-                        {{-- 2. KOTAK CENTANG ROBOT (Ditaruh diatas tombol login) --}}
-                        <div class="mb-3">
-                            <div class="d-flex justify-content-center">
-                                {!! NoCaptcha::display() !!}
+                        <div class="mb-4">
+                            <label class="form-label fw-bold small text-muted text-uppercase">Email Address</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-envelope"></i></span>
+                                <input type="email" class="form-control border-start-0 py-2" name="email" required autofocus placeholder="admin@sharesa.id">
                             </div>
-                            
-                            {{-- Pesan Error kalau lupa nyentang --}}
-                            @if ($errors->has('g-recaptcha-response'))
-                                <div class="text-danger small text-center mt-1">
-                                    <strong>{{ $errors->first('g-recaptcha-response') }}</strong>
-                                </div>
-                            @endif
                         </div>
 
-                        <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-danger btn-lg fw-bold">
-                                <i class="bi bi-box-arrow-in-right me-2"></i> MASUK DASHBOARD
+                        <div class="mb-5">
+                            <label class="form-label fw-bold small text-muted text-uppercase">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light border-end-0"><i class="bi bi-key"></i></span>
+                                <input type="password" class="form-control border-start-0 py-2" name="password" required placeholder="••••••••">
+                            </div>
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn fw-bold text-dark py-3" style="background-color: var(--sharesa-green);">
+                                MASUK DASHBOARD <i class="bi bi-arrow-right ms-2"></i>
                             </button>
                         </div>
                     </form>
                 </div>
-                <div class="card-footer text-center bg-light py-3">
-                    <small class="text-muted">Bukan admin? <a href="{{ route('login') }}" class="text-danger">Login User disini</a></small>
+                
+                {{-- Footer (Cuma Copyright, GAK ADA LINK LOGIN USER) --}}
+                <div class="card-footer bg-light text-center py-3 border-0">
+                    <small class="text-muted opacity-50">&copy; {{ date('Y') }} Sharesa Agency System</small>
                 </div>
             </div>
         </div>

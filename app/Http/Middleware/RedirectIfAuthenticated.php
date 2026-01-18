@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 
+use App\Providers\RouteServiceProvider;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -11,39 +12,14 @@ class RedirectIfAuthenticated
 {
     public function handle(Request $request, Closure $next, string ...$guards): Response
     {
-        // Jika SUDAH LOGIN
-        if (Auth::check()) {
+        $guards = empty($guards) ? [null] : $guards;
 
-            $role = Auth::user()->role;
-
-            // 🔐 ADMIN / POLICE TIDAK BOLEH LIHAT LOGIN ADMIN
-            if (
-                $request->is('admin/login') &&
-                in_array($role, ['admin', 'superadmin', 'police'])
-            ) {
+        foreach ($guards as $guard) {
+            if (Auth::guard($guard)->check()) {
+                // Kalo udah login, langsung lempar ke Dashboard Admin
+                // Gak peduli dia siapa, karena website ini cuma punya Admin sekarang.
                 return redirect()->route('admin.dashboard');
             }
-        }
-        foreach ($guards as $guard) {
-            // Cek apakah user sudah login?
-            if (Auth::guard($guard)->check()) {
-                
-                $user = Auth::user();
-
-                // PERBAIKAN: Logika Redirect berdasarkan ROLE
-                
-                // 1. Jika Role Admin atau Police -> Lempar ke Dashboard Admin
-                if ($user->role == 'admin' || $user->role == 'police') {
-                    return redirect()->route('admin.dashboard');
-                }
-
-                // 2. Jika Role User Biasa -> Lempar ke Home
-                // Jadi user gak akan bisa lihat halaman login admin lagi
-                return redirect()->route('profile');
-            }
-
-            // 👤 USER BIASA BOLEH AKSES /admin/login
-            return $next($request);
         }
 
         return $next($request);

@@ -147,6 +147,7 @@
                 </button>
 
                 {{-- NAVBAR CONTENT --}}
+                {{-- NAVBAR CONTENT --}}
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center">
 
@@ -169,7 +170,7 @@
                             </ul>
                         </li>
 
-                        {{-- === MENU UTAMA AGENCY (Panggil Kamus) === --}}
+                        {{-- === MENU UTAMA AGENCY === --}}
                         <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">{{ __('messages.home') }}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url('/services') }}">{{ __('messages.services') }}</a></li>
                         <li class="nav-item"><a class="nav-link" href="{{ url('/portfolios') }}">{{ __('messages.portfolios') }}</a></li>
@@ -178,21 +179,12 @@
 
                         <div class="vr mx-3 d-none d-lg-block bg-white opacity-25"></div>
 
-                        {{-- ========== AUTH GUEST ========== --}}
-                        @guest
-                            <li class="nav-item mb-2 mb-lg-0 me-2 mt-2 mt-lg-0">
-                                <a class="btn-sharesa-login" href="{{ route('login') }}">
-                                    {{ __('messages.login') }}
-                                </a>
-                            </li>
-                            <li class="nav-item mt-2 mt-lg-0">
-                                <a class="btn-sharesa-primary" href="{{ route('register') }}">
-                                    {{ __('messages.register') }}
-                                </a>
-                            </li>
-                        @endguest
+                        {{-- 
+                            BAGIAN GUEST KITA HAPUS
+                            (Karena Agency tidak butuh user umum Login/Register)
+                        --}}
 
-                        {{-- ========== AUTH USER ========== --}}
+                        {{-- ========== KHUSUS ADMIN (Hanya muncul kalau lu udah Login) ========== --}}
                         @auth
                             <li class="nav-item dropdown ms-lg-2">
                                 <a class="nav-link dropdown-toggle d-flex align-items-center profile-trigger mt-2 mt-lg-0"
@@ -210,19 +202,16 @@
                                 <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 rounded-3">
                                     <li>
                                         <h6 class="dropdown-header fw-bold" style="color: var(--sharesa-dark)">
-                                            {{ __('messages.welcome') }}, {{ explode(' ', Auth::user()->name)[0] }}!
+                                            {{ __('messages.welcome') }}, Admin!
                                         </h6>
                                     </li>
                                     <li><hr class="dropdown-divider"></li>
                                     
-                                    {{-- Menu Admin --}}
-                                    @if(in_array(Auth::user()->role, ['superadmin', 'admin', 'police']))
-                                        <li>
-                                            <a class="dropdown-item fw-bold text-primary" href="{{ url('/admin/dashboard') }}">
-                                                <i class="bi bi-grid-fill me-2"></i>{{ __('messages.dashboard') }}
-                                            </a>
-                                        </li>
-                                    @endif
+                                    <li>
+                                        <a class="dropdown-item fw-bold text-primary" href="{{ route('admin.dashboard') }}">
+                                            <i class="bi bi-grid-fill me-2"></i>{{ __('messages.dashboard') }}
+                                        </a>
+                                    </li>
 
                                     <li>
                                         <a class="dropdown-item" href="{{ route('profile') }}">
