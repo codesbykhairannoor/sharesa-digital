@@ -29,10 +29,11 @@
                     {{-- Gambar Project --}}
                     <div class="position-relative overflow-hidden">
                         {{-- Cek apakah ada gambar, kalau tidak pakai placeholder --}}
-                        <img src="{{ $item->image ? asset('storage/' . $item->image) : 'https://placehold.co/600x400/1e2a39/00ff8c?text=Sharesa+Project' }}" 
-                             class="card-img-top transition-transform duration-500" 
-                             alt="{{ $item->title }}" 
-                             style="height: 260px; object-fit: cover;">
+                        {{-- Ganti baris image lu jadi ini --}}
+<img src="{{ $item->image ?? 'https://placehold.co/600x400/1e2a39/00ff8c?text=Sharesa+Project' }}" 
+     class="card-img-top transition-transform duration-500" 
+     alt="{{ $item->title }}" 
+     style="height: 260px; object-fit: cover;">
                         
                         {{-- Overlay Kategori (Muncul di pojok) --}}
                         <div class="position-absolute top-0 end-0 m-3">

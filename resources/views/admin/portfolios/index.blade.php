@@ -26,7 +26,12 @@
                 @forelse($portfolios as $item)
                 <tr>
                     <td class="px-4">
-                        <img src="{{ asset('storage/' . $item->image) }}" class="rounded shadow-sm" width="60" height="60" style="object-fit: cover;">
+                        <img src="{{ $item->image ?? 'https://placehold.co/100x100?text=No+Image' }}" 
+     class="rounded shadow-sm" 
+     width="60" 
+     height="60" 
+     style="object-fit: cover;"
+     alt="Thumbnail">
                     </td>
                     <td class="fw-bold">{{ $item->title }}</td>
                     <td><span class="badge bg-light text-dark border">{{ $item->category }}</span></td>

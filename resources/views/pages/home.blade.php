@@ -171,10 +171,11 @@
                             {{-- Wrapper Gambar --}}
                             <div class="position-relative overflow-hidden">
                                 {{-- Cek Gambar --}}
-                                <img src="{{ $project->image ? asset('storage/' . $project->image) : 'https://placehold.co/800x600/1e2a39/00ff8c?text=Sharesa+Project' }}" 
-                                     class="card-img-top transition-transform duration-500" 
-                                     alt="{{ $project->title }}" 
-                                     style="height: 350px; object-fit: cover;">
+                                {{-- Ganti bagian img ini di home.blade.php --}}
+<img src="{{ $project->image ?? 'https://placehold.co/800x600/1e2a39/00ff8c?text=Sharesa+Project' }}" 
+     class="card-img-top transition-transform duration-500" 
+     alt="{{ $project->title }}" 
+     style="height: 350px; object-fit: cover;">
                                 
                                 {{-- Badge Kategori --}}
                                 <div class="position-absolute top-0 end-0 m-3">
