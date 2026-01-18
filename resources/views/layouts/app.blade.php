@@ -1,75 +1,126 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Dimsaykuu | @yield('title', 'UMKM F&B')</title>
-<link rel="icon" href="{{ asset('images/logoku.png') }}" type="image/x-icon">
+    <title>Sharesa Digital | @yield('title', 'Modern Digital Agency')</title>
+    
+    {{-- Favicon --}}
+    <link rel="icon" href="{{ asset('images/logoku.png') }}" type="image/x-icon">
     <link rel="shortcut icon" href="{{ asset('images/logoku.png') }}" type="image/x-icon">
-    {{-- Custom CSS --}}
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
 
     {{-- Bootstrap 5 --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    
     {{-- Bootstrap Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
+    {{-- Google Fonts (Plus Jakarta Sans) --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        /* === STYLE TOMBOL LOGIN & REGISTER ANDA === */
-        .btn-dimsai-login {
-            color: #fff !important;
-            border: 2px solid #fff;
+        /* === SHARESA BRAND COLORS === */
+        :root {
+            --sharesa-dark: #1e2a39;
+            --sharesa-green: #00ff8c;
+            --sharesa-white: #ffffff;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* === NAVBAR STYLE === */
+        .navbar-sharesa {
+            background-color: var(--sharesa-dark);
+            padding: 15px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand span {
+            color: var(--sharesa-white);
+            letter-spacing: 0.5px;
+            font-size: 1.25rem;
+        }
+
+        .nav-link {
+            color: rgba(255,255,255,0.8) !important;
+            font-weight: 500;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: var(--sharesa-green) !important;
+        }
+
+        /* === BUTTON STYLES === */
+        .btn-sharesa-login {
+            color: var(--sharesa-green) !important;
+            border: 2px solid var(--sharesa-green);
             border-radius: 50px;
-            padding: 5px 20px;
+            padding: 6px 24px;
             font-weight: 600;
             text-decoration: none;
             transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-        }
-        .btn-dimsai-login:hover {
-            background-color: #fff;
-            color: #d32f2f !important;
+            display: inline-block;
         }
 
-        .btn-dimsai-register {
-            background-color: #ffc107;
-            color: #000 !important;
-            border: 2px solid #ffc107;
+        .btn-sharesa-login:hover {
+            background-color: var(--sharesa-green);
+            color: var(--sharesa-dark) !important;
+            box-shadow: 0 0 15px rgba(0, 255, 140, 0.4);
+        }
+
+        .btn-sharesa-primary {
+            background-color: var(--sharesa-green);
+            color: var(--sharesa-dark) !important;
+            border: 2px solid var(--sharesa-green);
             border-radius: 50px;
-            padding: 5px 20px;
+            padding: 6px 24px;
             font-weight: 700;
             text-decoration: none;
             transition: 0.3s;
-            display: inline-flex;
-            align-items: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.2);
-        }
-        .btn-dimsai-register:hover {
-            background-color: #ffca2c;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(0, 255, 140, 0.2);
         }
 
+        .btn-sharesa-primary:hover {
+            background-color: #00cc70; 
+            border-color: #00cc70;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 255, 140, 0.4);
+        }
+
+        /* === DROPDOWN PROFILE === */
         .profile-trigger {
-            border: 1px solid rgba(255,255,255,0.5);
-            background-color: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+            background-color: rgba(255,255,255,0.05);
             color: #fff !important;
             border-radius: 50px;
-            padding: 5px 15px 5px 5px;
+            padding: 4px 15px 4px 4px;
             transition: 0.3s;
         }
         .profile-trigger:hover {
-            background-color: rgba(255,255,255,0.2);
-            border-color: #fff;
+            background-color: rgba(255,255,255,0.1);
+            border-color: var(--sharesa-green);
         }
 
-        /* Badge Keranjang */
-        .cart-badge {
-            font-size: 0.65rem;
-            padding: 0.25em 0.45em;
+        /* === FOOTER === */
+        .footer-sharesa {
+            background-color: var(--sharesa-dark);
+            color: rgba(255,255,255,0.6);
+            padding: 40px 0 20px;
+            margin-top: auto;
+            border-top: 3px solid var(--sharesa-green);
         }
     </style>
 </head>
@@ -78,136 +129,113 @@
 
     {{-- ================= HEADER ================= --}}
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dimsai">
+        <nav class="navbar navbar-expand-lg navbar-sharesa fixed-top">
             <div class="container">
 
                 {{-- LOGO --}}
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <img src="{{ asset('images/logoku.png') }}" alt="Dimsaykuu Logo" height="40">
-                    <span class="navbar-logo-text ms-2 text-white fw-bold">Dimsaykuu</span>
+                    <img src="{{ asset('images/logoku.png') }}" alt="Sharesa Logo" height="35">
+                    <span class="navbar-logo-text ms-2 fw-bold">Sharesa<span style="color: var(--sharesa-green)">.</span></span>
                 </a>
 
                 {{-- TOGGLER --}}
-                <button class="navbar-toggler" type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
+                <button class="navbar-toggler" type="button" 
+                        data-bs-toggle="collapse" 
+                        data-bs-target="#navbarNav"
+                        style="border-color: rgba(255,255,255,0.3);">
+                    <i class="bi bi-list text-white fs-2"></i>
                 </button>
 
                 {{-- NAVBAR CONTENT --}}
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto align-items-center">
 
-                        <li class="nav-item"><a class="nav-link text-white" href="{{ url('/') }}">Home</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{{ url('/program') }}">Program</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{{ url('/menu') }}">Menu</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{{ url('/our-team') }}">Our Team</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{{ url('/about') }}">About</a></li>
-                        <li class="nav-item"><a class="nav-link text-white" href="{{ url('/contact-us') }}">Contact Us</a></li>
+                        {{-- === LANGUAGE SWITCHER (ID | EN) === --}}
+                        <li class="nav-item dropdown me-lg-3">
+                            <a class="nav-link dropdown-toggle font-monospace d-flex align-items-center" href="#" role="button" data-bs-toggle="dropdown">
+                                <i class="bi bi-globe me-1"></i> {{ strtoupper(App::getLocale()) }}
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2" style="min-width: auto;">
+                                <li>
+                                    <a class="dropdown-item d-flex justify-content-between align-items-center {{ App::getLocale() == 'id' ? 'active bg-success' : '' }}" href="{{ route('lang.switch', 'id') }}">
+                                        <span>Indonesian</span> <span>🇮🇩</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item d-flex justify-content-between align-items-center {{ App::getLocale() == 'en' ? 'active bg-success' : '' }}" href="{{ route('lang.switch', 'en') }}">
+                                        <span>English</span> <span>🇬🇧</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
 
-                        <div class="vr mx-3 d-none d-lg-block text-white opacity-50"></div>
+                        {{-- === MENU UTAMA AGENCY (Panggil Kamus) === --}}
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/') }}">{{ __('messages.home') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/services') }}">{{ __('messages.services') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/portfolios') }}">{{ __('messages.portfolios') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/about') }}">{{ __('messages.about') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="{{ url('/contact') }}">{{ __('messages.contact') }}</a></li>
+
+                        <div class="vr mx-3 d-none d-lg-block bg-white opacity-25"></div>
 
                         {{-- ========== AUTH GUEST ========== --}}
                         @guest
-                            <li class="nav-item mb-2 mb-lg-0">
-                                <a class="btn-dimsai-login me-2" href="{{ route('login') }}">
-                                    <i class="bi bi-box-arrow-in-right me-2"></i>Login
+                            <li class="nav-item mb-2 mb-lg-0 me-2 mt-2 mt-lg-0">
+                                <a class="btn-sharesa-login" href="{{ route('login') }}">
+                                    {{ __('messages.login') }}
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="btn-dimsai-register" href="{{ route('register') }}">
-                                    <i class="bi bi-person-plus-fill me-2"></i>Register
+                            <li class="nav-item mt-2 mt-lg-0">
+                                <a class="btn-sharesa-primary" href="{{ route('register') }}">
+                                    {{ __('messages.register') }}
                                 </a>
                             </li>
                         @endguest
 
                         {{-- ========== AUTH USER ========== --}}
                         @auth
-                           {{-- Ikon Favorit --}}
-                            <li class="nav-item me-3">
-                                <a class="nav-link text-white position-relative" href="{{ route('favorites.index') }}" title="Favorit Saya">
-                                    <i class="bi bi-heart-fill fs-5"></i>
-
-                                    @if(Auth::user()->favorites()->count() > 0)
-                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger cart-badge">
-                                            {{ Auth::user()->favorites()->count() }}
-                                        </span>
-                                    @endif
-                                </a>
-                            </li>
-
-
-                            {{-- Ikon Keranjang (Cart) --}}
-                            <li class="nav-item me-3">
-                                <a class="nav-link text-white position-relative" href="{{ route('cart.index') }}" title="Keranjang Belanja">
-                                    <i class="bi bi-cart3 fs-5"></i>
-                                    @if(Auth::user()->carts->count() > 0)
-                                        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-warning text-dark cart-badge">
-                                            {{ Auth::user()->carts->count() }}
-                                        </span>
-                                    @endif
-                                </a>
-                            </li>
-
                             <li class="nav-item dropdown ms-lg-2">
                                 <a class="nav-link dropdown-toggle d-flex align-items-center profile-trigger mt-2 mt-lg-0"
-                                   href="#"
-                                   role="button"
-                                   data-bs-toggle="dropdown">
-
-                                    {{-- Avatar User --}}
+                                   href="#" role="button" data-bs-toggle="dropdown">
+                                    {{-- Avatar --}}
                                     <img src="{{ Auth::user()->avatar
                                             ? asset('storage/' . Auth::user()->avatar)
-                                            : 'https://ui-avatars.com/api/?name='.urlencode(Auth::user()->name).'&background=ffc107&color=000' }}"
-                                     class="rounded-circle me-2 border border-white"
-                                     width="32"
-                                     height="32"
-                                     style="object-fit: cover;">
-
-                                    {{-- Nama User --}}
+                                            : 'https://ui-avatars.com/api/?name='.urlencode(Auth::user()->name).'&background=00ff8c&color=1e2a39&bold=true' }}"
+                                     class="rounded-circle me-2" width="32" height="32" style="object-fit: cover;">
+                                    
+                                    {{-- Nama --}}
                                     <span class="fw-bold small">{{ explode(' ', Auth::user()->name)[0] }}</span>
                                 </a>
 
-                                {{-- Isi Dropdown --}}
                                 <ul class="dropdown-menu dropdown-menu-end shadow border-0 mt-2 rounded-3">
                                     <li>
-                                        <h6 class="dropdown-header text-danger fw-bold">
-                                            Halo, {{ explode(' ', Auth::user()->name)[0] }}! 👋
+                                        <h6 class="dropdown-header fw-bold" style="color: var(--sharesa-dark)">
+                                            {{ __('messages.welcome') }}, {{ explode(' ', Auth::user()->name)[0] }}!
                                         </h6>
                                     </li>
                                     <li><hr class="dropdown-divider"></li>
                                     
-                                    {{-- MENU UNTUK ADMIN --}}
-                                    @if(Auth::user()->role == 'superadmin' || Auth::user()->role == 'admin' || Auth::user()->role == 'police')
+                                    {{-- Menu Admin --}}
+                                    @if(in_array(Auth::user()->role, ['superadmin', 'admin', 'police']))
                                         <li>
-                                            <a class="dropdown-item fw-bold text-danger" href="{{ url('/admin/dashboard') }}">
-                                                <i class="bi bi-speedometer2 me-2"></i>Admin Dashboard
+                                            <a class="dropdown-item fw-bold text-primary" href="{{ url('/admin/dashboard') }}">
+                                                <i class="bi bi-grid-fill me-2"></i>{{ __('messages.dashboard') }}
                                             </a>
                                         </li>
                                     @endif
 
                                     <li>
                                         <a class="dropdown-item" href="{{ route('profile') }}">
-                                            <i class="bi bi-person-circle me-2 text-danger"></i>Profile Saya
+                                            <i class="bi bi-person-gear me-2"></i>{{ __('messages.settings') }}
                                         </a>
                                     </li>
-
-                                    {{-- MENU UNTUK USER BIASA (INI PERBAIKANNYA) --}}
-                                    {{-- Hanya tampil kalau rolenya 'user' --}}
-                                    @if(Auth::user()->role == 'user')
-                                        <li>
-                                            <a class="dropdown-item" href="{{ route('profile.history') }}">
-                                                <i class="bi bi-clock-history me-2 text-danger"></i>Riwayat Pesanan
-                                            </a>
-                                        </li>
-                                    @endif
 
                                     <li><hr class="dropdown-divider"></li>
                                     <li>
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
                                             <button type="submit" class="dropdown-item text-danger">
-                                                <i class="bi bi-box-arrow-right me-2"></i>Logout
+                                                <i class="bi bi-box-arrow-right me-2"></i>{{ __('messages.logout') }}
                                             </button>
                                         </form>
                                     </li>
@@ -222,16 +250,25 @@
     </header>
 
     {{-- ================= CONTENT ================= --}}
-    <main class="container my-5">
+    {{-- Padding top agar tidak ketutup navbar fixed --}}
+    <main class="flex-shrink-0" style="padding-top: 85px;">
         @yield('content')
     </main>
 
     {{-- ================= FOOTER ================= --}}
-    <footer class="footer-dimsai text-center">
+    <footer class="footer-sharesa text-center">
         <div class="container">
-            <p class="m-0">
-                &copy; {{ date('Y') }} Dimsaykuu. Dimsum Lezat, Harga Bersahabat.
-            </p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <h5 class="text-white fw-bold mb-3">Sharesa<span style="color: var(--sharesa-green)">.</span></h5>
+                    <p class="small mb-3 text-white-50">
+                        {{ __('messages.footer_text') }}
+                    </p>
+                    <p class="small mb-0 opacity-50">
+                        &copy; {{ date('Y') }} Sharesa Digital Agency. {{ __('messages.rights') }}
+                    </p>
+                </div>
+            </div>
         </div>
     </footer>
 

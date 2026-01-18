@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\Session;
 // --- DAFTAR CONTROLLER ---
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\HomeController;
@@ -38,7 +38,12 @@ Route::get('/', fn() => view('pages.home'));
 Route::get('/about', fn() => view('pages.about'));
 Route::get('/our-team', fn() => view('pages.team'));
 Route::get('/contact-us', fn() => view('pages.contact'));
-
+Route::get('lang/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'id'])) {
+        Session::put('locale', $locale);
+    }
+    return back();
+})->name('lang.switch');
 // Halaman Program & Menu
 Route::get('/program', [PageController::class, 'program'])->name('program');
 Route::get('/menu', [PageController::class, 'menu'])->name('menu');
