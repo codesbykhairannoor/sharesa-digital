@@ -83,7 +83,7 @@
                             <i class="bi bi-geo-alt-fill fs-3 text-success"></i>
                         </div>
                         <h5 class="fw-bold mb-2">{{ __('messages.addr_title') }}</h5>
-                        <p class="text-muted small">Jeruk Purut, Cilandak Timur<br>Jakarta Selatan, Indonesia</p>
+                        <p class="text-muted small"><br>Jakarta Selatan, Indonesia</p>
                     </div>
                 </div>
                 

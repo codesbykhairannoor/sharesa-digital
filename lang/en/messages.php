@@ -18,13 +18,14 @@ return [
     
     // HOME PAGE
     'hero_badge' => '🚀 Level Up Your Business',
-    'hero_title' => 'I Build Digital Experiences That Matter.',
+    'hero_title' => 'Build Digital Experiences That Matter.',
     'hero_desc' => 'Sharesa is an independent digital studio focused on UI/UX Design, Web Development, and Branding. I help businesses thrive in the digital era with a personal touch.',
     'hero_cta' => 'Start a Project',
     'hero_secondary' => 'View My Work',
-
+    'hubungi_kami' => 'Let\'s Talk',
     'stats_projects' => 'Projects Done',
     'stats_clients' => 'Happy Clients',
+    'stats_rating' => 'Average Rating',
     'stats_exp' => 'Years Experience',
 
     'why_title' => 'Why Choose Sharesa?',

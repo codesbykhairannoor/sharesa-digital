@@ -18,14 +18,15 @@ return [
     
     // HOME PAGE
     'hero_badge' => '🚀 Tingkatkan Bisnis Anda',
-    'hero_title' => 'Saya Membangun Pengalaman Digital yang Berarti.',
+    'hero_title' => 'Membangun Pengalaman Digital yang Berarti.',
     'hero_desc' => 'Sharesa adalah studio digital independen yang berfokus pada Desain UI/UX, Pengembangan Web, dan Branding. Saya membantu bisnis berkembang di era digital dengan sentuhan personal.',
     'hero_cta' => 'Mulai Proyek',
     'hero_secondary' => 'Lihat Karya',
-
     'stats_projects' => 'Proyek Selesai',
     'stats_clients' => 'Klien Puas',
+    'stats_rating' => 'Rating Rata-rata',
     'stats_exp' => 'Tahun Pengalaman',
+    'hubungi_kami' => 'Hubungi Kami',
 
     'why_title' => 'Kenapa Memilih Sharesa?',
     'why_subtitle' => 'Bukan sekadar coding, tapi solusi yang dipikirkan matang-matang.',

@@ -182,11 +182,14 @@
                 <div class="col-md-4 col-lg-3">
                     <div class="card border-0 rounded-4 overflow-hidden group text-center">
                         <div class="position-relative overflow-hidden">
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1374&auto=format&fit=crop" class="card-img-top hover-scale" alt="CEO">
+                            <img src="https://github.com/codesbykhairannoor.png" 
+     class="card-img-top hover-scale" 
+     style="object-fit: cover; aspect-ratio: 1/1;"
+     alt="Khairan Noor F - CEO Sharesa">
                             <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75 translate-y-100 group-hover-visible transition-all">
                                 <div class="d-flex justify-content-center gap-3">
-                                    <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#" class="text-white"><i class="bi bi-twitter-x"></i></a>
+                                    <a href="https://www.linkedin.com/in/khairannoorfadhlillah/" class="text-white"><i class="bi bi-linkedin"></i></a>
+                                    <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
                                 </div>
                             </div>
                         </div>

@@ -247,7 +247,7 @@
                             <li class="nav-item d-none d-lg-block ms-2">
                                 <a href="{{ url('/contact') }}" class="btn btn-sm text-dark fw-bold rounded-pill px-4 hover-scale" 
                                    style="background-color: var(--sharesa-green);">
-                                    Let's Talk
+                                    {{ __('messages.hubungi_kami') }}
                                 </a>
                             </li>
                         @endauth
