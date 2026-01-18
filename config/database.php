@@ -10,11 +10,17 @@ return [
 
         'pgsql' => [
             'driver' => 'pgsql',
+
+            // INI KUNCI SUPABASE
+            'url' => env('DATABASE_URL'),
+
+            // fallback (jangan dihapus)
             'host' => env('DB_HOST'),
             'port' => env('DB_PORT', 5432),
             'database' => env('DB_DATABASE'),
             'username' => env('DB_USERNAME'),
             'password' => env('DB_PASSWORD'),
+
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
@@ -53,7 +59,7 @@ return [
         'client' => env('REDIS_CLIENT', 'phpredis'),
         'options' => [
             'cluster' => env('REDIS_CLUSTER', 'redis'),
-            'prefix' => Str::slug(env('APP_NAME', 'laravel'), '_').'_database_',
+            'prefix' => Str::slug(env('APP_NAME', 'laravel'), '_') . '_database_',
         ],
         'default' => [
             'host' => env('REDIS_HOST', '127.0.0.1'),
