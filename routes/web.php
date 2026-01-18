@@ -123,3 +123,21 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'is_admin'])->group(
 // 5. FALLBACK
 // =====================
 Route::fallback(fn() => view('404'));
+
+Route::get('/init-project-sharesa', function () {
+    try {
+        // 1. Bersihkan Cache (Penting di Vercel!)
+        Artisan::call('config:clear');
+        Artisan::call('route:clear');
+        
+        // 2. Jalankan Migrasi
+        Artisan::call('migrate:fresh', ['--force' => true]);
+        
+        // 3. (Opsional) Isi data dummy jika perlu
+        // Artisan::call('db:seed', ['--force' => true]);
+        
+        return "<h1>✅ SUKSES!</h1><p>Database berhasil dimigrasi.</p><pre>" . Artisan::output() . "</pre>";
+    } catch (\Exception $e) {
+        return "<h1>❌ ERROR</h1><p>" . $e->getMessage() . "</p>";
+    }
+});

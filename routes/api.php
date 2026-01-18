@@ -12,7 +12,6 @@ use App\Http\Controllers\PaymentCallbackController; // Panggil Controller Piliha
 
 // URL Webhook untuk Dashboard Xendit: 
 // https://dimsaykuu.vercel.app/api/payment/callback
-Route::post('payment/callback', [PaymentCallbackController::class, 'handleCallback'])->name('api.payment.callback');
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
