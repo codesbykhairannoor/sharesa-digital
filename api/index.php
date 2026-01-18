@@ -1,12 +1,9 @@
 <?php
-
 require __DIR__ . '/../vendor/autoload.php';
 $app = require_once __DIR__ . '/../bootstrap/app.php';
 
-// Fix Storage untuk Vercel (Serverless)
 $app->useStoragePath('/tmp/storage');
 
-// Pastikan folder cache tersedia
 $storagePaths = [
     '/tmp/storage/framework/views',
     '/tmp/storage/framework/cache',
@@ -20,11 +17,8 @@ foreach ($storagePaths as $path) {
 }
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
-
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()
 );
-
 $response->send();
-
 $kernel->terminate($request, $response);
