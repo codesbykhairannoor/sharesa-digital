@@ -126,17 +126,16 @@ Route::fallback(fn() => view('404'));
 
 Route::get('/init-project-sharesa', function () {
     try {
-        // 1. Bersihkan Cache (Penting di Vercel!)
         Artisan::call('config:clear');
         Artisan::call('route:clear');
         
-        // 2. Jalankan Migrasi
+        // 1. Jalankan Migrasi (Biartabel & kolom 'role' kebuat otomatis)
         Artisan::call('migrate:fresh', ['--force' => true]);
         
-        // 3. (Opsional) Isi data dummy jika perlu
-        // Artisan::call('db:seed', ['--force' => true]);
+        // 2. Jalankan Seeder (Biar Akun admin@sharesa.id kebuat otomatis)
+        Artisan::call('db:seed', ['--force' => true]);
         
-        return "<h1>✅ SUKSES!</h1><p>Database berhasil dimigrasi.</p><pre>" . Artisan::output() . "</pre>";
+        return "<h1>✅ SUKSES!</h1><p>Database & Admin Berhasil Dibuat.</p><pre>" . Artisan::output() . "</pre>";
     } catch (\Exception $e) {
         return "<h1>❌ ERROR</h1><p>" . $e->getMessage() . "</p>";
     }
