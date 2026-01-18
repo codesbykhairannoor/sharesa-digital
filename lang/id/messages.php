@@ -86,4 +86,11 @@ return [
     'contact_wa' => 'Dukungan WhatsApp',
     'btn_wa' => 'Chat via WhatsApp',
 
+    // PORTFOLIO PAGE
+    'port_header' => 'Karya Terbaik',
+    'port_title' => 'Portofolio Pilihan',
+    'port_desc' => 'Jelajahi proyek terbaru kami dan lihat bagaimana kami membantu klien mencapai tujuan digital mereka.',
+    'port_client' => 'Klien',
+    'port_empty' => 'Belum ada proyek yang diunggah. Cek lagi nanti!',
+
 ];

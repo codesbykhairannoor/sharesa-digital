@@ -10,7 +10,7 @@ use App\Http\Controllers\ProductController; // Nanti jadi Portfolio
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\GoogleController;
-
+use App\Models\Portfolio;
 /*
 |--------------------------------------------------------------------------
 | SHARESA DIGITAL AGENCY - WEB ROUTES
@@ -25,7 +25,12 @@ Route::get('/services', fn() => view('pages.services'))->name('services');
 Route::get('/portfolios', fn() => view('pages.portfolios'))->name('portfolios');
 Route::get('/about', fn() => view('pages.about'))->name('about');
 Route::get('/contact', fn() => view('pages.contact'))->name('contact');
-
+Route::get('/portfolios', function () {
+    // Ambil data portfolio dari database, urutkan dari yang terbaru
+    $portfolios = Portfolio::latest()->get();
+    
+    return view('pages.portfolios', compact('portfolios')); 
+})->name('portfolios');
 // Switch Language
 Route::get('lang/{locale}', function ($locale) {
     if (in_array($locale, ['en', 'id'])) {
@@ -87,7 +92,12 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'is_admin'])->group(
     Route::get('/dashboard', [AdminController::class, 'index'])->name('dashboard');
 
     // Kelola Portfolio (Menggunakan Resource ProductController sementara)
-    Route::resource('portfolios', ProductController::class);
+    // CRUD Portfolio
+    Route::get('/portfolios/trash', [App\Http\Controllers\PortfolioController::class, 'trash'])->name('portfolios.trash');
+    Route::get('/portfolios/restore/{id}', [App\Http\Controllers\PortfolioController::class, 'restore'])->name('portfolios.restore');
+    Route::delete('/portfolios/force-delete/{id}', [App\Http\Controllers\PortfolioController::class, 'forceDelete'])->name('portfolios.force_delete');
+    
+    Route::resource('portfolios', App\Http\Controllers\PortfolioController::class);
 
     // Kelola User
     Route::get('/manage-users', [AdminController::class, 'users'])->name('manage.users');

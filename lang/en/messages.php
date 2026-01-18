@@ -86,4 +86,11 @@ return [
     'contact_wa' => 'WhatsApp Support',
     'btn_wa' => 'Chat on WhatsApp',
 
+    // PORTFOLIO PAGE
+    'port_header' => 'Our Masterpieces',
+    'port_title' => 'Selected Portfolios',
+    'port_desc' => 'Explore our latest projects and see how we help our clients achieve their digital goals.',
+    'port_client' => 'Client',
+    'port_empty' => 'No projects uploaded yet. Check back soon!',
+
 ];
