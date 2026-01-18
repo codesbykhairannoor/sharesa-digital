@@ -3,63 +3,91 @@
 @section('title', __('messages.about'))
 
 @section('content')
+{{-- SECTION 1: HERO ABOUT --}}
+   {{-- ========================================== --}}
+    {{-- SECTION 1: HERO ABOUT (CLEAN & ICONIC)      --}}
+    {{-- ========================================== --}}
+   {{-- ========================================== --}}
+    {{-- SECTION 1: HERO ABOUT (ULTRA CLEAN)         --}}
+    {{-- ========================================== --}}
+    <section class="py-5 bg-white position-relative overflow-hidden" style="padding-top: 120px !important; padding-bottom: 80px !important;">
+        
+        {{-- Background Pattern Dihapus untuk kesan Ultra Clean --}}
 
-    {{-- SECTION 1: HERO ABOUT --}}
-    <section class="py-5 bg-white position-relative overflow-hidden">
-        {{-- Background blobs --}}
-        <div class="position-absolute top-0 end-0 p-5 opacity-10">
-            <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" width="400" height="400">
-                <path fill="#00FF8C" d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-5.3C93.5,8.6,82.2,21.5,70.9,32.3C59.6,43.1,48.3,51.8,36.5,58.8C24.7,65.8,12.4,71.1,-1.2,73.2C-14.8,75.3,-29.6,74.2,-42.6,67.6C-55.6,61,-66.8,48.9,-74.6,35.4C-82.4,21.9,-86.8,7,-84.6,-6.9C-82.4,-20.8,-73.6,-33.7,-63.1,-43.3C-52.6,-52.9,-40.4,-59.2,-28,-67.2C-15.6,-75.2,-3,-84.9,10.2,-86.6C23.4,-88.3,30.5,-103.5,44.7,-76.4Z" transform="translate(100 100)" />
-            </svg>
-        </div>
-
-        <div class="container py-5 position-relative z-1">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <span class="badge bg-light text-dark border px-3 py-2 mb-3 fw-bold tracking-widest text-uppercase">
-                        {{ __('messages.about_title') }}
-                    </span>
-                    <h1 class="display-4 fw-bold mb-4" style="color: var(--sharesa-dark);">
+        <div class="container position-relative z-1">
+            <div class="row align-items-center g-5">
+                
+                {{-- Kiri: Teks Content --}}
+                <div class="col-lg-6">
+                    <div class="d-inline-flex align-items-center px-3 py-1 rounded-pill bg-light border mb-4 shadow-sm">
+                        <i class="bi bi-info-circle-fill me-2 text-success" style="font-size: 0.8rem;"></i>
+                        <span class="text-uppercase fw-bold tracking-widest small text-muted" style="letter-spacing: 2px;">
+                            {{ __('messages.about_title') }}
+                        </span>
+                    </div>
+                    
+                    <h1 class="display-3 fw-bold mb-4 text-dark lh-sm">
                         {{ __('messages.about_hero_title') }}
                     </h1>
-                    <p class="lead text-muted mb-5" style="line-height: 1.8;">
+                    
+                    <p class="lead text-muted mb-5 border-start border-4 border-success ps-4 py-1" style="line-height: 1.8; font-size: 1.15rem;">
                         {{ __('messages.about_hero_desc') }}
                     </p>
                     
-                    {{-- Stats Grid --}}
-                    <div class="row g-4">
-                        <div class="col-auto">
-                            <div class="d-flex align-items-center">
-                                <div class="display-5 fw-bold text-dark me-2">2024</div>
-                                <div class="text-muted small text-uppercase lh-1">Founded<br>Year</div>
+                    {{-- Stats Grid Clean --}}
+                    <div class="row g-4 pt-2">
+                        <div class="col-6 col-sm-auto">
+                            <div class="p-3 bg-light rounded-4 border-bottom border-4 border-success shadow-sm text-center" style="min-width: 120px;">
+                                <h2 class="fw-bold text-dark mb-0">2024</h2>
+                                <small class="text-muted text-uppercase fw-bold tracking-tighter" style="font-size: 0.7rem;">Founded</small>
                             </div>
                         </div>
-                        <div class="col-auto">
-                            <div class="vr h-100 mx-3 opacity-25"></div>
-                        </div>
-                        <div class="col-auto">
-                            <div class="d-flex align-items-center">
-                                <div class="display-5 fw-bold text-dark me-2" style="color: var(--sharesa-green);">50+</div>
-                                <div class="text-muted small text-uppercase lh-1">Projects<br>Done</div>
+                        <div class="col-6 col-sm-auto">
+                            <div class="p-3 bg-light rounded-4 border-bottom border-4 border-dark shadow-sm text-center" style="min-width: 120px;">
+                                <h2 class="fw-bold mb-0" style="color: var(--sharesa-dark);">50+</h2>
+                                <small class="text-muted text-uppercase fw-bold tracking-tighter" style="font-size: 0.7rem;">Projects</small>
                             </div>
                         </div>
                     </div>
                 </div>
                 
-                {{-- Hero Image --}}
-                <div class="col-lg-6">
-                    <div class="position-relative ps-lg-5">
-                        <div class="position-absolute top-0 start-0 bg-success rounded-circle mt-n4 ms-4" style="width: 100px; height: 100px; opacity: 0.1;"></div>
-                        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1470&auto=format&fit=crop" 
-                             class="img-fluid rounded-4 shadow-lg position-relative z-1 hover-scale" alt="Our Team">
+                {{-- Kanan: Visual Ikonik --}}
+                <div class="col-lg-6 text-center">
+                    <div class="position-relative d-inline-block">
                         
-                        {{-- Floating Card --}}
-                        <div class="position-absolute bottom-0 start-0 bg-white p-4 rounded-4 shadow-lg m-4 border-start border-4 border-success d-none d-md-block z-2 animate-float" style="max-width: 300px;">
-                            <i class="bi bi-quote fs-1 text-success opacity-50 position-absolute top-0 end-0 me-3"></i>
-                            <p class="fst-italic mb-0 fw-medium small text-dark">"Innovation distinguishes between a leader and a follower."</p>
+                        {{-- Glow Effect behind Icon (Soft Green) --}}
+                        <div class="position-absolute top-50 start-50 translate-middle rounded-circle opacity-20" 
+                             style="width: 300px; height: 300px; background: var(--sharesa-green); filter: blur(80px); z-index: 0;">
                         </div>
+
+                        {{-- Ikon Utama --}}
+                        <div class="position-relative z-1 animate-float">
+                            <div class="bg-white rounded-5 shadow-lg border p-5 d-flex align-items-center justify-content-center mx-auto" 
+                                 style="width: 280px; height: 280px; border-width: 1px !important; border-color: rgba(0,0,0,0.05) !important;">
+                                <i class="bi bi-cpu-fill display-1" style="color: var(--sharesa-dark); filter: drop-shadow(0 10px 15px rgba(0,0,0,0.05));"></i>
+                            </div>
+                            
+                            {{-- Mini Floating Icons --}}
+                            <div class="position-absolute top-0 start-0 translate-middle-x bg-white shadow-sm rounded-4 p-3 border animate-float" style="animation-delay: 1s; border-color: rgba(0,0,0,0.05) !important;">
+                                <i class="bi bi-palette-fill text-primary fs-3"></i>
+                            </div>
+                            <div class="position-absolute bottom-0 end-0 translate-middle-x bg-white shadow-sm rounded-4 p-3 border animate-float" style="animation-delay: 2s; border-color: rgba(0,0,0,0.05) !important;">
+                                <i class="bi bi-braces text-success fs-3"></i>
+                            </div>
+                        </div>
+
+                        {{-- Floating Quote Minimalist --}}
+                        <div class="mt-5 bg-dark text-white p-4 rounded-4 shadow-xl border-0 z-2 position-relative" style="max-width: 320px; margin-left: auto; margin-right: auto;">
+                            <p class="fst-italic mb-2 small opacity-75">"Innovation distinguishes between a leader and a follower."</p>
+                            <div class="d-flex align-items-center gap-2 justify-content-center">
+                                <div style="width: 20px; height: 2px; background: var(--sharesa-green);"></div>
+                                <span class="small fw-bold tracking-widest text-uppercase" style="font-size: 0.65rem;">Khairan Noor F.</span>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
+
             </div>
         </div>
     </section>

@@ -8,30 +8,32 @@
     {{-- SECTION 1: HERO SECTION (Modern & Clean)   --}}
     {{-- ========================================== --}}
     {{-- Margin negatif di top untuk kompensasi navbar fixed padding --}}
-    <section class="position-relative overflow-hidden" style="background-color: var(--sharesa-dark); padding-top: 120px; padding-bottom: 100px; margin-top: -85px;">
+    {{-- ========================================== --}}
+    {{-- SECTION 1: HERO SECTION (Modern & Clean)   --}}
+    {{-- ========================================== --}}
+    <section class="position-relative overflow-hidden" style="background-color: var(--sharesa-dark); padding-top: 150px; padding-bottom: 100px; margin-top: -85px;">
         
-        {{-- Background Decoration --}}
-        <div class="position-absolute top-0 end-0 opacity-10 pe-none">
-            <svg width="600" height="600" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
-                <path fill="#00FF8C" d="M44.7,-76.4C58.9,-69.2,71.8,-59.1,81.6,-46.6C91.4,-34.1,98.1,-19.2,95.8,-5.3C93.5,8.6,82.2,21.5,70.9,32.3C59.6,43.1,48.3,51.8,36.5,58.8C24.7,65.8,12.4,71.1,-1.2,73.2C-14.8,75.3,-29.6,74.2,-42.6,67.6C-55.6,61,-66.8,48.9,-74.6,35.4C-82.4,21.9,-86.8,7,-84.6,-6.9C-82.4,-20.8,-73.6,-33.7,-63.1,-43.3C-52.6,-52.9,-40.4,-59.2,-28,-67.2C-15.6,-75.2,-3,-84.9,10.2,-86.6C23.4,-88.3,30.5,-103.5,44.7,-76.4Z" transform="translate(100 100)" />
-            </svg>
+        {{-- Glassmorphism Glow Decoration --}}
+        <div class="position-absolute top-0 end-0 translate-middle opacity-25 pe-none" 
+             style="width: 500px; height: 500px; background: radial-gradient(circle, var(--sharesa-green) 0%, transparent 70%); filter: blur(80px); z-index: 0;">
         </div>
 
         <div class="container position-relative z-1">
             <div class="row align-items-center">
                 <div class="col-lg-7 text-white">
-                    <div class="d-inline-flex align-items-center rounded-pill px-3 py-1 mb-4 border border-secondary bg-white bg-opacity-10">
-                        <span class="badge bg-success rounded-pill me-2">NEW</span>
-                        <small class="fw-bold tracking-wide">{{ __('messages.hero_badge') }}</small>
-                    </div>
+                   <div class="d-inline-flex align-items-center rounded-pill px-3 py-1 mb-4 border border-white border-opacity-25 bg-white bg-opacity-10 shadow-sm">
+    <span class="badge rounded-pill me-2 fw-bolder" style="background-color: var(--sharesa-green); color: var(--sharesa-dark);">NEW</span>
+    {{-- Tambahkan class text-white atau style color eksplisit --}}
+    <small class="fw-bold tracking-wide text-white">{{ __('messages.hero_badge') }}</small>
+</div>
                     <h1 class="display-3 fw-bold mb-4 leading-tight">
                         {{ __('messages.hero_title') }}
                     </h1>
-                    <p class="lead mb-5 text-white-50 col-lg-10" style="font-size: 1.25rem;">
+                    <p class="lead mb-5 text-white-50 col-lg-10" style="font-size: 1.25rem; line-height: 1.8;">
                         {{ __('messages.hero_desc') }}
                     </p>
                     <div class="d-flex gap-3 flex-column flex-sm-row">
-                        <a href="{{ url('/contact') }}" class="btn btn-sharesa-primary btn-lg px-5 py-3 shadow-lg hover-up">
+                        <a href="{{ url('/contact') }}" class="btn btn-sharesa-primary btn-lg px-5 py-3 shadow-lg hover-up fw-bold">
                             {{ __('messages.hero_cta') }}
                         </a>
                         <a href="{{ url('/portfolios') }}" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill hover-up">
@@ -43,15 +45,15 @@
                     <div class="row mt-5 pt-4 border-top border-white border-opacity-10 g-4">
                         <div class="col-auto me-4">
                             <h3 class="fw-bold text-white mb-0">50+</h3>
-                            <small class="text-white-50 text-uppercase" style="font-size: 0.75rem;">Projects</small>
+                            <small class="text-white-50 text-uppercase" style="font-size: 0.75rem; letter-spacing: 1px;">Projects</small>
                         </div>
                         <div class="col-auto me-4">
                             <h3 class="fw-bold mb-0" style="color: var(--sharesa-green);">30+</h3>
-                            <small class="text-white-50 text-uppercase" style="font-size: 0.75rem;">Clients</small>
+                            <small class="text-white-50 text-uppercase" style="font-size: 0.75rem; letter-spacing: 1px;">Clients</small>
                         </div>
                         <div class="col-auto">
                             <h3 class="fw-bold text-white mb-0">4.9</h3>
-                            <small class="text-white-50 text-uppercase" style="font-size: 0.75rem;">Rating</small>
+                            <small class="text-white-50 text-uppercase" style="font-size: 0.75rem; letter-spacing: 1px;">Rating</small>
                         </div>
                     </div>
                 </div>
@@ -59,19 +61,26 @@
                 {{-- Hero Illustration (Right) --}}
                 <div class="col-lg-5 d-none d-lg-block">
                     <div class="position-relative">
-                        {{-- Main Image --}}
-                        <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=2070&auto=format&fit=crop" 
-                             alt="Agency Team" 
-                             class="img-fluid rounded-4 shadow-lg border border-secondary border-opacity-25"
-                             style="transform: rotate(3deg);">
+                        {{-- Background Glow for Image --}}
+                        <div class="position-absolute top-50 start-50 translate-middle w-100 h-100 opacity-20" 
+                             style="background: var(--sharesa-green); filter: blur(100px); border-radius: 50%;"></div>
                         
-                        {{-- Floating Badge --}}
-                        <div class="position-absolute bottom-0 start-0 bg-white p-3 rounded-3 shadow-lg m-4 animate-float" style="max-width: 200px;">
-                            <div class="d-flex align-items-center mb-2">
-                                <div class="bg-success rounded-circle p-1 me-2"><i class="bi bi-check text-white small"></i></div>
-                                <small class="fw-bold text-dark">Project Completed</small>
+                        {{-- Main Image dengan Frame Mewah --}}
+                        <div class="p-2 rounded-4 bg-white bg-opacity-10 border border-white border-opacity-10 shadow-2xl overflow-hidden shadow-lg" style="transform: perspective(1000px) rotateY(-5deg) rotateX(5deg);">
+                             <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2015&auto=format&fit=crop" 
+                                  alt="Digital Experience" 
+                                  class="img-fluid rounded-3 shadow-sm">
+                        </div>
+                        
+                        {{-- Floating Activity Badge --}}
+                        <div class="position-absolute top-0 start-0 bg-white p-3 rounded-4 shadow-xl m-n3 animate-float d-flex align-items-center gap-3" style="max-width: 220px; z-index: 2;">
+                            <div class="bg-success bg-opacity-10 p-2 rounded-circle">
+                                <i class="bi bi- lightning-charge-fill text-success"></i>
                             </div>
-                            <small class="text-muted d-block" style="font-size: 0.7rem;">Just now • E-Commerce App</small>
+                            <div>
+                                <h6 class="text-dark fw-bold mb-0 small">High Performance</h6>
+                                <small class="text-muted" style="font-size: 0.65rem;">Optimized for speed</small>
+                            </div>
                         </div>
                     </div>
                 </div>

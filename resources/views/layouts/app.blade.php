@@ -8,8 +8,8 @@
     <title>Sharesa Digital | @yield('title', 'Modern Digital Agency')</title>
     
     {{-- Favicon --}}
-    <link rel="icon" href="{{ asset('images/logoku.png') }}" type="image/x-icon">
-    <link rel="shortcut icon" href="{{ asset('images/logoku.png') }}" type="image/x-icon">
+   <link rel="icon" type="image/png" href="{{ asset('images/logoku.png') }}?v=1">
+<link rel="shortcut icon" href="{{ asset('images/logoku.png') }}?v=1">
 
     {{-- Bootstrap 5 --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -132,16 +132,20 @@
         <nav class="navbar navbar-expand-lg navbar-sharesa fixed-top py-3" style="background-color: var(--sharesa-dark); transition: all 0.3s;">
             <div class="container">
 
-                {{-- LOGO BRANDING --}}
-                <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    {{-- Ganti logoku.png dengan logo asli kalau ada, sementara pakai Icon Code --}}
-                    <div class="bg-white rounded-circle p-1 d-flex align-items-center justify-content-center me-2" style="width: 35px; height: 35px;">
-                        <i class="bi bi-code-slash text-dark fs-5"></i>
-                    </div>
-                    <span class="navbar-logo-text fw-bold text-white fs-4" style="letter-spacing: -0.5px;">
-                        Sharesa<span style="color: var(--sharesa-green)">.</span>
-                    </span>
-                </a>
+               {{-- LOGO BRANDING --}}
+<a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
+    {{-- Container untuk Logo Gambar --}}
+    <div class="bg-white rounded-circle p-1 d-flex align-items-center justify-content-center me-2 shadow-sm" 
+         style="width: 40px; height: 40px; overflow: hidden;">
+        <img src="{{ asset('images/logoku.png') }}" alt="Sharesa Logo" 
+             style="width: 100%; height: 100%; object-fit: contain;">
+    </div>
+    
+    {{-- Teks Brand --}}
+    <span class="navbar-logo-text fw-bold text-white fs-4" style="letter-spacing: -0.5px;">
+        Sharesa<span style="color: var(--sharesa-green)">.</span>
+    </span>
+</a>
 
                 {{-- TOGGLER (MOBILE) --}}
                 <button class="navbar-toggler border-0" type="button" 
