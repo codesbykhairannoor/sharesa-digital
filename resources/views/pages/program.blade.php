@@ -1,240 +1,159 @@
 @extends('layouts.app')
 
-@section('title', 'Program & Promo')
+@section('title', __('messages.services'))
 
 @section('content')
 
     {{-- ========================================== --}}
-    {{-- BAGIAN 1: KONTEN ASLI (HEADER & KARTU) --}}
+    {{-- SECTION 1: HEADER                          --}}
     {{-- ========================================== --}}
-
-    <div class="row">
-        <div class="col-lg-10 offset-lg-1 text-center mb-5">
-            <h2 class="display-4 fw-bold" style="color: var(--dimsai-red);">Program Spesial Dimsaykuu</h2>
-            <p class="lead text-muted">Dapatkan penawaran terbaik dan ikuti event seru kami di sini!</p>
-            <div style="width: 100px; height: 5px; background-color: var(--dimsai-yellow); margin: 0 auto; border-radius: 5px;"></div>
+    <section class="py-5 text-center" style="background-color: #f8f9fa;">
+        <div class="container pt-4">
+            <span class="text-uppercase fw-bold tracking-widest" style="color: var(--sharesa-green); letter-spacing: 2px;">
+                {{ __('messages.services') }}
+            </span>
+            <h1 class="display-4 fw-bold mt-2 mb-3" style="color: var(--sharesa-dark);">
+                {{ __('messages.serv_header_title') }}
+            </h1>
+            <p class="lead text-muted mx-auto" style="max-width: 700px;">
+                {{ __('messages.serv_header_desc') }}
+            </p>
         </div>
-    </div>
-
-    <div class="row mb-5">
-        {{-- Kartu Promo 1 --}}
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-lg border-0 h-100 hover-card" style="border-top: 5px solid var(--dimsai-red) !important;">
-                <div class="card-body text-center p-4">
-                    <div class="bg-light rounded-circle d-inline-flex p-3 mb-3">
-                        <i class="bi bi-gift-fill display-4" style="color: var(--dimsai-red);"></i>
-                    </div>
-                    <h5 class="card-title fw-bold" style="color: var(--dimsai-red);">Promo Spesial Mingguan</h5>
-                    <p class="card-text text-muted">Dapatkan potongan harga menarik untuk menu dimsum pilihan setiap hari kerja.</p>
-                    <button type="button" class="btn btn-dimsai-primary mt-3 w-100 rounded-pill" data-bs-toggle="modal" data-bs-target="#menuModal">
-                        <i class="bi bi-eye me-2"></i>Lihat Menu Diskon
-                    </button>
-                </div>
-            </div>
-        </div>
-
-        {{-- Kartu Promo 2 --}}
-        <div class="col-md-4 mb-4">
-            <div class="card shadow-lg border-0 h-100 hover-card" style="border-top: 5px solid var(--dimsai-yellow) !important;">
-                <div class="card-body text-center p-4">
-                    <div class="bg-light rounded-circle d-inline-flex p-3 mb-3">
-                        <i class="bi bi-people-fill display-4" style="color: var(--dimsai-yellow);"></i>
-                    </div>
-                    <h5 class="card-title fw-bold" style="color: var(--dimsai-red);">Paket Hemat Keluarga</h5>
-                    <p class="card-text text-muted">Pilihan paket bundling dimsum porsi besar, sempurna untuk acara kumpul keluarga.</p>
-                    <a href="{{ url('/contact-us') }}" class="btn btn-outline-danger mt-3 w-100 rounded-pill">
-                        <i class="bi bi-cart-plus me-2"></i>Pesan Paket
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        {{-- Kartu Promo 3 --}}
-<div class="col-md-4 mb-4">
-    <div class="card shadow-lg border-0 h-100 hover-card" style="border-top: 5px solid var(--dimsai-red) !important;">
-        <div class="card-body text-center p-4">
-            <div class="bg-light rounded-circle d-inline-flex p-3 mb-3">
-                <i class="bi bi-calendar-event-fill display-4" style="color: var(--dimsai-red);"></i>
-            </div>
-            <h5 class="card-title fw-bold" style="color: var(--dimsai-red);">Event Kuliner Terbaru</h5>
-            <p class="card-text text-muted">Ikuti kami di berbagai food bazaar dan pop-up event terdekat di kotamu.</p>
-            
-            {{-- PERBAIKAN DI SINI: Ganti href ke route events.index --}}
-            <a href="{{ route('events.index') }}" class="btn btn-outline-danger mt-3 w-100 rounded-pill">
-                <i class="bi bi-geo-alt me-2"></i>Cek Jadwal
-            </a>
-            
-        </div>
-    </div>
-</div>
+    </section>
 
     {{-- ========================================== --}}
-    {{-- BAGIAN 2: LOYALTY PROGRAM & GAME           --}}
+    {{-- SECTION 2: SERVICES LIST                   --}}
     {{-- ========================================== --}}
-
-    {{-- SECTION: LOYALTY PROGRAM (Banner) --}}
-    <div class="card border-0 shadow-lg text-white mb-5 overflow-hidden" style="background: linear-gradient(135deg, #d32f2f 0%, #ffc107 100%);">
-        <div class="row g-0 align-items-center">
-            <div class="col-md-8 p-5">
-                <h2 class="display-5 fw-bold mb-3"><i class="bi bi-stars me-2"></i>Dimsaykuu Member Club</h2>
-                <p class="fs-5">Gabung jadi member eksklusif dan kumpulkan poin setiap pembelian!</p>
-                <button class="btn btn-light text-danger fw-bold rounded-pill px-4 py-2 mt-3 shadow-sm">
-                    Daftar Member Sekarang
-                </button>
-            </div>
-            <div class="col-md-4 text-center p-3 d-none d-md-block">
-                <i class="bi bi-trophy-fill" style="font-size: 10rem; color: rgba(255,255,255,0.3);"></i>
-            </div>
-        </div>
-    </div>
-
-    {{-- !!!!!!!!!!!! GAME SECTION (LITE VERSION) !!!!!!!!!!!! --}}
-    <div class="row justify-content-center mb-5" id="luckyKlakat">
-        <div class="col-lg-10 text-center">
-            <div class="bg-white p-5 rounded-4 shadow-lg border border-warning position-relative overflow-hidden">
+    <section class="py-5 bg-white">
+        <div class="container">
+            <div class="row g-4">
                 
-                {{-- Hiasan Background Simple --}}
-                <div style="position: absolute; top: -20px; right: -20px; font-size: 10rem; opacity: 0.1; transform: rotate(30deg);">🎰</div>
-
-                <h2 class="fw-bold display-6 mb-2" style="color: var(--dimsai-red);">
-                    🧧 TEBAK KLAKAT HOKI 🧧
-                </h2>
-                <p class="text-muted mb-4">Pilih satu klakat misterius di bawah ini dan dapatkan hadiah voucher rahasia! (1x Kesempatan/Hari)</p>
-
-                {{-- === ALERT HASIL GAME (PENGGANTI POPUP ANIMASI) === --}}
-                @if(session('prize_result'))
-                    <div class="alert alert-success border-2 border-success p-4 mb-4 shadow-sm animate__animated animate__fadeIn">
-                        <h2 class="alert-heading fw-bold">🎉 SELAMAT! 🎉</h2>
-                        <p class="fs-4 mb-0">Kamu mendapatkan: <strong class="text-success bg-white px-2 rounded">{{ session('prize_result') }}</strong></p>
-                        <hr>
-                        <p class="mb-0 small">Screenshot layar ini dan tunjukkan ke kasir untuk klaim hadiahmu!</p>
-                    </div>
-                @endif
-                {{-- ================================================= --}}
-
-                @guest
-                    {{-- STATE: BELUM LOGIN --}}
-                    <div class="alert alert-warning d-inline-block px-5 py-3 rounded-pill">
-                        <i class="bi bi-lock-fill me-2"></i> 
-                        Silakan <a href="{{ route('login') }}" class="fw-bold text-dark">Login</a> terlebih dahulu untuk bermain.
-                    </div>
-                @else
-                    {{-- STATE: SUDAH LOGIN --}}
-                    
-                    @if($alreadyPlayed)
-                        {{-- STATE: SUDAH MAIN (TAMPILKAN PESAN HABIS) --}}
-                        <div class="p-4 bg-light rounded-3 border">
-                            <i class="bi bi-hourglass-split display-4 text-muted mb-3"></i>
-                            <h4 class="fw-bold text-muted">Kesempatan Hari Ini Habis!</h4>
-                            <p class="mb-0">Kamu sudah mencoba keberuntunganmu hari ini. Kembali lagi besok ya! 👋</p>
+                {{-- Service 1: UI/UX --}}
+                <div class="col-md-6">
+                    <div class="d-flex p-4 border rounded-4 h-100 hover-shadow transition-all">
+                        <div class="flex-shrink-0 me-4">
+                            <div class="rounded-3 d-flex align-items-center justify-content-center" 
+                                 style="width: 60px; height: 60px; background-color: rgba(30, 42, 57, 0.1);">
+                                <i class="bi bi-palette fs-2" style="color: var(--sharesa-dark);"></i>
+                            </div>
                         </div>
-                    @else
-                        {{-- STATE: BELUM MAIN (TAMPILKAN KLAKAT) --}}
-                        <div class="row justify-content-center g-4">
-                            @foreach([1, 2, 3] as $box)
-                                <div class="col-md-3 col-6">
-                                    <form action="{{ route('game.play') }}" method="POST">
-                                        @csrf
-                                        <button type="submit" class="btn p-0 border-0 bg-transparent klakat-btn w-100">
-                                            <div class="card h-100 shadow-sm border-0 hover-shake">
-                                                <div class="card-body text-center py-4">
-                                                    {{-- Icon Klakat/Box --}}
-                                                    <i class="bi bi-box2-heart-fill display-1 text-warning"></i>
-                                                    <h5 class="fw-bold mt-3 text-dark">KLAKAT #{{ $box }}</h5>
-                                                    <small class="text-muted">Klik untuk Buka</small>
-                                                </div>
-                                            </div>
-                                        </button>
-                                    </form>
-                                </div>
-                            @endforeach
+                        <div>
+                            <h4 class="fw-bold mb-2">{{ __('messages.serv_ui_title') }}</h4>
+                            <p class="text-muted mb-0">{{ __('messages.serv_ui_desc') }}</p>
                         </div>
-                    @endif
-                @endguest
+                    </div>
+                </div>
+
+                {{-- Service 2: Web Dev --}}
+                <div class="col-md-6">
+                    <div class="d-flex p-4 border rounded-4 h-100 hover-shadow transition-all">
+                        <div class="flex-shrink-0 me-4">
+                            <div class="rounded-3 d-flex align-items-center justify-content-center" 
+                                 style="width: 60px; height: 60px; background-color: rgba(0, 255, 140, 0.2);">
+                                <i class="bi bi-code-square fs-2" style="color: #00cc70;"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-2">{{ __('messages.serv_web_title') }}</h4>
+                            <p class="text-muted mb-0">{{ __('messages.serv_web_desc') }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Service 3: Branding --}}
+                <div class="col-md-6">
+                    <div class="d-flex p-4 border rounded-4 h-100 hover-shadow transition-all">
+                        <div class="flex-shrink-0 me-4">
+                            <div class="rounded-3 d-flex align-items-center justify-content-center" 
+                                 style="width: 60px; height: 60px; background-color: #fff3cd;">
+                                <i class="bi bi-stars fs-2 text-warning"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-2">{{ __('messages.serv_brand_title') }}</h4>
+                            <p class="text-muted mb-0">{{ __('messages.serv_brand_desc') }}</p>
+                        </div>
+                    </div>
+                </div>
+
+                {{-- Service 4: SEO --}}
+                <div class="col-md-6">
+                    <div class="d-flex p-4 border rounded-4 h-100 hover-shadow transition-all">
+                        <div class="flex-shrink-0 me-4">
+                            <div class="rounded-3 d-flex align-items-center justify-content-center" 
+                                 style="width: 60px; height: 60px; background-color: #cfe2ff;">
+                                <i class="bi bi-graph-up-arrow fs-2 text-primary"></i>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="fw-bold mb-2">{{ __('messages.serv_seo_title') }}</h4>
+                            <p class="text-muted mb-0">{{ __('messages.serv_seo_desc') }}</p>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
-    {{-- SECTION: FAQ PROMO --}}
-    <div class="row justify-content-center mb-5">
-        <div class="col-md-8">
-            <h3 class="fw-bold text-center mb-4" style="color: var(--dimsai-red);">Syarat & Ketentuan Promo</h3>
-            <div class="accordion" id="accordionPromo">
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
-                        <button class="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-                            Apakah promo berlaku untuk pemesanan online?
-                        </button>
-                    </h2>
-                    <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionPromo">
-                        <div class="accordion-body text-muted">
-                            Promo mingguan saat ini hanya berlaku untuk <strong>Dine-in (Makan di tempat)</strong> dan <strong>Take-away</strong> langsung di outlet.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
-                        <button class="accordion-button collapsed fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-                            Sampai jam berapa promo berlaku?
-                        </button>
-                    </h2>
-                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionPromo">
-                        <div class="accordion-body text-muted">
-                            Promo berlaku setiap hari selama jam operasional (10.00 - 22.00 WIB).
-                        </div>
-                    </div>
-                </div>
+    {{-- ========================================== --}}
+    {{-- SECTION 3: WORKFLOW (TIMELINE)             --}}
+    {{-- ========================================== --}}
+    <section class="py-5" style="background-color: var(--sharesa-dark);">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold text-white">{{ __('messages.process_title') }}</h2>
             </div>
-        </div>
-    </div>
 
-    {{-- MODAL PROMO (ASLI) --}}
-    <div class="modal fade" id="menuModal" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-            <div class="modal-content border-0">
-                <div class="modal-header bg-danger text-white">
-                    <h5 class="modal-title"><i class="bi bi-fire me-2"></i>Produk Lagi Promo!</h5>
-                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+            <div class="row text-center g-4">
+                {{-- Step 1 --}}
+                <div class="col-md-3 position-relative">
+                    <div class="bg-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow" style="width: 80px; height: 80px; border: 4px solid var(--sharesa-green);">
+                        <span class="fs-2 fw-bold">1</span>
+                    </div>
+                    <h5 class="text-white fw-bold">{{ __('messages.process_1') }}</h5>
+                    <p class="text-white-50 small">{{ __('messages.process_1_desc') }}</p>
                 </div>
-                <div class="modal-body bg-light">
-                      @if ($promo_products->isEmpty())
-                        <p class="text-center py-4">Belum ada promo.</p>
-                      @else
-                        <div class="table-responsive">
-                            <table class="table table-hover align-middle">
-                                <thead class="table-warning">
-                                    <tr><th>Menu</th><th>Harga Spesial</th></tr>
-                                </thead>
-                                <tbody>
-                                    @foreach ($promo_products as $product)
-                                    <tr>
-                                        <td>{{ $product->name }}</td>
-                                        <td class="text-danger fw-bold">Rp {{ number_format($product->price, 0, ',', '.') }}</td>
-                                    </tr>
-                                    @endforeach
-                                </tbody>
-                            </table>
-                        </div>
-                      @endif
+
+                {{-- Step 2 --}}
+                <div class="col-md-3 position-relative">
+                    <div class="bg-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow" style="width: 80px; height: 80px; border: 4px solid var(--sharesa-green);">
+                        <span class="fs-2 fw-bold">2</span>
+                    </div>
+                    <h5 class="text-white fw-bold">{{ __('messages.process_2') }}</h5>
+                    <p class="text-white-50 small">{{ __('messages.process_2_desc') }}</p>
+                </div>
+
+                {{-- Step 3 --}}
+                <div class="col-md-3 position-relative">
+                    <div class="bg-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow" style="width: 80px; height: 80px; border: 4px solid var(--sharesa-green);">
+                        <span class="fs-2 fw-bold">3</span>
+                    </div>
+                    <h5 class="text-white fw-bold">{{ __('messages.process_3') }}</h5>
+                    <p class="text-white-50 small">{{ __('messages.process_3_desc') }}</p>
+                </div>
+
+                {{-- Step 4 --}}
+                <div class="col-md-3 position-relative">
+                    <div class="bg-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3 shadow" style="width: 80px; height: 80px; border: 4px solid var(--sharesa-green);">
+                        <span class="fs-2 fw-bold">4</span>
+                    </div>
+                    <h5 class="text-white fw-bold">{{ __('messages.process_4') }}</h5>
+                    <p class="text-white-50 small">{{ __('messages.process_4_desc') }}</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
 @endsection
 
 @section('styles')
 <style>
-    .hover-card:hover { transform: translateY(-5px); transition: 0.3s; }
-    
-    /* Animasi Hover Klakat Ringan */
-    .hover-shake { transition: 0.3s; cursor: pointer; }
-    .klakat-btn:hover .hover-shake {
-        transform: scale(1.05); /* Membesar Sedikit */
-        background-color: #fff3cd !important;
-        border-color: #ffc107 !important;
+    .hover-shadow { transition: 0.3s ease; }
+    .hover-shadow:hover { 
+        transform: translateY(-5px); 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.08) !important; 
+        border-color: var(--sharesa-green) !important;
     }
 </style>
 @endsection
-
-{{-- BAGIAN SCRIPT DIHAPUS KARENA SUDAH TIDAK PAKAI JS --}}
