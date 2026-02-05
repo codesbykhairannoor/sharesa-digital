@@ -37,20 +37,21 @@ return [
         ],
 
         'pgsql' => [
-            'driver' => 'pgsql',
-            // BARIS DI BAWAH INI SAYA MATIKAN BIAR DIA BACA VAR DB_HOST KITA
-            // 'url' => env('DATABASE_URL'), 
-            'host' => env('DB_HOST', '127.0.0.1'),
-            'port' => env('DB_PORT', '5432'),
-            'database' => env('DB_DATABASE', 'forge'),
-            'username' => env('DB_USERNAME', 'forge'),
-            'password' => env('DB_PASSWORD', ''),
-            'charset' => 'utf8',
-            'prefix' => '',
-            'prefix_indexes' => true,
-            'search_path' => 'public',
-            'sslmode' => 'require', // PENTING BUAT SUPABASE
-        ],
+    'driver' => 'pgsql',
+    'url' => env('DATABASE_URL'), // Biarkan baris ini ada jika memang pakai env
+    'host' => env('DB_HOST', '127.0.0.1'),
+    'port' => env('DB_PORT', '5432'),
+    'database' => env('DB_DATABASE', 'forge'),
+    'username' => env('DB_USERNAME', 'forge'),
+    'password' => env('DB_PASSWORD', ''),
+    'charset' => 'utf8',
+    'prefix' => '',
+    'prefix_indexes' => true,
+    'search_path' => 'public',
+    'sslmode' => 'prefer', // Ubah dari require ke prefer
+    'attributes' => [      // Tambahkan blok ini
+        PDO::ATTR_EMULATE_PREPARES => true,
+    ],
 
     ],
 
