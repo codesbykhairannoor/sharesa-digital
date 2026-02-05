@@ -32,6 +32,16 @@
                         <label class="form-label fw-bold">Deskripsi</label>
                         <textarea name="description" class="form-control" rows="4"></textarea>
                     </div>
+                    <div class="mb-3">
+    <label class="form-label fw-bold">Link Project (Opsional)</label>
+    <div class="input-group">
+        <span class="input-group-text bg-light"><i class="bi bi-link-45deg"></i></span>
+        <input type="url" name="project_url" class="form-control" 
+               placeholder="https://example.com" 
+               value="{{ isset($portfolio) ? $portfolio->project_url : '' }}">
+    </div>
+    <small class="text-muted">Masukkan link demo atau live project.</small>
+</div>
                     <div class="mb-4">
                         <label class="form-label fw-bold">Gambar Cover</label>
                         <input type="file" name="image" class="form-control" required>
