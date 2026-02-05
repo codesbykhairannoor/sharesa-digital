@@ -48,6 +48,7 @@ class PortfolioController extends Controller
             'client_name' => $request->client_name,
             'description' => $request->description,
             'image' => $imageUrl, // Simpan URL lengkap ke DB
+            'project_url' => $request->project_url,
         ]);
 
         return redirect()->route('admin.portfolios.index')->with('success', 'Project uploaded to Cloudinary!');
@@ -84,6 +85,7 @@ class PortfolioController extends Controller
             'category' => $request->category,
             'client_name' => $request->client_name,
             'description' => $request->description,
+            'project_url' => $request->project_url,
         ]);
 
         return redirect()->route('admin.portfolios.index')->with('success', 'Project updated successfully!');
