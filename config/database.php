@@ -51,7 +51,8 @@ return [
     'sslmode' => 'prefer', // Ubah dari require ke prefer
     'attributes' => [      // Tambahkan blok ini
         PDO::ATTR_EMULATE_PREPARES => true,
-    ],
+    ], 
+        ],
 
     ],
 
