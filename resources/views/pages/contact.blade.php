@@ -5,16 +5,11 @@
 @section('content')
 
     {{-- ========================================== --}}
-    {{-- SECTION 1: HEADER HERO                     --}}
-    {{-- ========================================== --}}
-   {{-- ========================================== --}}
     {{-- SECTION 1: HEADER HERO (CLEAN DARK)        --}}
     {{-- ========================================== --}}
     <section class="position-relative overflow-hidden" 
              style="background-color: var(--sharesa-dark); margin-top: -85px; padding-top: 160px; padding-bottom: 80px;">
         
-        {{-- HAPUS BAGIAN SVG HIJAU DISINI --}}
-
         <div class="container position-relative z-1 text-white text-center">
             <span class="text-white-50 fw-bold text-uppercase tracking-widest letter-spacing-2" style="font-size: 0.8rem;">
                 24/7 SUPPORT
@@ -27,7 +22,7 @@
     </section>
 
     {{-- ========================================== --}}
-    {{-- SECTION 2: FOUNDER SPOTLIGHT (SINGLE CEO)  --}}
+    {{-- SECTION 2: FOUNDER SPOTLIGHT               --}}
     {{-- ========================================== --}}
     <section class="py-5 bg-white">
         <div class="container py-4">
@@ -98,14 +93,14 @@
                     </div>
                 </div>
 
-                {{-- Phone Card --}}
+                {{-- Phone Card (UPDATED NUMBER) --}}
                 <div class="col-md-4">
                     <div class="bg-white p-4 rounded-4 shadow-sm h-100 text-center hover-up border-bottom border-4 border-warning">
                         <div class="d-inline-flex bg-warning bg-opacity-10 p-3 rounded-circle mb-3">
                             <i class="bi bi-whatsapp fs-3 text-warning"></i>
                         </div>
                         <h5 class="fw-bold mb-2">{{ __('messages.phone_title') }}</h5>
-                        <p class="text-muted small">+62 831-3689-2742<br>Mon-Fri, 9AM - 6PM</p>
+                        <p class="text-muted small">+62 877-5245-8894<br>Mon-Fri, 9AM - 6PM</p>
                     </div>
                 </div>
             </div>
@@ -113,7 +108,7 @@
     </section>
 
     {{-- ========================================== --}}
-    {{-- SECTION 4: MAP & FORM (SPLIT)              --}}
+    {{-- SECTION 4: MAP & FORM (THE MAGIC PART)     --}}
     {{-- ========================================== --}}
     <section class="py-5 bg-white">
         <div class="container py-4">
@@ -128,39 +123,45 @@
                             style="border:0; filter: grayscale(1) contrast(1.2) opacity(0.8);" 
                             loading="lazy" 
                             allowfullscreen 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3965.989098481442!2d106.81267447499015!3d-6.265166293724286!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f1a0a5760825%3A0x6295964894314757!2sJeruk%20Purut%20Cemetery!5e0!3m2!1sen!2sid!4v1709653245412!5m2!1sen!2sid">
+                            src="https://maps.google.com/maps?q=Jakarta%20Selatan&t=&z=13&ie=UTF8&iwloc=&output=embed">
                         </iframe>
                     </div>
                 </div>
 
-                {{-- Right: Form --}}
+                {{-- Right: Form to WhatsApp --}}
                 <div class="col-lg-6 bg-white p-5">
                     <h3 class="fw-bold mb-4 text-dark">{{ __('messages.form_title') }}</h3>
-                    <form>
+                    
+                    {{-- 
+                         IMPORTANT:
+                         1. Gw kasih ID 'whatsappForm' biar bisa dipanggil JS.
+                         2. Gw kasih ID di setiap input biar value-nya bisa diambil.
+                    --}}
+                    <form id="whatsappForm">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <label class="form-label small fw-bold text-muted text-uppercase">{{ __('messages.form_name') }}</label>
-                                <input type="text" class="form-control bg-light border-0 py-3 px-4 rounded-3" placeholder="John Doe">
+                                <input type="text" id="wa-name" class="form-control bg-light border-0 py-3 px-4 rounded-3" placeholder="John Doe" required>
                             </div>
                             <div class="col-md-6">
                                 <label class="form-label small fw-bold text-muted text-uppercase">{{ __('messages.form_email') }}</label>
-                                <input type="email" class="form-control bg-light border-0 py-3 px-4 rounded-3" placeholder="john@example.com">
+                                <input type="email" id="wa-email" class="form-control bg-light border-0 py-3 px-4 rounded-3" placeholder="john@example.com" required>
                             </div>
                             <div class="col-12">
                                 <label class="form-label small fw-bold text-muted text-uppercase">{{ __('messages.form_subject') }}</label>
-                                <select class="form-select bg-light border-0 py-3 px-4 rounded-3">
-                                    <option>General Inquiry</option>
-                                    <option>Project Proposal</option>
-                                    <option>Partnership</option>
+                                <select id="wa-subject" class="form-select bg-light border-0 py-3 px-4 rounded-3">
+                                    <option value="General Inquiry">General Inquiry</option>
+                                    <option value="Project Proposal">Project Proposal</option>
+                                    <option value="Partnership">Partnership</option>
                                 </select>
                             </div>
                             <div class="col-12">
                                 <label class="form-label small fw-bold text-muted text-uppercase">{{ __('messages.form_msg') }}</label>
-                                <textarea class="form-control bg-light border-0 py-3 px-4 rounded-3" rows="5" placeholder="Tell us about your project..."></textarea>
+                                <textarea id="wa-message" class="form-control bg-light border-0 py-3 px-4 rounded-3" rows="5" placeholder="Tell us about your project..." required></textarea>
                             </div>
                             <div class="col-12 mt-4">
                                 <button type="submit" class="btn btn-dark w-100 py-3 fw-bold rounded-pill">
-                                    {{ __('messages.form_btn') }} <i class="bi bi-send-fill ms-2"></i>
+                                    {{ __('messages.form_btn') }} <i class="bi bi-whatsapp ms-2"></i>
                                 </button>
                             </div>
                         </div>
@@ -178,7 +179,8 @@
         <div class="container text-center py-4">
             <h2 class="fw-bold text-success mb-3">Need a faster response?</h2>
             <p class="text-muted mb-4">Chat directly with our team via WhatsApp.</p>
-            <a href="https://wa.me/6283136892742" class="btn btn-success btn-lg rounded-pill px-5 shadow-lg hover-scale">
+            {{-- UPDATED LINK & NUMBER --}}
+            <a href="https://wa.me/6287752458894?text=Halo%20Sharesa%20Digital,%20saya%20tertarik%20dengan%20jasa%20Anda." target="_blank" class="btn btn-success btn-lg rounded-pill px-5 shadow-lg hover-scale">
                 <i class="bi bi-whatsapp me-2"></i> Chat on WhatsApp
             </a>
         </div>
@@ -197,3 +199,40 @@
     .letter-spacing-2 { letter-spacing: 2px; }
 </style>
 @endsection
+
+{{-- ========================================== --}}
+{{-- JAVASCRIPT BUAT REDIRECT KE WA             --}}
+{{-- ========================================== --}}
+@push('scripts')
+<script>
+    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
+        // 1. Cegah form submit biasa (biar halaman gak reload)
+        e.preventDefault();
+
+        // 2. Ambil value dari input
+        let name    = document.getElementById('wa-name').value;
+        let email   = document.getElementById('wa-email').value;
+        let subject = document.getElementById('wa-subject').value;
+        let message = document.getElementById('wa-message').value;
+
+        // 3. Nomor Tujuan (Tanpa +, tanpa spasi, pake kode negara 62)
+        let phoneNumber = '6287752458894';
+
+        // 4. Buat Format Pesan (Pake enter/baris baru)
+        let text = `*Halo Sharesa Digital!* 👋%0A%0A` +
+                   `Saya ingin berdiskusi mengenai hal berikut:%0A` +
+                   `--------------------------------%0A` +
+                   `👤 *Nama:* ${name}%0A` +
+                   `📧 *Email:* ${email}%0A` +
+                   `🏷️ *Subjek:* ${subject}%0A` +
+                   `--------------------------------%0A` +
+                   `📝 *Pesan:*%0A${message}`;
+
+        // 5. Buat URL WhatsApp
+        let whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+
+        // 6. Buka di tab baru
+        window.open(whatsappUrl, '_blank');
+    });
+</script>
+@endpush
