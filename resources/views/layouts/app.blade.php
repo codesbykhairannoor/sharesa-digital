@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Sharesa Digital | @yield('title', 'Modern Digital Agency')</title>
+    <title>Sharesa Spacce | @yield('title', 'Modern Digital Agency')</title>
     
     {{-- Favicon --}}
    <link rel="icon" type="image/png" href="{{ asset('images/logoku.png') }}?v=1">

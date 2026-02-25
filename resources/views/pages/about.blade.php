@@ -168,41 +168,75 @@
         </div>
     </section>
 
-    {{-- SECTION 4: OUR TEAM (NEW) --}}
-    <section class="py-5 bg-white">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <span class="text-uppercase fw-bold text-success small tracking-widest">THE SQUAD</span>
-                <h2 class="fw-bold display-6 mt-2">{{ __('messages.team_title') }}</h2>
-                <p class="text-muted">{{ __('messages.team_desc') }}</p>
-            </div>
+    {{-- ========================================== --}}
+{{-- SECTION 1: CORE LEADERSHIP & NETWORK       --}}
+{{-- ========================================== --}}
+<section class="py-5 bg-light">
+    <div class="container py-5">
+        <div class="text-center mb-5">
+            <span class="text-uppercase fw-bold text-success small tracking-widest">THE ECOSYSTEM</span>
+            <h2 class="fw-bold display-6 mt-2">Di Balik Sharesa Space</h2>
+            <p class="text-muted">Kami menggabungkan keahlian manusia dan teknologi mutakhir untuk hasil terbaik.</p>
+        </div>
 
-            <div class="row g-4 justify-content-center">
-                {{-- Member 1 --}}
-                <div class="col-md-4 col-lg-3">
-                    <div class="card border-0 rounded-4 overflow-hidden group text-center">
-                        <div class="position-relative overflow-hidden">
+        <div class="row g-4 justify-content-center">
+            
+            {{-- Card 1: Lo sebagai Director (Manusia) --}}
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden group">
+                    <div class="card-body p-4 text-center">
+                        <div class="mb-4 mt-2">
                             <img src="https://github.com/codesbykhairannoor.png" 
-     class="card-img-top hover-scale" 
-     style="object-fit: cover; aspect-ratio: 1/1;"
-     alt="Khairan Noor F - CEO Sharesa">
-                            <div class="position-absolute bottom-0 start-0 w-100 p-3 bg-dark bg-opacity-75 translate-y-100 group-hover-visible transition-all">
-                                <div class="d-flex justify-content-center gap-3">
-                                    <a href="https://www.linkedin.com/in/khairannoorfadhlillah/" class="text-white"><i class="bi bi-linkedin"></i></a>
-                                    <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
-                                </div>
-                            </div>
+                                 class="rounded-circle shadow-sm" 
+                                 style="width: 120px; height: 120px; object-fit: cover;"
+                                 alt="Technical Director">
                         </div>
-                        <div class="card-body bg-light">
-                            <h5 class="fw-bold mb-1">Khairan Noor</h5>
-                            <small class="text-muted text-uppercase" style="font-size: 0.75rem;">{{ __('messages.team_1_role') }}</small>
+                        <h5 class="fw-bold mb-1">Khairan Noor</h5>
+                        <small class="text-success text-uppercase fw-bold" style="font-size: 0.75rem;">Technical Director</small>
+                        <p class="text-muted mt-3 small">Mengawasi arsitektur sistem, keamanan kode, dan kualitas pengembangan setiap produk klien.</p>
+                        <div class="mt-3">
+                            <a href="https://www.linkedin.com/in/khairannoorfadhlillah/" class="text-secondary me-2"><i class="bi bi-linkedin fs-5"></i></a>
+                            <a href="#" class="text-secondary"><i class="bi bi-github fs-5"></i></a>
                         </div>
                     </div>
                 </div>
-                
-                {{-- Member 2 --}}
-               
-    </section>
+            </div>
+
+            {{-- Card 2: Creative Network (Ilusi Tim Besar) --}}
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden bg-dark text-white">
+                    <div class="card-body p-4 text-center d-flex flex-column justify-content-center">
+                        <div class="mb-4">
+                            <div class="bg-white bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <i class="bi bi-globe2 fs-1 text-success"></i>
+                            </div>
+                        </div>
+                        <h5 class="fw-bold mb-1">Creative Partners</h5>
+                        <small class="text-success text-uppercase fw-bold" style="font-size: 0.75rem;">Global Network</small>
+                        <p class="text-light opacity-75 mt-3 small">Berkolaborasi dengan desainer UI/UX dan spesialis lepas terpilih sesuai dengan kebutuhan skala proyek Anda.</p>
+                    </div>
+                </div>
+            </div>
+
+            {{-- Card 3: AI Infrastructure (Keliatan Modern & Efisien) --}}
+            <div class="col-md-4">
+                <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
+                    <div class="card-body p-4 text-center d-flex flex-column justify-content-center">
+                        <div class="mb-4">
+                            <div class="bg-success bg-opacity-10 rounded-circle d-inline-flex align-items-center justify-content-center" style="width: 80px; height: 80px;">
+                                <i class="bi bi-cpu text-success fs-1"></i>
+                            </div>
+                        </div>
+                        <h5 class="fw-bold mb-1">AI & Automation</h5>
+                        <small class="text-success text-uppercase fw-bold" style="font-size: 0.75rem;">Tech Infrastructure</small>
+                        <p class="text-muted mt-3 small">Memanfaatkan model bahasa mutakhir dan otomatisasi untuk mempercepat riset, SEO, dan optimasi kode.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     {{-- SECTION 5: MILESTONES (NEW) --}}
     <section class="py-5" style="background-color: var(--sharesa-dark);">

@@ -19,7 +19,7 @@ return [
     // HOME PAGE
     'hero_badge' => '🚀 Transformasi Digital Bisnis Anda',
     'hero_title' => 'Membangun Pengalaman Digital yang Berdampak Nyata.',
-    'hero_desc' => 'Sharesa adalah studio digital yang berfokus pada Desain UI/UX, Pengembangan Web, dan Branding. Kami membantu bisnis Anda mendominasi era digital dengan solusi teknologi yang presisi dan estetis.',
+    'hero_desc' => 'Sharesa Space adalah studio digital yang berfokus pada Desain UI/UX, Pengembangan Web, dan Branding. Kami membantu bisnis Anda mendominasi era digital dengan solusi teknologi yang presisi dan estetis.',
     'hero_cta' => 'Mulai Proyek Bersama',
     'hero_secondary' => 'Lihat Karya Kami',
     'stats_projects' => 'Proyek Diselesaikan',
@@ -28,7 +28,7 @@ return [
     'stats_exp' => 'Tahun Pengalaman',
     'hubungi_kami' => 'Hubungi Tim Kami',
 
-    'why_title' => 'Mengapa Memilih Sharesa?',
+    'why_title' => 'Mengapa Memilih Sharesa Space?',
     'why_subtitle' => 'Kami tidak sekadar menulis kode, kami merancang solusi untuk pertumbuhan bisnis Anda.',
     'why_1_title' => 'Kolaborasi Transparan',
     'why_1_desc' => 'Komunikasi langsung dengan tim ahli kami, memastikan setiap visi Anda tereksekusi dengan sempurna.',
@@ -46,7 +46,7 @@ return [
     
     'testi_title' => 'Kepercayaan Klien',
     'testi_desc' => 'Dipercaya oleh berbagai brand inovatif untuk mewujudkan visi digital mereka.',
-    'testi_1_quote' => "Tim Sharesa mengubah visi kami menjadi platform yang menakjubkan. Perhatian terhadap detail dan performa sangat luar biasa.",
+    'testi_1_quote' => "Tim Sharesa Space mengubah visi kami menjadi platform yang menakjubkan. Perhatian terhadap detail dan performa sangat luar biasa.",
     'testi_1_author' => 'Sarah Johnson, Pemilik TechFlow',
     'testi_2_quote' => "Profesional, cepat tanggap, dan sangat teknikal. Website baru kami sukses meningkatkan kredibilitas di mata investor.",
     'testi_2_author' => 'Michael Chen, Founder StartUp X',
@@ -96,9 +96,9 @@ return [
     'faq_2_a' => 'Tentu, kami memberikan garansi optimasi dan perbaikan bug untuk memastikan operasional tanpa hambatan.',
    
     // ABOUT PAGE
-    'about_title' => 'Tentang Sharesa',
+    'about_title' => 'Tentang Sharesa Space',
     'about_hero_title' => 'Satu Visi, Ribuan Inovasi.',
-    'about_hero_desc' => 'Sharesa adalah studio digital kreatif yang didirikan oleh Khairan Noor. Berawal dari dedikasi pada teknologi, kami kini hadir untuk membantu bisnis skala menengah hingga enterprise membangun ekosistem digital yang kuat tanpa birokrasi yang rumit.',
+    'about_hero_desc' => 'Sharesa Space adalah studio digital kreatif yang berdedikasi pada teknologi. Kami hadir untuk membantu bisnis skala menengah hingga enterprise membangun ekosistem digital yang kuat tanpa birokrasi yang rumit.',
     
     'vision_title' => 'Visi Kami',
     'vision_desc' => 'Menjadi mitra teknologi terdepan yang menghadirkan kualitas setara agensi multinasional dengan fleksibilitas dan eksekusi yang lebih cepat.',
@@ -115,15 +115,15 @@ return [
     'val_3_title' => 'Ownership',
     'val_3_desc' => 'Kami memperlakukan setiap proyek klien layaknya produk andalan kami sendiri.',
 
-    'team_title' => 'Di Balik Sharesa',
-    'team_desc' => 'Mengenal para profesional yang akan mengeksekusi visi Anda.',
-    'team_1_role' => 'Founder & Lead Developer',
+    'team_title' => 'Di Balik Sharesa Space',
+    'team_desc' => 'Mengenal tim profesional yang akan mengeksekusi visi Anda.',
+    'team_1_role' => 'Lead Developer & Strategist',
     
     'milestone_title' => 'Perjalanan Kami',
     'mile_1_year' => '2024',
     'mile_1_desc' => 'Memulai inisiatif sebagai penyedia solusi web independen.',
     'mile_2_year' => '2025',
-    'mile_2_desc' => 'Evolusi menjadi Sharesa Studio untuk melayani klien yang lebih luas.',
+    'mile_2_desc' => 'Evolusi menjadi Sharesa Space untuk melayani klien yang lebih luas.',
     'mile_3_year' => '2026',
     'mile_3_desc' => 'Ekspansi layanan ke ranah produk digital dan kolaborasi B2B.',
 
@@ -134,8 +134,8 @@ return [
     // CEO Section
     'ceo_badge' => 'LEADERSHIP',
     'ceo_quote' => 'Teknologi terbaik adalah yang tidak terlihat, namun dampaknya terasa nyata pada pertumbuhan bisnis Anda.',
-    'ceo_name' => 'Khairan Noor F.',
-    'ceo_role' => 'Founder Sharesa Studio',
+    'ceo_name' => 'Tim Sharesa Space',
+    'ceo_role' => 'Digital Solutions Provider',
 
     // Form Section
     'form_title' => 'Mulai Konsultasi',

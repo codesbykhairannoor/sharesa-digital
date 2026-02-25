@@ -21,49 +21,51 @@
         </div>
     </section>
 
-    {{-- ========================================== --}}
-    {{-- SECTION 2: FOUNDER SPOTLIGHT               --}}
-    {{-- ========================================== --}}
-    <section class="py-5 bg-white">
-        <div class="container py-4">
-            <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="card border-0 shadow-lg rounded-5 overflow-hidden">
-                        <div class="row g-0">
-                            {{-- Foto Founder --}}
-                            <div class="col-md-5 position-relative">
-                                <img src="https://ui-avatars.com/api/?name=Khairan+Noor&background=1e2a39&color=00ff8c&size=500&bold=true" 
-                                     class="img-fluid h-100 w-100 object-fit-cover" 
-                                     alt="Khairan Noor">
-                                <div class="position-absolute bottom-0 start-0 bg-success text-white px-3 py-1 m-3 rounded fw-bold small">
-                                    {{ __('messages.ceo_badge') }}
-                                </div>
-                            </div>
-                            
-                            {{-- Pesan Founder --}}
-                            <div class="col-md-7 d-flex align-items-center bg-light">
-                                <div class="p-5">
-                                    <i class="bi bi-quote fs-1 text-success opacity-25"></i>
-                                    <h4 class="fst-italic text-dark mb-4 lh-base">"{{ __('messages.ceo_quote') }}"</h4>
+  {{-- ========================================== --}}
+{{-- SECTION 2: THE STUDIO VISION               --}}
+{{-- ========================================== --}}
+<section class="py-5 bg-white border-top">
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card border-0 bg-dark text-white rounded-5 overflow-hidden shadow-lg">
+                    <div class="row g-0 align-items-center">
+                        
+                        {{-- Bagian Kiri: Visual Branding --}}
+                        <div class="col-md-5 bg-success p-5 text-center d-flex flex-column justify-content-center h-100 min-vh-25">
+                            <i class="bi bi-layers-half text-dark opacity-50 mb-3" style="font-size: 4rem;"></i>
+                            <h3 class="fw-bold text-dark tracking-widest text-uppercase mb-0">Sharesa<br>Space</h3>
+                            <span class="badge bg-dark text-white mt-3 mx-auto px-3 py-2">Established 2025</span>
+                        </div>
+                        
+                        {{-- Bagian Kanan: Director's Message --}}
+                        <div class="col-md-7">
+                            <div class="p-5 p-md-5">
+                                <span class="text-success fw-bold tracking-widest small text-uppercase mb-3 d-block">Director's Note</span>
+                                <i class="bi bi-quote fs-1 text-white opacity-25 position-absolute mt-n4 ms-n3"></i>
+                                <h4 class="fst-italic text-white mb-4 lh-base position-relative" style="z-index: 1;">
+                                    "{{ __('messages.ceo_quote') }}"
+                                </h4>
+                                
+                                <div class="mt-5 border-top border-secondary pt-4 d-flex justify-content-between align-items-end">
                                     <div>
-                                        <h5 class="fw-bold mb-0 text-dark">{{ __('messages.ceo_name') }}</h5>
-                                        <small class="text-muted text-uppercase tracking-widest">{{ __('messages.ceo_role') }}</small>
+                                        <h5 class="fw-bold mb-0 text-white">{{ __('messages.ceo_name') }}</h5>
+                                        <small class="text-success text-uppercase tracking-widest" style="font-size: 0.8rem;">Technical Director</small>
                                     </div>
-                                    <div class="mt-4 pt-4 border-top">
-                                        <div class="d-flex gap-3">
-                                            <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="bi bi-linkedin"></i></a>
-                                            <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="bi bi-instagram"></i></a>
-                                            <a href="#" class="btn btn-outline-dark btn-sm rounded-circle"><i class="bi bi-envelope"></i></a>
-                                        </div>
+                                    <div class="d-flex gap-2">
+                                        <a href="#" class="btn btn-outline-light btn-sm rounded-circle"><i class="bi bi-envelope"></i></a>
+                                        <a href="#" class="btn btn-outline-success btn-sm rounded-circle"><i class="bi bi-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     {{-- ========================================== --}}
     {{-- SECTION 3: CONTACT INFO GRID               --}}
@@ -219,7 +221,7 @@
         let phoneNumber = '6287752458894';
 
         // 4. Buat Format Pesan (Pake enter/baris baru)
-        let text = `*Halo Sharesa Digital!* 👋%0A%0A` +
+        let text = `*Halo Sharesa Space!* 👋%0A%0A` +
                    `Saya ingin berdiskusi mengenai hal berikut:%0A` +
                    `--------------------------------%0A` +
                    `👤 *Nama:* ${name}%0A` +

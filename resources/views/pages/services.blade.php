@@ -187,7 +187,7 @@
                         <div class="card-header bg-white border-0 py-4 text-center">
                             <h5 class="fw-bold text-muted text-uppercase small ls-1 mb-2">{{ __('messages.price_1_name') }}</h5>
                             <span class="badge bg-light text-dark mb-3">{{ __('messages.price_1_feat') }}</span>
-                            <div class="display-6 fw-bold text-dark">99$</div>
+                            <div class="display-6 fw-bold text-dark">RP. 1.000.000</div>
                         </div>
                         <div class="card-body px-4">
                             <ul class="list-unstyled mb-0 d-grid gap-2">
@@ -209,7 +209,7 @@
                         <div class="card-header border-0 py-4 text-center text-white" style="background-color: var(--sharesa-dark);">
                             <h5 class="fw-bold text-white-50 text-uppercase small ls-1 mb-2 mt-2">{{ __('messages.price_2_name') }}</h5>
                             <span class="badge bg-success mb-3">{{ __('messages.price_2_feat') }}</span>
-                            <div class="display-6 fw-bold text-white">299$</div>
+                            <div class="display-6 fw-bold text-white">RP. 2.500.000</div>
                         </div>
                         <div class="card-body px-4 bg-white">
                             <ul class="list-unstyled mb-0 d-grid gap-2">
