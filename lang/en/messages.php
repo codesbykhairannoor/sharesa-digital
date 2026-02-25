@@ -160,4 +160,16 @@ return [
     'port_desc' => 'A collection of digital solutions our team has developed for various industries.',
     'port_client' => 'Partner / Client',
     'port_empty' => 'Portfolio is currently being updated. Contact us to see the latest case studies!',
+
+    'team_badge' => 'OUR ECOSYSTEM',
+    'team_subtitle' => 'We combine human expertise and cutting-edge technology to deliver superior results.',
+    'team_lead_name' => 'Khairan Noor',
+    'team_lead_role' => 'Technical Director',
+    'team_lead_desc' => 'Overseeing system architecture, code security, and development quality for every client product.',
+    'team_partner_name' => 'Creative Partners',
+    'team_partner_role' => 'Global Network',
+    'team_partner_desc' => 'Collaborating with selected UI/UX designers and freelance specialists based on your project requirements.',
+    'team_ai_name' => 'AI & Automation',
+    'team_ai_role' => 'Tech Infrastructure',
+    'team_ai_desc' => 'Leveraging advanced language models and automation to accelerate research, SEO, and code optimization.',
 ];

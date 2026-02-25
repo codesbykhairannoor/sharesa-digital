@@ -168,20 +168,20 @@
         </div>
     </section>
 
-    {{-- ========================================== --}}
+   {{-- ========================================== --}}
 {{-- SECTION 1: CORE LEADERSHIP & NETWORK       --}}
 {{-- ========================================== --}}
 <section class="py-5 bg-light">
     <div class="container py-5">
         <div class="text-center mb-5">
-            <span class="text-uppercase fw-bold text-success small tracking-widest">THE ECOSYSTEM</span>
-            <h2 class="fw-bold display-6 mt-2">Di Balik Sharesa Space</h2>
-            <p class="text-muted">Kami menggabungkan keahlian manusia dan teknologi mutakhir untuk hasil terbaik.</p>
+            <span class="text-uppercase fw-bold text-success small tracking-widest">{{ __('messages.team_badge') }}</span>
+            <h2 class="fw-bold display-6 mt-2">{{ __('messages.team_title') }}</h2>
+            <p class="text-muted">{{ __('messages.team_subtitle') }}</p>
         </div>
 
         <div class="row g-4 justify-content-center">
             
-            {{-- Card 1: Lo sebagai Director (Manusia) --}}
+            {{-- Card 1: Technical Director --}}
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden group">
                     <div class="card-body p-4 text-center">
@@ -191,9 +191,9 @@
                                  style="width: 120px; height: 120px; object-fit: cover;"
                                  alt="Technical Director">
                         </div>
-                        <h5 class="fw-bold mb-1">Khairan Noor</h5>
-                        <small class="text-success text-uppercase fw-bold" style="font-size: 0.75rem;">Technical Director</small>
-                        <p class="text-muted mt-3 small">Mengawasi arsitektur sistem, keamanan kode, dan kualitas pengembangan setiap produk klien.</p>
+                        <h5 class="fw-bold mb-1">{{ __('messages.team_lead_name') }}</h5>
+                        <small class="text-success text-uppercase fw-bold" style="font-size: 0.75rem;">{{ __('messages.team_lead_role') }}</small>
+                        <p class="text-muted mt-3 small">{{ __('messages.team_lead_desc') }}</p>
                         <div class="mt-3">
                             <a href="https://www.linkedin.com/in/khairannoorfadhlillah/" class="text-secondary me-2"><i class="bi bi-linkedin fs-5"></i></a>
                             <a href="#" class="text-secondary"><i class="bi bi-github fs-5"></i></a>
@@ -202,7 +202,7 @@
                 </div>
             </div>
 
-            {{-- Card 2: Creative Network (Ilusi Tim Besar) --}}
+            {{-- Card 2: Creative Partners --}}
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden bg-dark text-white">
                     <div class="card-body p-4 text-center d-flex flex-column justify-content-center">
@@ -211,14 +211,14 @@
                                 <i class="bi bi-globe2 fs-1 text-success"></i>
                             </div>
                         </div>
-                        <h5 class="fw-bold mb-1">Creative Partners</h5>
-                        <small class="text-success text-uppercase fw-bold" style="font-size: 0.75rem;">Global Network</small>
-                        <p class="text-light opacity-75 mt-3 small">Berkolaborasi dengan desainer UI/UX dan spesialis lepas terpilih sesuai dengan kebutuhan skala proyek Anda.</p>
+                        <h5 class="fw-bold mb-1">{{ __('messages.team_partner_name') }}</h5>
+                        <small class="text-success text-uppercase fw-bold" style="font-size: 0.75rem;">{{ __('messages.team_partner_role') }}</small>
+                        <p class="text-light opacity-75 mt-3 small">{{ __('messages.team_partner_desc') }}</p>
                     </div>
                 </div>
             </div>
 
-            {{-- Card 3: AI Infrastructure (Keliatan Modern & Efisien) --}}
+            {{-- Card 3: AI Infrastructure --}}
             <div class="col-md-4">
                 <div class="card border-0 shadow-sm rounded-4 h-100 overflow-hidden">
                     <div class="card-body p-4 text-center d-flex flex-column justify-content-center">
@@ -227,9 +227,9 @@
                                 <i class="bi bi-cpu text-success fs-1"></i>
                             </div>
                         </div>
-                        <h5 class="fw-bold mb-1">AI & Automation</h5>
-                        <small class="text-success text-uppercase fw-bold" style="font-size: 0.75rem;">Tech Infrastructure</small>
-                        <p class="text-muted mt-3 small">Memanfaatkan model bahasa mutakhir dan otomatisasi untuk mempercepat riset, SEO, dan optimasi kode.</p>
+                        <h5 class="fw-bold mb-1">{{ __('messages.team_ai_name') }}</h5>
+                        <small class="text-success text-uppercase fw-bold" style="font-size: 0.75rem;">{{ __('messages.team_ai_role') }}</small>
+                        <p class="text-muted mt-3 small">{{ __('messages.team_ai_desc') }}</p>
                     </div>
                 </div>
             </div>

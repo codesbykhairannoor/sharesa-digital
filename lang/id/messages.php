@@ -160,4 +160,17 @@ return [
     'port_desc' => 'Kumpulan solusi digital yang telah tim kami kembangkan untuk berbagai industri.',
     'port_client' => 'Mitra / Klien',
     'port_empty' => 'Portofolio sedang dalam pembaruan. Hubungi kami untuk melihat studi kasus terbaru!',
+
+
+    'team_badge' => 'EKOSISTEM KAMI',
+    'team_subtitle' => 'Kami menggabungkan keahlian manusia dan teknologi mutakhir untuk hasil terbaik.',
+    'team_lead_name' => 'Khairan Noor',
+    'team_lead_role' => 'Technical Director',
+    'team_lead_desc' => 'Mengawasi arsitektur sistem, keamanan kode, dan kualitas pengembangan setiap produk klien.',
+    'team_partner_name' => 'Creative Partners',
+    'team_partner_role' => 'Global Network',
+    'team_partner_desc' => 'Berkolaborasi dengan desainer UI/UX dan spesialis lepas terpilih sesuai dengan kebutuhan skala proyek Anda.',
+    'team_ai_name' => 'AI & Automation',
+    'team_ai_role' => 'Infrastruktur Teknologi',
+    'team_ai_desc' => 'Memanfaatkan model bahasa mutakhir dan otomatisasi untuk mempercepat riset, SEO, dan optimasi kode.',
 ];
