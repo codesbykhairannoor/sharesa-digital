@@ -124,6 +124,11 @@ Route::prefix('admin')->name('admin.')->middleware(['auth', 'is_admin'])->group(
 // =====================
 Route::fallback(fn() => view('404'));
 
+// =====================
+// 6. TRACKING (META CAPI)
+// =====================
+Route::post('/track/meta', [App\Http\Controllers\MetaCapiController::class, 'track'])->name('track.meta');
+
 Route::get('/init-project-sharesa', function () {
     try {
         Artisan::call('config:clear');

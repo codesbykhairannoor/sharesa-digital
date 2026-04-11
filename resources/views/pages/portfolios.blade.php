@@ -17,7 +17,17 @@
         </p>
     </div>
 
-    {{-- ================= FILTER TABS ================= --}}
+    {{-- ================= SEARCH & FILTER ================= --}}
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-6">
+            <div class="input-group shadow-sm rounded-pill overflow-hidden border">
+                <span class="input-group-text bg-white border-0 ps-4"><i class="bi bi-search text-muted"></i></span>
+                <input type="text" id="portfolio-search" class="form-control border-0 py-3 px-2" placeholder="Search by Project Name or Tech Stack (e.g. Laravel, React)..." style="outline: none; box-shadow: none;">
+                <button class="btn btn-sharesa-primary px-4 fw-bold" type="button" id="search-btn">Search</button>
+            </div>
+        </div>
+    </div>
+
     <div class="d-flex justify-content-center flex-wrap mb-5 gap-2" id="portfolio-filters">
         <button class="btn btn-filter active px-4 py-2 rounded-pill fw-bold" data-filter="all">All Projects</button>
         <button class="btn btn-filter px-4 py-2 rounded-pill fw-bold" data-filter="Web Development">Web Dev</button>
@@ -134,32 +144,59 @@
 @endsection
 
 @section('scripts')
+<script src="{{ asset('js/tracking.js') }}"></script>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('portfolio-search');
         const filters = document.querySelectorAll('.btn-filter');
         const items = document.querySelectorAll('.portfolio-item');
+        let currentFilter = 'all';
+        let currentSearch = '';
+
+        function applyFilters() {
+            items.forEach(item => {
+                const category = item.getAttribute('data-category');
+                const title = item.querySelector('h4').textContent.toLowerCase();
+                const desc = item.querySelector('p').textContent.toLowerCase();
+                
+                const matchesFilter = (currentFilter === 'all' || category === currentFilter);
+                const matchesSearch = (title.includes(currentSearch) || desc.includes(currentSearch));
+
+                if (matchesFilter && matchesSearch) {
+                    item.style.display = 'block';
+                    setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 10);
+                } else {
+                    item.style.opacity = '0';
+                    item.style.transform = 'scale(0.8)';
+                    setTimeout(() => { item.style.display = 'none'; }, 300);
+                }
+            });
+        }
 
         filters.forEach(filter => {
             filter.addEventListener('click', function() {
-                // Update active button
                 filters.forEach(f => f.classList.remove('active'));
                 this.classList.add('active');
-
-                const selectedFilter = this.getAttribute('data-filter');
-
-                items.forEach(item => {
-                    const category = item.getAttribute('data-category');
-                    
-                    if (selectedFilter === 'all' || category === selectedFilter) {
-                        item.style.display = 'block';
-                        setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 10);
-                    } else {
-                        item.style.opacity = '0';
-                        item.style.transform = 'scale(0.8)';
-                        setTimeout(() => { item.style.display = 'none'; }, 300);
-                    }
-                });
+                currentFilter = this.getAttribute('data-filter');
+                applyFilters();
             });
+        });
+
+        // Instant Search
+        let searchTimeout;
+        searchInput.addEventListener('input', function() {
+            currentSearch = this.value.toLowerCase();
+            applyFilters();
+
+            // Meta Tracking (Debounced)
+            clearTimeout(searchTimeout);
+            searchTimeout = setTimeout(() => {
+                if (currentSearch.length > 2) {
+                    if (window.trackingService) {
+                        window.trackingService.track('Search', { search_string: currentSearch });
+                    }
+                }
+            }, 1000);
         });
     });
 </script>

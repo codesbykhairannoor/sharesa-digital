@@ -17,10 +17,43 @@
     {{-- Bootstrap Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
-    {{-- Google Fonts (Plus Jakarta Sans) --}}
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '{{ env('META_PIXEL_ID') }}');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id={{ env('META_PIXEL_ID') }}&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
+    <script>
+        window.SHARESASPACE = {
+            meta: {
+                pixelId: '{{ env('META_PIXEL_ID') }}',
+                externalId: '{{ request()->cookie("sharesa_external_id") }}',
+                fbp: document.cookie.split('; ').find(row => row.startsWith('_fbp='))?.split('=')[1] || null,
+                fbc: document.cookie.split('; ').find(row => row.startsWith('_fbc='))?.split('=')[1] || null,
+                trackUrl: '{{ route("track.meta") }}',
+                csrf: '{{ csrf_token() }}'
+            }
+        };
+    </script>
+
+    @vite(['resources/sass/app.scss', 'resources/js/app.js'])
 
     <style>
         /* === SHARESA BRAND COLORS === */
@@ -284,5 +317,42 @@
     {{-- Bootstrap JS --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     @stack('scripts')
+
+    <!-- Floating WhatsApp Widget -->
+    <div class="wa-float-widget shadow-lg rounded-circle d-flex align-items-center justify-content-center wa-track" 
+         data-msg="Halo Sharesa, saya ingin konsultasi mengenai layanan Digital Agency Anda."
+         style="position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px; background-color: #25d366; color: white; cursor: pointer; z-index: 9999; transition: all 0.3s ease;">
+        <i class="bi bi-whatsapp fs-2"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger border border-light" style="font-size: 0.6rem;">1</span>
+    </div>
+
+    <style>
+        .wa-float-widget:hover { transform: scale(1.1) rotate(5deg); background-color: #128c7e !important; }
+        @media (max-width: 768px) { .wa-float-widget { bottom: 20px; right: 20px; width: 50px; height: 50px; } }
+    </style>
+
+    <script src="{{ asset('js/tracking.js') }}"></script>
+    <script>
+        document.querySelectorAll('.wa-track').forEach(btn => {
+            if (btn.classList.contains('wa-processed')) return; // Avoid double binding
+            btn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const msg = this.getAttribute('data-msg');
+                const url = `https://wa.me/6287752458894?text=${encodeURIComponent(msg)}`;
+
+                if (window.trackingService) {
+                    window.trackingService.track('Contact', { 
+                        value: 900000.00, 
+                        currency: 'IDR',
+                        content_name: 'Floating WA Widget',
+                        content_category: 'Direct Message'
+                    });
+                }
+
+                setTimeout(() => { window.open(url, '_blank'); }, 300);
+            });
+            btn.classList.add('wa-processed');
+        });
+    </script>
 </body>
 </html>

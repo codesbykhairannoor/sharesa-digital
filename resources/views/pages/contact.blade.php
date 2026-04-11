@@ -146,23 +146,40 @@
                                 <input type="text" id="wa-name" class="form-control bg-light border-0 py-3 px-4 rounded-3" placeholder="John Doe" required>
                             </div>
                             <div class="col-md-6">
+                                <label class="form-label small fw-bold text-muted text-uppercase">Company Name</label>
+                                <input type="text" id="wa-company" class="form-control bg-light border-0 py-3 px-4 rounded-3" placeholder="Company Ltd.">
+                            </div>
+                            <div class="col-md-6">
                                 <label class="form-label small fw-bold text-muted text-uppercase">{{ __('messages.form_email') }}</label>
                                 <input type="email" id="wa-email" class="form-control bg-light border-0 py-3 px-4 rounded-3" placeholder="john@example.com" required>
                             </div>
+                            <div class="col-md-6">
+                                <label class="form-label small fw-bold text-muted text-uppercase">Service Type</label>
+                                <select id="wa-service" class="form-select bg-light border-0 py-3 px-4 rounded-3" required>
+                                    <option value="" disabled selected>Select a Service</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="Mobile App Development">Mobile App Development</option>
+                                    <option value="UI/UX Design">UI/UX Design</option>
+                                    <option value="Branding & Identity">Branding & Identity</option>
+                                    <option value="Digital Strategy">Digital Strategy</option>
+                                </select>
+                            </div>
                             <div class="col-12">
-                                <label class="form-label small fw-bold text-muted text-uppercase">{{ __('messages.form_subject') }}</label>
-                                <select id="wa-subject" class="form-select bg-light border-0 py-3 px-4 rounded-3">
-                                    <option value="General Inquiry">General Inquiry</option>
-                                    <option value="Project Proposal">Project Proposal</option>
-                                    <option value="Partnership">Partnership</option>
+                                <label class="form-label small fw-bold text-muted text-uppercase">Budget Estimation</label>
+                                <select id="wa-budget" class="form-select bg-light border-0 py-3 px-4 rounded-3" required>
+                                    <option value="" disabled selected>Select Budget Range</option>
+                                    <option value="< 10 Juta IDR">&lt; 10 Juta IDR</option>
+                                    <option value="10 - 50 Juta IDR">10 - 50 Juta IDR</option>
+                                    <option value="50 - 100 Juta IDR">50 - 100 Juta IDR</option>
+                                    <option value="> 100 Juta IDR">&gt; 100 Juta IDR</option>
                                 </select>
                             </div>
                             <div class="col-12">
                                 <label class="form-label small fw-bold text-muted text-uppercase">{{ __('messages.form_msg') }}</label>
-                                <textarea id="wa-message" class="form-control bg-light border-0 py-3 px-4 rounded-3" rows="5" placeholder="Tell us about your project..." required></textarea>
+                                <textarea id="wa-message" class="form-control bg-light border-0 py-3 px-4 rounded-3" rows="4" placeholder="Tell us about your goals..." required></textarea>
                             </div>
                             <div class="col-12 mt-4">
-                                <button type="submit" class="btn btn-dark w-100 py-3 fw-bold rounded-pill">
+                                <button type="submit" class="btn btn-dark w-100 py-3 fw-bold rounded-pill shadow-lg" id="submit-lead">
                                     {{ __('messages.form_btn') }} <i class="bi bi-whatsapp ms-2"></i>
                                 </button>
                             </div>
@@ -206,35 +223,54 @@
 {{-- JAVASCRIPT BUAT REDIRECT KE WA             --}}
 {{-- ========================================== --}}
 @push('scripts')
+<script src="{{ asset('js/tracking.js') }}"></script>
 <script>
-    document.getElementById('whatsappForm').addEventListener('submit', function(e) {
-        // 1. Cegah form submit biasa (biar halaman gak reload)
+    document.getElementById('whatsappForm').addEventListener('submit', async function(e) {
         e.preventDefault();
 
-        // 2. Ambil value dari input
-        let name    = document.getElementById('wa-name').value;
-        let email   = document.getElementById('wa-email').value;
-        let subject = document.getElementById('wa-subject').value;
-        let message = document.getElementById('wa-message').value;
+        // 1. Get Values
+        const name    = document.getElementById('wa-name').value;
+        const email   = document.getElementById('wa-email').value;
+        const company = document.getElementById('wa-company').value || '-';
+        const service = document.getElementById('wa-service').value;
+        const budget  = document.getElementById('wa-budget').value;
+        const message = document.getElementById('wa-message').value;
 
-        // 3. Nomor Tujuan (Tanpa +, tanpa spasi, pake kode negara 62)
-        let phoneNumber = '6287752458894';
+        // 2. Meta Hybrid Tracking (Lead)
+        if (window.trackingService) {
+            window.trackingService.track('Lead', 
+                { 
+                    value: 900000.00, 
+                    currency: 'IDR',
+                    content_name: service,
+                    content_category: 'Service Lead'
+                },
+                {
+                    em: email,
+                    fn: name
+                }
+            );
+        }
 
-        // 4. Buat Format Pesan (Pake enter/baris baru)
-        let text = `*Halo Sharesa Space!* 👋%0A%0A` +
-                   `Saya ingin berdiskusi mengenai hal berikut:%0A` +
+        // 3. Prepare WA Message
+        const phoneNumber = '6287752458894';
+        const text = `*Halo Sharesa Space!* 👋%0A%0A` +
+                   `Saya tertarik untuk memulai project baru:%0A` +
                    `--------------------------------%0A` +
                    `👤 *Nama:* ${name}%0A` +
+                   `🏢 *Company:* ${company}%0A` +
                    `📧 *Email:* ${email}%0A` +
-                   `🏷️ *Subjek:* ${subject}%0A` +
+                   `🛠️ *Layanan:* ${service}%0A` +
+                   `💰 *Budget:* ${budget}%0A` +
                    `--------------------------------%0A` +
-                   `📝 *Pesan:*%0A${message}`;
+                   `📝 *Pesan tambahan:*%0A${message}`;
 
-        // 5. Buat URL WhatsApp
-        let whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+        const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
 
-        // 6. Buka di tab baru
-        window.open(whatsappUrl, '_blank');
+        // 4. Buka WA (Delay dikit biar tracking sempat kejepit)
+        setTimeout(() => {
+            window.open(whatsappUrl, '_blank');
+        }, 500);
     });
 </script>
 @endpush

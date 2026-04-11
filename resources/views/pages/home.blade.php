@@ -36,7 +36,7 @@
 
                 {{-- Buttons --}}
                 <div class="d-flex gap-3 flex-column flex-sm-row">
-                    <a href="{{ url('/contact') }}" class="btn btn-sharesa-primary btn-lg px-5 py-3 shadow-lg hover-up fw-bold">
+                    <a href="#" class="btn btn-sharesa-primary btn-lg px-5 py-3 shadow-lg hover-up fw-bold wa-track" data-msg="Halo Sharesa, saya ingin tanya-tanya tentang transformasi digital bisnis saya.">
                         {{ __('messages.hero_cta') }}
                     </a>
                     <a href="{{ url('/portfolios') }}" class="btn btn-outline-light btn-lg px-5 py-3 rounded-pill hover-up">
@@ -296,7 +296,7 @@
                 <div class="position-relative z-1 col-lg-8 mx-auto">
                     <h2 class="fw-bold display-5 mb-3">{{ __('messages.cta_title') }}</h2>
                     <p class="lead mb-5 text-white-50">{{ __('messages.cta_desc') }}</p>
-                    <a href="{{ url('/contact') }}" class="btn btn-sharesa-primary btn-lg rounded-pill px-5 py-3 shadow-lg hover-scale fw-bold text-uppercase tracking-widest">
+                    <a href="#" class="btn btn-sharesa-primary btn-lg rounded-pill px-5 py-3 shadow-lg hover-scale fw-bold text-uppercase tracking-widest wa-track" data-msg="Halo Sharesa, saya siap buat project besar. Bisa kirimkan pricelist-nya?">
                         {{ __('messages.cta_btn') }}
                     </a>
                 </div>
@@ -326,4 +326,28 @@
     }
     .animate-float { animation: float 6s ease-in-out infinite; }
 </style>
+
+<script src="{{ asset('resources/js/tracking.js') }}"></script>
+<script>
+    document.querySelectorAll('.wa-track').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+            e.preventDefault();
+            const msg = this.getAttribute('data-msg');
+            const url = `https://wa.me/6287752458894?text=${encodeURIComponent(msg)}`;
+
+            if (window.trackingService) {
+                window.trackingService.track('Contact', { 
+                    value: 900000.00, 
+                    currency: 'IDR',
+                    content_name: 'WhatsApp Button',
+                    content_category: 'Direct Message'
+                });
+            }
+
+            setTimeout(() => {
+                window.open(url, '_blank');
+            }, 300);
+        });
+    });
+</script>
 @endsection
