@@ -19,11 +19,17 @@ class EnsureExternalIdCookie
     {
         $response = $next($request);
 
-        // Meta External ID (UUID) for anonymous tracking
+        // 1. Meta External ID (UUID) for anonymous tracking
         if (!$request->hasCookie('sharesa_external_id')) {
-            $externalId = Str::uuid()->toString();
-            // Cookie for 30 days
+            $externalId = (string) Str::uuid();
             $response->withCookie(cookie('sharesa_external_id', $externalId, 60 * 24 * 30));
+        }
+
+        // 2. Meta Click ID (FBC)
+        if ($request->has('fbclid')) {
+            $fbclid = $request->query('fbclid');
+            $fbc = 'fb.1.' . time() . '.' . $fbclid;
+            $response->withCookie(cookie('_fbc', $fbc, 60 * 24 * 30));
         }
 
         return $response;

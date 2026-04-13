@@ -166,6 +166,11 @@
                                     placeholder="john@example.com" required>
                             </div>
                             <div class="col-md-6">
+                                <label class="form-label small fw-bold text-muted text-uppercase">Phone Number</label>
+                                <input type="tel" id="wa-phone" class="form-control bg-light border-0 py-3 px-4 rounded-3"
+                                    placeholder="08123456789" required>
+                            </div>
+                            <div class="col-md-6">
                                 <label class="form-label small fw-bold text-muted text-uppercase">Service Type</label>
                                 <select id="wa-service" class="form-select bg-light border-0 py-3 px-4 rounded-3" required>
                                     <option value="" disabled selected>Select a Service</option>
@@ -259,6 +264,7 @@
             // 1. Get Values
             const name = document.getElementById('wa-name').value;
             const email = document.getElementById('wa-email').value;
+            const phone = document.getElementById('wa-phone').value;
             const company = document.getElementById('wa-company').value || '-';
             const service = document.getElementById('wa-service').value;
             const budget = document.getElementById('wa-budget').value;
@@ -284,9 +290,13 @@
                         },
                         {
                             em: email,
+                            ph: phone,
                             fn: name
                         }
                     );
+
+                    // 2.5 Persist Identity for future events (WhatsApp clicks, etc)
+                    await window.trackingService.saveIdentity(email, phone);
                 } catch (err) {
                     console.error('Lead tracking failed', err);
                 }
