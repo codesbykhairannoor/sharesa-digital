@@ -52,22 +52,27 @@
                              style="height: 260px; object-fit: cover;">
                         
                         @if($item->project_url)
-                        <div class="project-overlay d-flex align-items-center justify-content-center">
+                        <div class="project-overlay d-flex flex-column align-items-center justify-content-center gap-2">
                             <a href="{{ $item->project_url }}" target="_blank" class="btn btn-light rounded-pill fw-bold shadow-sm px-4">
                                 <i class="bi bi-eye-fill me-2"></i>Visit Site
                             </a>
+                            <a href="https://wa.me/6287752458894?text=Halo%20Sharesa!%20Saya%20tertarik%20dengan%20project%20{{ $item->title }}." 
+                               target="_blank" class="btn btn-success rounded-pill fw-bold shadow-sm px-4 wa-portfolio-track"
+                               data-project="{{ $item->title }}">
+                                <i class="bi bi-whatsapp me-2"></i>Tanya WA
+                            </a>
                         </div>
                         @endif
-
+ 
                         <div class="position-absolute top-0 end-0 m-3">
                             <span class="badge bg-white text-dark shadow-sm border px-3 py-2 rounded-pill fw-bold">
                                 {{ $item->category }}
                             </span>
                         </div>
                     </div>
-
+ 
                     <div class="card-body p-4 d-flex flex-column">
-                        <h4 class="fw-bold mb-2 text-dark">{{ $item->title }}</h4>
+                        <h4 class="fw-bold mb-2 text-dark project-title">{{ $item->title }}</h4>
                         
                         @if($item->client_name)
                             <small class="text-muted mb-3 d-block">
@@ -75,21 +80,36 @@
                                 {{ __('messages.port_client') }}: <strong>{{ $item->client_name }}</strong>
                             </small>
                         @endif
-
+ 
                         <p class="text-secondary small mb-4 flex-grow-1">
                             {{ Str::limit($item->description, 100) }}
                         </p>
-
-                        <div class="mt-auto pt-3 border-top d-flex justify-content-between align-items-center">
-                            <a href="#" class="text-decoration-none fw-bold small d-flex align-items-center" style="color: var(--sharesa-dark);">
-                                View Details <i class="bi bi-arrow-right ms-2 transition-icon"></i>
-                            </a>
-
-                            @if($item->project_url)
-                                <a href="{{ $item->project_url }}" target="_blank" class="btn btn-sm btn-live-preview rounded-pill px-3 fw-bold">
-                                    <i class="bi bi-box-arrow-up-right me-1"></i> Live
+ 
+                        <div class="mt-auto pt-3 border-top">
+                            <div class="d-flex gap-2 mb-3">
+                                <a href="https://wa.me/6287752458894?text=Halo%20Sharesa!%20Saya%20ingin%20tanya%20estimasi%20harga%20untuk%20project%20{{ $item->title }}." 
+                                   target="_blank" class="btn btn-sm btn-outline-dark rounded-pill px-3 fw-bold flex-grow-1 wa-portfolio-track"
+                                   data-project="{{ $item->title }}" data-type="Req Harga">
+                                   Req Harga
                                 </a>
-                            @endif
+                                <a href="https://wa.me/6287752458894?text=Halo%20Sharesa!%20Saya%20ingin%20konsultasi%20mengenai%20project%20{{ $item->title }}." 
+                                   target="_blank" class="btn btn-sm btn-sharesa-primary rounded-pill px-3 fw-bold flex-grow-1 wa-portfolio-track"
+                                   data-project="{{ $item->title }}" data-type="Hubungi WA">
+                                   Hubungi WA
+                                </a>
+                            </div>
+ 
+                            <div class="d-flex justify-content-between align-items-center">
+                                <a href="#" class="text-decoration-none fw-bold small d-flex align-items-center" style="color: var(--sharesa-dark);">
+                                    View Details <i class="bi bi-arrow-right ms-2 transition-icon"></i>
+                                </a>
+ 
+                                @if($item->project_url)
+                                    <a href="{{ $item->project_url }}" target="_blank" class="btn btn-sm btn-live-preview rounded-pill px-3 fw-bold">
+                                        <i class="bi bi-box-arrow-up-right me-1"></i> Live
+                                    </a>
+                                @endif
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -199,6 +219,22 @@
                     }
                 }
             }, 1000);
+        });
+
+        // Portfolio Button Tracking
+        document.querySelectorAll('.wa-portfolio-track').forEach(btn => {
+            btn.addEventListener('click', function() {
+                const project = this.getAttribute('data-project');
+                const type = this.getAttribute('data-type') || 'Direct WA';
+                
+                if (window.trackingService) {
+                    window.trackingService.track('Contact', {
+                        content_name: project,
+                        content_category: 'Portfolio',
+                        contact_type: type
+                    });
+                }
+            });
         });
     });
 </script>

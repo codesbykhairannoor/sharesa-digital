@@ -292,9 +292,9 @@
                 }
             }
 
-            // 3. Prepare WA Message (SPECIFIC FORMAT)
+            // 3. Prepare WA Message (PROFESSIONAL TEMPLATE)
             const phoneNumber = '6287752458894';
-            const text = `Halo Sharesa! Saya ${name} dari ${company}. Saya tertarik dengan ${service} (Budget: ${budget}). Bisa bantu jelaskan prosesnya?`;
+            const text = `Halo Sharesa Space! Saya ${name} dari ${company}. Saya tertarik dengan layanan ${service} dengan estimasi budget ${budget}. Mari diskusikan bagaimana kita bisa berkolaborasi!`;
 
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
 

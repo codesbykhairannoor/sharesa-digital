@@ -12,8 +12,7 @@
     <link rel="icon" type="image/png" href="{{ asset('images/logoku.png') }}?v=1">
     <link rel="shortcut icon" href="{{ asset('images/logoku.png') }}?v=1">
 
-    {{-- Bootstrap 5 --}}
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    {{-- Bootstrap 5 (Handled by Vite) --}}
 
     {{-- Bootstrap Icons --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
@@ -39,6 +38,7 @@
         }(window, document, 'script',
             'https://connect.facebook.net/en_US/fbevents.js');
         fbq('init', '{{ env('META_PIXEL_ID') }}');
+        fbq('set', 'autoConfig', false, '{{ env('META_PIXEL_ID') }}');
         fbq('track', 'PageView');
     </script>
     <noscript><img height="1" width="1" style="display:none"
@@ -333,8 +333,7 @@
         </div>
     </footer>
 
-    {{-- Bootstrap JS --}}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    {{-- Bootstrap JS (Handled by Vite) --}}
     @stack('scripts')
 
     <!-- Floating WhatsApp Widget -->

@@ -196,8 +196,14 @@
                                 <li class="text-muted"><i class="bi bi-check-circle-fill text-success me-2"></i> 1 Week Support</li>
                             </ul>
                         </div>
-                        <div class="card-footer bg-white border-0 pb-4 px-4 text-center">
-                            <a href="{{ url('/contact') }}" class="btn btn-outline-dark rounded-pill w-100 fw-bold">{{ __('messages.price_btn') }}</a>
+                        <div class="card-footer bg-white border-0 pb-4 px-4">
+                            <div class="d-grid gap-2">
+                                <a href="{{ url('/contact') }}" class="btn btn-outline-dark rounded-pill fw-bold">{{ __('messages.price_btn') }}</a>
+                                <a href="https://wa.me/6287752458894?text=Halo%20Sharesa!%20Saya%20tertarik%20dengan%20paket%20Starter." 
+                                   target="_blank" class="btn btn-success rounded-pill fw-bold">
+                                   <i class="bi bi-whatsapp me-2"></i>Hubungi WA
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -219,8 +225,14 @@
                                 <li class="text-dark"><i class="bi bi-check-circle-fill text-success me-2"></i> 1 Month Support</li>
                             </ul>
                         </div>
-                        <div class="card-footer bg-white border-0 pb-4 px-4 text-center">
-                            <a href="{{ url('/contact') }}" class="btn text-dark rounded-pill w-100 fw-bold shadow-sm" style="background-color: var(--sharesa-green);">{{ __('messages.price_btn') }}</a>
+                        <div class="card-footer bg-white border-0 pb-4 px-4">
+                            <div class="d-grid gap-2">
+                                <a href="{{ url('/contact') }}" class="btn text-dark rounded-pill fw-bold shadow-sm" style="background-color: var(--sharesa-green);">{{ __('messages.price_btn') }}</a>
+                                <a href="https://wa.me/6287752458894?text=Halo%20Sharesa!%20Saya%20tertarik%20dengan%20paket%20Business." 
+                                   target="_blank" class="btn btn-success rounded-pill fw-bold">
+                                   <i class="bi bi-whatsapp me-2"></i>Hubungi WA
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -240,8 +252,14 @@
                                 <li class="text-muted"><i class="bi bi-check-circle-fill text-success me-2"></i> Priority Support</li>
                             </ul>
                         </div>
-                        <div class="card-footer bg-white border-0 pb-4 px-4 text-center">
-                            <a href="{{ url('/contact') }}" class="btn btn-outline-dark rounded-pill w-100 fw-bold">{{ __('messages.price_btn') }}</a>
+                        <div class="card-footer bg-white border-0 pb-4 px-4">
+                            <div class="d-grid gap-2">
+                                <a href="{{ url('/contact') }}" class="btn btn-outline-dark rounded-pill fw-bold">{{ __('messages.price_btn') }}</a>
+                                <a href="https://wa.me/6287752458894?text=Halo%20Sharesa!%20Saya%20tertarik%20dengan%20paket%20Enterprise." 
+                                   target="_blank" class="btn btn-success rounded-pill fw-bold">
+                                   <i class="bi bi-whatsapp me-2"></i>Hubungi WA
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>

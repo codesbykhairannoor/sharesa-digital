@@ -9,14 +9,12 @@ class MetaCapiService
 {
     private $pixelId;
     private $accessToken;
-    private $testEventCode;
     private $version = 'v19.0';
 
     public function __construct()
     {
         $this->pixelId = env('META_PIXEL_ID', '1442372837685960');
         $this->accessToken = env('META_ACCESS_TOKEN');
-        $this->testEventCode = env('META_TEST_EVENT_CODE');
     }
 
     /**
@@ -35,7 +33,7 @@ class MetaCapiService
             'external_id' => $userData['external_id'] ?? request()->cookie('sharesa_external_id') ?? null,
         ];
 
-        // Add additional PII if available (Hashed)
+        // Add additional PII if available (Hashed using SHA-256)
         if (isset($userData['em'])) {
             $payloadUserData['em'] = $this->hashData($userData['em']);
         }
@@ -48,7 +46,7 @@ class MetaCapiService
             'event_time' => time(),
             'action_source' => 'website',
             'user_data' => array_filter($payloadUserData),
-            'event_id' => $eventId ?? 'sharesa-' . $eventName . '-' . time(),
+            'event_id' => $eventId ?? 'sharesa-' . strtolower($eventName) . '-' . time(),
         ];
 
         if (!empty($customData)) {
@@ -59,10 +57,6 @@ class MetaCapiService
             'data' => [$eventData],
             'access_token' => $this->accessToken,
         ];
-
-        if ($this->testEventCode) {
-            $payload['test_event_code'] = $this->testEventCode;
-        }
 
         try {
             $response = Http::post($url, $payload);
