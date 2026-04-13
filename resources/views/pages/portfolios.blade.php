@@ -193,7 +193,9 @@
             searchTimeout = setTimeout(() => {
                 if (currentSearch.length > 2) {
                     if (window.trackingService) {
-                        window.trackingService.track('Search', { search_string: currentSearch });
+                        window.trackingService.track('Search', { 
+                            search_string: currentSearch 
+                        });
                     }
                 }
             }, 1000);

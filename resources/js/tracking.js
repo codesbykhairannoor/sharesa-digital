@@ -7,17 +7,17 @@ class SharesaTracking {
     }
 
     /**
-     * Generate Unique Event ID for Deduplication
+     * Generate Unique Event ID for Deduplication (CariDisini Standard)
      */
-    generateEventId() {
-        return 'evt_' + Math.random().toString(36).substr(2, 9) + Date.now();
+    generateEventId(eventName) {
+        return `sharesa-${eventName.toLowerCase()}-${Date.now()}`;
     }
 
     /**
      * Trigger Hybrid Event (Browser + Server)
      */
     async track(eventName, customData = {}, userData = {}) {
-        const eventId = this.generateEventId();
+        const eventId = this.generateEventId(eventName);
 
         // 1. Browser Tracking (Meta Pixel)
         if (window.fbq) {
@@ -45,7 +45,15 @@ class SharesaTracking {
                 })
             });
             
-            return await response.json();
+            const result = await response.json();
+            
+            if (result.success) {
+                console.log(`✅ [CAPI] Event "${eventName}" transmitted successfully.`, { eventId });
+            } else {
+                console.warn(`❌ [CAPI] Event "${eventName}" failed to transmit.`, result);
+            }
+
+            return result;
         } catch (error) {
             console.error('Tracking Error:', error);
         }
