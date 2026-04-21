@@ -357,21 +357,26 @@
 
                 {{-- LOGO BRANDING --}}
                 <a class="navbar-brand d-flex align-items-center" href="{{ url('/') }}">
-                    <div class="bg-white rounded-circle p-1 d-flex align-items-center justify-content-center me-2 shadow-sm"
-                        style="width: 40px; height: 40px; overflow: hidden;">
+                    <div class="bg-white rounded-circle d-flex align-items-center justify-content-center shadow-sm"
+                        style="width: 42px; height: 42px; overflow: hidden;">
                         <img src="{{ asset('images/logoku.png') }}" alt="Sharesa Logo"
-                            style="width: 100%; height: 100%; object-fit: contain;">
+                            style="width: 85%; height: 85%; object-fit: contain;">
                     </div>
-                    <span class="navbar-logo-text fw-bold text-white fs-4" style="letter-spacing: -0.5px;">
-                        Sharesa<span style="color: var(--sharesa-green)">.</span>
-                    </span>
                 </a>
 
-                {{-- TOGGLER (MOBILE) --}}
-                <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav">
-                    <i class="bi bi-list text-white fs-1"></i>
-                </button>
+                <div class="d-flex align-items-center gap-3">
+                    {{-- HUBUNGI KAMI BUTTON (MOBILE ONLY) --}}
+                    <a href="{{ url('/contact') }}" class="btn btn-sharesa-primary btn-sm rounded-pill px-3 d-lg-none" 
+                       style="font-size: 0.8rem; padding-top: 6px; padding-bottom: 6px;">
+                        Hubungi
+                    </a>
+
+                    {{-- TOGGLER (MOBILE) --}}
+                    <button class="navbar-toggler border-0 p-0" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav">
+                        <i class="bi bi-list text-white" style="font-size: 2.2rem;"></i>
+                    </button>
+                </div>
 
                 {{-- NAVBAR CONTENT --}}
                 <div class="collapse navbar-collapse" id="navbarNav">
