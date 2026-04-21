@@ -48,7 +48,7 @@
                                      style="width: 90px; height: 90px; object-fit: cover;"
                                      alt="Director">
                                 <h5 class="fw-bold text-dark mb-1">{{ __('messages.ceo_name') }}</h5>
-                                <small class="text-dark opacity-60 fw-semibold text-uppercase" style="letter-spacing: 1px; font-size: 0.7rem;">Technical Director</small>
+                                <small class="text-dark opacity-60 fw-semibold" style="letter-spacing: 0.5px; font-size: 0.7rem;">Technical Director</small>
                                 <div class="mt-3 px-3 py-1 rounded-pill bg-dark text-white" style="font-size: 0.72rem; letter-spacing: 1px;">Est. 2025</div>
                             </div>
 
@@ -150,23 +150,23 @@
                     <form id="whatsappForm">
                         <div class="row g-3">
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold text-muted text-uppercase" style="font-size: 0.72rem; letter-spacing: 1px;">{{ __('messages.form_name') }}</label>
+                                <label class="form-label small fw-bold text-muted" style="font-size: 0.75rem; letter-spacing: 0.5px;">{{ __('messages.form_name') }}</label>
                                 <input type="text" id="wa-name" class="form-control contact-input border-0 py-3 px-4 rounded-3" placeholder="John Doe" required style="background: #f8fafc;">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold text-muted text-uppercase" style="font-size: 0.72rem; letter-spacing: 1px;">Company Name</label>
+                                <label class="form-label small fw-bold text-muted" style="font-size: 0.75rem; letter-spacing: 0.5px;">Company Name</label>
                                 <input type="text" id="wa-company" class="form-control contact-input border-0 py-3 px-4 rounded-3" placeholder="Company Ltd." style="background: #f8fafc;">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold text-muted text-uppercase" style="font-size: 0.72rem; letter-spacing: 1px;">{{ __('messages.form_email') }}</label>
+                                <label class="form-label small fw-bold text-muted" style="font-size: 0.75rem; letter-spacing: 0.5px;">{{ __('messages.form_email') }}</label>
                                 <input type="email" id="wa-email" class="form-control contact-input border-0 py-3 px-4 rounded-3" placeholder="john@example.com" required style="background: #f8fafc;">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold text-muted text-uppercase" style="font-size: 0.72rem; letter-spacing: 1px;">Phone Number</label>
+                                <label class="form-label small fw-bold text-muted" style="font-size: 0.75rem; letter-spacing: 0.5px;">Phone Number</label>
                                 <input type="tel" id="wa-phone" class="form-control contact-input border-0 py-3 px-4 rounded-3" placeholder="08123456789" required style="background: #f8fafc;">
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold text-muted text-uppercase" style="font-size: 0.72rem; letter-spacing: 1px;">Service Type</label>
+                                <label class="form-label small fw-bold text-muted" style="font-size: 0.75rem; letter-spacing: 0.5px;">Service Type</label>
                                 <select id="wa-service" class="form-select contact-input border-0 py-3 px-4 rounded-3" required style="background: #f8fafc;">
                                     <option value="" disabled selected>Select a Service</option>
                                     <option value="Web Development">Web Development</option>
@@ -177,7 +177,7 @@
                                 </select>
                             </div>
                             <div class="col-md-6">
-                                <label class="form-label small fw-bold text-muted text-uppercase" style="font-size: 0.72rem; letter-spacing: 1px;">Budget Estimation</label>
+                                <label class="form-label small fw-bold text-muted" style="font-size: 0.75rem; letter-spacing: 0.5px;">Budget Estimation</label>
                                 <select id="wa-budget" class="form-select contact-input border-0 py-3 px-4 rounded-3" required style="background: #f8fafc;">
                                     <option value="" disabled selected>Select Budget Range</option>
                                     <option value="< 10 Juta IDR">&lt; 10 Juta IDR</option>
@@ -187,14 +187,13 @@
                                 </select>
                             </div>
                             <div class="col-12">
-                                <label class="form-label small fw-bold text-muted text-uppercase" style="font-size: 0.72rem; letter-spacing: 1px;">{{ __('messages.form_msg') }}</label>
+                                <label class="form-label small fw-bold text-muted" style="font-size: 0.75rem; letter-spacing: 0.5px;">{{ __('messages.form_msg') }}</label>
                                 <textarea id="wa-message" class="form-control contact-input border-0 py-3 px-4 rounded-3"
                                     rows="4" placeholder="Tell us about your goals..." required style="background: #f8fafc;"></textarea>
                             </div>
                             <div class="col-12 mt-2">
                                 <button type="submit" id="submit-lead"
-                                    class="btn w-100 py-3 fw-bold rounded-pill shadow-sm"
-                                    style="background: var(--sharesa-dark); color: white; transition: all 0.3s; border: 2px solid var(--sharesa-dark);">
+                                    class="btn btn-sharesa-primary w-100 py-3 fw-bold rounded-pill shadow-sm">
                                     {{ __('messages.form_btn') }} <i class="bi bi-whatsapp ms-2"></i>
                                 </button>
                             </div>

@@ -29,7 +29,7 @@
                         <span class="rounded-circle me-2 d-inline-flex align-items-center justify-content-center" style="width:20px; height:20px; background: var(--sharesa-green);">
                             <i class="bi bi-lightning-charge-fill" style="color: var(--sharesa-dark); font-size: 0.6rem;"></i>
                         </span>
-                        <small class="fw-bold tracking-wide text-white" style="letter-spacing: 1.5px; font-size: 0.75rem; text-transform: uppercase;">{{ __('messages.hero_badge') }}</small>
+                        <small class="fw-bold tracking-wide text-white" style="letter-spacing: 1px; font-size: 0.75rem;">{{ __('messages.hero_badge') }}</small>
                     </div>
 
                     {{-- Title --}}
@@ -62,7 +62,7 @@
                             <h2 class="fw-black text-white mb-1" style="font-size: 2.5rem;">
                                 <span class="counter-num" data-count="50">0</span><span style="color: var(--sharesa-green);">+</span>
                             </h2>
-                            <p class="text-white-50 fw-semibold mb-0" style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase;">
+                            <p class="text-white-50 fw-semibold mb-0" style="font-size: 0.8rem; letter-spacing: 1px;">
                                 {{ __('messages.stats_projects') }}
                             </p>
                         </div>
@@ -70,7 +70,7 @@
                             <h2 class="fw-black mb-1" style="font-size: 2.5rem; color: var(--sharesa-green);">
                                 <span class="counter-num" data-count="30">0</span><span class="text-white">+</span>
                             </h2>
-                            <p class="text-white-50 fw-semibold mb-0" style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase;">
+                            <p class="text-white-50 fw-semibold mb-0" style="font-size: 0.8rem; letter-spacing: 1px;">
                                 {{ __('messages.stats_clients') }}
                             </p>
                         </div>
@@ -78,7 +78,7 @@
                             <h2 class="fw-black text-white mb-1" style="font-size: 2.5rem;">
                                 4.9<span style="color: #ffc107; font-size: 1.5rem; margin-left: 4px;">★</span>
                             </h2>
-                            <p class="text-white-50 fw-semibold mb-0" style="font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase;">
+                            <p class="text-white-50 fw-semibold mb-0" style="font-size: 0.8rem; letter-spacing: 1px;">
                                 {{ __('messages.stats_rating') }}
                             </p>
                         </div>
@@ -149,7 +149,7 @@
                 <div class="vr d-none d-md-block" style="height: 20px; background: rgba(255,255,255,0.15);"></div>
                 <div class="d-flex gap-4 flex-wrap justify-content-center">
                     @foreach(['E-Commerce', 'F&B Brands', 'Healthcare', 'Startup', 'Property', 'Education'] as $sector)
-                        <span class="text-white fw-semibold" style="opacity: 0.3; font-size: 0.85rem; letter-spacing: 1px; text-transform: uppercase;">{{ $sector }}</span>
+                        <span class="text-white fw-semibold" style="opacity: 0.4; font-size: 0.9rem; letter-spacing: 0.5px;">{{ $sector }}</span>
                     @endforeach
                 </div>
             </div>
@@ -352,9 +352,9 @@
                     <h2 class="fw-bold mb-3" style="font-size: clamp(1.8rem, 4vw, 2.8rem); letter-spacing: -1px;">{{ __('messages.cta_title') }}</h2>
                     <p class="mb-5 text-white-50" style="font-size: 1.05rem; line-height: 1.7;">{{ __('messages.cta_desc') }}</p>
                     <a href="#"
-                        class="btn btn-sharesa-primary btn-lg rounded-pill px-5 py-3 shadow-lg fw-bold text-uppercase wa-track cta-pulse-btn"
+                        class="btn btn-sharesa-primary btn-lg rounded-pill px-5 py-3 shadow-lg fw-bold wa-track cta-pulse-btn"
                         data-msg="Halo Sharesa, saya siap buat project besar. Bisa kirimkan pricelist-nya?"
-                        style="letter-spacing: 1px; box-shadow: 0 0 40px rgba(0,255,140,0.35) !important;">
+                        style="box-shadow: 0 0 40px rgba(0,255,140,0.35) !important;">
                         {{ __('messages.cta_btn') }}
                     </a>
                 </div>

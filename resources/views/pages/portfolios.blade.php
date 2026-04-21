@@ -90,7 +90,7 @@
 
                             <div class="position-absolute top-0 end-0 m-3">
                                 <span class="badge bg-white text-dark border px-3 py-2 rounded-pill fw-bold shadow-sm"
-                                    style="font-size: 0.7rem;">
+                                    style="font-size: 0.75rem; letter-spacing: 0.5px;">
                                     {{ $item->category }}
                                 </span>
                             </div>

@@ -193,7 +193,7 @@
                                 </div>
                             </div>
                             <h5 class="fw-bold mb-1" style="font-size: 1rem;">{{ __('messages.team_lead_name') }}</h5>
-                            <small class="text-success text-uppercase fw-bold section-label mb-3 d-block">{{ __('messages.team_lead_role') }}</small>
+                            <small class="text-success fw-bold section-label mb-3 d-block">{{ __('messages.team_lead_role') }}</small>
                             <p class="text-muted small mb-3" style="line-height: 1.7;">{{ __('messages.team_lead_desc') }}</p>
                             <div class="d-flex gap-2 justify-content-center">
                                 <a href="https://www.linkedin.com/in/khairannoorfadhlillah/" target="_blank" class="social-chip"><i class="bi bi-linkedin"></i></a>
@@ -211,7 +211,7 @@
                                 <i class="bi bi-globe2 fs-2 text-success"></i>
                             </div>
                             <h5 class="fw-bold mb-1 text-white" style="font-size: 1rem;">{{ __('messages.team_partner_name') }}</h5>
-                            <small class="text-success text-uppercase fw-bold section-label mb-3 d-block">{{ __('messages.team_partner_role') }}</small>
+                            <small class="text-success fw-bold section-label mb-3 d-block">{{ __('messages.team_partner_role') }}</small>
                             <p class="text-white-50 small mb-0" style="line-height: 1.7;">{{ __('messages.team_partner_desc') }}</p>
                         </div>
                     </div>
@@ -225,7 +225,7 @@
                                 <i class="bi bi-cpu text-success fs-2"></i>
                             </div>
                             <h5 class="fw-bold mb-1" style="font-size: 1rem;">{{ __('messages.team_ai_name') }}</h5>
-                            <small class="text-success text-uppercase fw-bold section-label mb-3 d-block">{{ __('messages.team_ai_role') }}</small>
+                            <small class="text-success fw-bold section-label mb-3 d-block">{{ __('messages.team_ai_role') }}</small>
                             <p class="text-muted small mb-0" style="line-height: 1.7;">{{ __('messages.team_ai_desc') }}</p>
                         </div>
                     </div>

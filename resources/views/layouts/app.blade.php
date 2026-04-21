@@ -22,7 +22,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&display=swap"
         rel="stylesheet">
 
     <!-- Meta Pixel Code -->
@@ -99,8 +99,8 @@
         .section-label {
             font-size: 0.72rem;
             font-weight: 700;
-            letter-spacing: 3px;
-            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--sharesa-green-dim);
         }
 
         /* ============================================
@@ -354,7 +354,7 @@
                             <a class="nav-link dropdown-toggle text-white d-flex align-items-center gap-1" href="#"
                                 role="button" data-bs-toggle="dropdown">
                                 <i class="bi bi-globe"></i>
-                                <span class="small font-monospace text-uppercase">{{ App::getLocale() }}</span>
+                                <span class="small font-monospace">{{ App::getLocale() }}</span>
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2"
                                 style="min-width: 120px;">
@@ -470,7 +470,7 @@
 
                 {{-- Column 2: Quick Links --}}
                 <div class="col-lg-4 col-md-6">
-                    <h6 class="text-white fw-bold text-uppercase mb-4" style="letter-spacing: 2.5px; font-size: 0.72rem;">
+                    <h6 class="text-white fw-bold mb-4" style="letter-spacing: 1px; font-size: 0.85rem;">
                         Quick Links
                     </h6>
                     <ul class="list-unstyled d-grid gap-2">
@@ -504,7 +504,7 @@
 
                 {{-- Column 3: Contact --}}
                 <div class="col-lg-4 col-md-6">
-                    <h6 class="text-white fw-bold text-uppercase mb-4" style="letter-spacing: 2.5px; font-size: 0.72rem;">
+                    <h6 class="text-white fw-bold mb-4" style="letter-spacing: 1px; font-size: 0.85rem;">
                         {{ __('messages.contact') }}
                     </h6>
                     <div class="d-grid gap-3">

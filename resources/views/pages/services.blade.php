@@ -27,7 +27,7 @@
     </section>
 
     {{-- ========================================== --}}
-    {{-- SECTION 2: PRICING PLANS (10 Tiers)        --}}
+    {{-- SECTION 2: PRICING PLANS                   --}}
     {{-- ========================================== --}}
     <section class="py-5 bg-light">
         <div class="container py-5">
@@ -53,203 +53,94 @@
             {{-- Tabs Content --}}
             <div class="tab-content" id="pills-tabContent" data-aos="fade-up" data-aos-delay="100">
                 
-                {{-- TAB 1: UMKM --}}
-                <div class="tab-pane fade show active" id="pills-umkm" role="tabpanel">
-                    <div class="row g-4 justify-content-center">
-                        {{-- Paket Hemat UMKM --}}
-                        <div class="col-lg-4">
-                            <div class="card h-100 rounded-4 border-0 pricing-card shadow-sm p-4">
-                                <span class="text-muted section-label mb-3">Paket Hemat</span>
-                                <h4 class="fw-bold mb-1">Hemat UMKM</h4>
-                                <div class="my-3">
-                                    <span class="fs-2 fw-black text-dark">Rp 650 rb</span>
-                                    <p class="text-muted small mb-0">Rp 700.000 di tahun berikutnya</p>
-                                </div>
-                                <hr class="opacity-10">
-                                <ul class="list-unstyled d-grid gap-3 mb-4 flex-grow-1">
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> 1 Halaman Website</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Free Domain .com</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Aktif 1 Tahun</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Basic Landing Page Design</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Basic Copy Writing</li>
-                                </ul>
-                                <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan Paket Hemat UMKM (650rb)." target="_blank" class="btn btn-outline-dark rounded-pill fw-bold py-2 mt-auto">{{ __('messages.price_btn') }}</a>
-                            </div>
-                        </div>
-                        {{-- UMKM (Most Popular) --}}
-                        <div class="col-lg-4">
-                            <div class="card h-100 rounded-4 border-0 pricing-card pricing-featured shadow-lg p-4 bg-dark text-white position-relative overflow-hidden">
-                                <div class="position-absolute top-0 start-0 w-100 py-1 text-center bg-success text-dark fw-bold" style="font-size: 0.7rem;">MOST POPULAR</div>
-                                <span class="text-white-50 section-label mb-3 pt-2">UMKM Catalog</span>
-                                <h4 class="fw-bold mb-1 text-white">UMKM</h4>
-                                <div class="my-3">
-                                    <span class="fs-2 fw-black" style="color: var(--sharesa-green);">Rp 1.0 Jt</span>
-                                    <p class="text-white-50 small mb-0">Rp 700.000 di tahun berikutnya</p>
-                                </div>
-                                <hr class="opacity-10 bg-white">
-                                <ul class="list-unstyled d-grid gap-3 mb-4 flex-grow-1">
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> 3 Halaman Website</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Free Domain .com</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Aktif 1 Tahun</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Basic Web Design</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Advanced Copy Writing</li>
-                                </ul>
-                                <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan Paket UMKM (1jt)." target="_blank" class="btn btn-success rounded-pill fw-bold text-dark py-2 mt-auto">{{ __('messages.price_btn') }}</a>
-                            </div>
-                        </div>
-                        {{-- Paket Website Untung --}}
-                        <div class="col-lg-4">
-                            <div class="card h-100 rounded-4 border-0 pricing-card shadow-sm p-4">
-                                <span class="text-muted section-label mb-3">Product Intro</span>
-                                <h4 class="fw-bold mb-1">Website Untung</h4>
-                                <div class="my-3">
-                                    <span class="fs-2 fw-black text-dark">Rp 1.5 Jt</span>
-                                    <p class="text-muted small mb-0">Rp 800.000 di tahun berikutnya</p>
-                                </div>
-                                <hr class="opacity-10">
-                                <ul class="list-unstyled d-grid gap-3 mb-4 flex-grow-1">
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> 5 Halaman Website</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Free Domain .com</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Shared Hosting</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Basic Web Design</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Free Logo Design</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Advanced Copy Writing</li>
-                                </ul>
-                                <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan Paket Website Untung (1.5jt)." target="_blank" class="btn btn-outline-dark rounded-pill fw-bold py-2 mt-auto">{{ __('messages.price_btn') }}</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @php
+                    $categories = [
+                        'umkm' => [1, 2, 3],
+                        'bisnis' => [4, 5, 6],
+                        'toko' => [7, 8, 9]
+                    ];
+                @endphp
 
-                {{-- TAB 2: Bisnis --}}
-                <div class="tab-pane fade" id="pills-bisnis" role="tabpanel">
-                    <div class="row g-4 justify-content-center">
-                        {{-- Paket Bisnis --}}
-                        <div class="col-lg-4">
-                            <div class="card h-100 rounded-4 border-0 pricing-card shadow-sm p-4">
-                                <span class="text-muted section-label mb-3">Bisnis Profile</span>
-                                <h4 class="fw-bold mb-1">Paket Bisnis</h4>
-                                <div class="my-3">
-                                    <span class="fs-2 fw-black text-dark">Rp 2,525 Jt</span>
-                                    <p class="text-muted small mb-0">Rp 1.000.000 di tahun berikutnya</p>
-                                </div>
-                                <ul class="list-unstyled d-grid gap-2 mb-4 flex-grow-1">
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> 10 Halaman Website</li>
-                                    <li class="small d-flex align-items-start gap-2 text-muted ms-4">Contoh: Home, Service, About, Contact, Blog</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Free Domain .com .id .org</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Shared Hosting & Aktif 1 Thn</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Custom Web Design</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Free Logo Design</li>
-                                </ul>
-                                <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan Paket Bisnis (2.525jt)." target="_blank" class="btn btn-outline-dark rounded-pill fw-bold py-2 mt-auto">{{ __('messages.price_btn') }}</a>
-                            </div>
-                        </div>
-                        {{-- Paket Bisnis Plus (Best Choice) --}}
-                        <div class="col-lg-4">
-                            <div class="card h-100 rounded-4 border-0 pricing-card pricing-featured shadow-lg p-4 bg-dark text-white position-relative overflow-hidden">
-                                <div class="position-absolute top-0 start-0 w-100 py-1 text-center bg-warning text-dark fw-bold" style="font-size: 0.7rem;">BEST CHOICE</div>
-                                <span class="text-white-50 section-label mb-3 pt-2">Professional</span>
-                                <h4 class="fw-bold mb-1 text-white">Bisnis Plus</h4>
-                                <div class="my-3">
-                                    <span class="fs-2 fw-black" style="color: var(--sharesa-green);">Rp 5.0 Jt</span>
-                                    <p class="text-white-50 small mb-0">Rp 2.000.000 di tahun berikutnya</p>
-                                </div>
-                                <ul class="list-unstyled d-grid gap-2 mb-4 flex-grow-1">
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> 20 Halaman Website</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Domain .com .id .org .or.id</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> **Dedicated Hosting**</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Custom Web & Logo Design</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> *Setting Google Ads*</li>
-                                </ul>
-                                <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan Paket Bisnis Plus (5jt)." target="_blank" class="btn btn-success rounded-pill fw-bold text-dark py-2 mt-auto">{{ __('messages.price_btn') }}</a>
-                            </div>
-                        </div>
-                        {{-- Paket Bisnis High --}}
-                        <div class="col-lg-4">
-                            <div class="card h-100 rounded-4 border-0 pricing-card shadow-sm p-4">
-                                <span class="text-muted section-label mb-3">Enterprise Profile</span>
-                                <h4 class="fw-bold mb-1">Bisnis High</h4>
-                                <div class="my-3">
-                                    <span class="fs-2 fw-black text-dark">Rp 7,5 Jt</span>
-                                    <p class="text-muted small mb-0">Rp 3.500.000 di tahun berikutnya</p>
-                                </div>
-                                <ul class="list-unstyled d-grid gap-2 mb-4 flex-grow-1">
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> 30+ Halaman Website</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Dedicated Hosting</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> **Multi Bahasa**</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> **Live Chat Integration**</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Setting Google Ads</li>
-                                </ul>
-                                <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan Paket Bisnis High (7.5jt)." target="_blank" class="btn btn-outline-dark rounded-pill fw-bold py-2 mt-auto">{{ __('messages.price_btn') }}</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @foreach($categories as $id => $pkgs)
+                    <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="pills-{{ $id }}" role="tabpanel">
+                        <div class="row g-4 justify-content-center">
+                            @foreach($pkgs as $pIdx)
+                                <div class="col-lg-4">
+                                    <div class="card h-100 rounded-4 border-0 pricing-card shadow-sm p-4 {{ $pIdx == 2 || $pIdx == 5 || $pIdx == 9 ? 'pricing-featured border-success' : '' }}">
+                                        @if($pIdx == 2 || $pIdx == 5 || $pIdx == 9)
+                                            <div class="position-absolute top-0 start-0 w-100 py-1 text-center bg-success text-dark fw-bold" style="font-size: 0.7rem; border-top-left-radius: 12px; border-top-right-radius: 12px;">
+                                                {{ __('messages.pkg_'.$pIdx.'_tag') }}
+                                            </div>
+                                        @endif
+                                        
+                                        <div class="pt-3">
+                                            <span class="text-muted small fw-bold mb-1 d-block">{{ __('messages.pkg_'.$pIdx.'_tag') }}</span>
+                                            <h4 class="fw-bold mb-1 text-dark">{{ __('messages.pkg_'.$pIdx.'_name') }}</h4>
+                                            <p class="text-muted small mb-3" style="line-height: 1.4; min-height: 40px;">{{ __('messages.pkg_'.$pIdx.'_desc') }}</p>
+                                            
+                                            <div class="mb-4">
+                                                <span class="fs-2 fw-black text-dark">Rp {{ __('messages.pkg_'.$pIdx.'_price') }}</span>
+                                                <p class="text-muted extra-small mb-0 mt-1" style="font-size: 0.75rem;">Rp {{ __('messages.pkg_'.$pIdx.'_renewal') }}</p>
+                                            </div>
+                                        </div>
 
-                {{-- TAB 3: Toko Online --}}
-                <div class="tab-pane fade" id="pills-toko" role="tabpanel">
-                    <div class="row g-4 justify-content-center">
-                        {{-- Paket Toko WA UMKM --}}
-                        <div class="col-lg-4">
-                            <div class="card h-100 rounded-4 border-0 pricing-card shadow-sm p-4">
-                                <span class="text-muted section-label mb-3">Small Shop</span>
-                                <h4 class="fw-bold mb-1">Toko WA UMKM</h4>
-                                <div class="my-3">
-                                    <span class="fs-2 fw-black text-dark">Rp 2,525 Jt</span>
-                                    <p class="text-muted small mb-0">Rp 1.000.000 di tahun berikutnya</p>
+                                        <hr class="opacity-10">
+                                        
+                                        <ul class="list-unstyled d-grid gap-2 mb-4 flex-grow-1">
+                                            @foreach(__('messages.pkg_'.$pIdx.'_feat') as $feat)
+                                                <li class="small d-flex align-items-start gap-2">
+                                                    <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                                                    <span>{{ $feat }}</span>
+                                                </li>
+                                            @endforeach
+                                        </ul>
+
+                                        {{-- Extra Features List (Fitur Lainnya) --}}
+                                        <div class="feature-extras mb-4">
+                                            <button class="btn btn-link p-0 text-decoration-none text-dark fw-bold small d-flex align-items-center gap-1 mb-2" 
+                                                    type="button" data-bs-toggle="collapse" data-bs-target="#extraFeats{{ $pIdx }}">
+                                                {{ __('messages.feat_label') }} <i class="bi bi-chevron-down small"></i>
+                                            </button>
+                                            <div class="collapse" id="extraFeats{{ $pIdx }}">
+                                                <ul class="list-unstyled d-grid gap-2 ps-1">
+                                                    @php
+                                                        $extraKeys = ['dashboard', 'wa', 'gallery', 'sosmed', 'analytic'];
+                                                        if($pIdx >= 2) $extraKeys = array_merge($extraKeys, ['email', 'seo', 'google_ads']);
+                                                        if($pIdx >= 3) $extraKeys = array_merge($extraKeys, ['gmap', 'indexing']);
+                                                        if($pIdx >= 4) $extraKeys[] = 'maintenance';
+                                                    @endphp
+                                                    @foreach($extraKeys as $eKey)
+                                                        <li class="extra-small d-flex align-items-center gap-2 opacity-75" style="font-size: 0.78rem;">
+                                                            <i class="bi bi-plus-circle text-success" style="font-size:0.7rem;"></i>
+                                                            {{ __('messages.feat_'.$eKey) }}
+                                                        </li>
+                                                    @endforeach
+                                                    
+                                                    {{-- Woocommerce Section --}}
+                                                    @if($pIdx >= 7 && $pIdx <= 9)
+                                                        <li class="mt-2 fw-bold small text-success">{{ __('messages.woo_label') }}</li>
+                                                        @foreach(['order', 'report', 'shipping', 'member'] as $wKey)
+                                                            <li class="extra-small d-flex align-items-center gap-2 opacity-75" style="font-size: 0.78rem;">
+                                                                <i class="bi bi-cart-check text-success" style="font-size:0.7rem;"></i>
+                                                                {{ __('messages.woo_'.$wKey) }}
+                                                            </li>
+                                                        @endforeach
+                                                    @endif
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                        <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan {{ __('messages.pkg_'.$pIdx.'_name') }}." 
+                                           target="_blank" 
+                                           class="btn w-100 rounded-pill fw-bold py-2 mt-auto {{ $pIdx == 2 || $pIdx == 5 || $pIdx == 9 ? 'btn-sharesa-primary' : 'btn-outline-dark' }}">
+                                            {{ __('messages.price_btn') }}
+                                        </a>
+                                    </div>
                                 </div>
-                                <ul class="list-unstyled d-grid gap-2 mb-4 flex-grow-1">
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> 10 Halaman Website</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Katalog Produk</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> **Checkout Via WhatsApp**</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Bantu Upload 10 Produk</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Shared Hosting & Logo Design</li>
-                                </ul>
-                                <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan Paket Toko WA UMKM (2.525jt)." target="_blank" class="btn btn-outline-dark rounded-pill fw-bold py-2 mt-auto">{{ __('messages.price_btn') }}</a>
-                            </div>
-                        </div>
-                        {{-- Paket Toko Bisnis --}}
-                        <div class="col-lg-4">
-                            <div class="card h-100 rounded-4 border-0 pricing-card shadow-sm p-4">
-                                <span class="text-muted section-label mb-3">E-Commerce</span>
-                                <h4 class="fw-bold mb-1">Toko Bisnis</h4>
-                                <div class="my-3">
-                                    <span class="fs-2 fw-black text-dark">Rp 3,5 Jt</span>
-                                    <p class="text-muted small mb-0">Rp 2.000.000 di tahun berikutnya</p>
-                                </div>
-                                <ul class="list-unstyled d-grid gap-2 mb-4 flex-grow-1">
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> 15 Halaman Website</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Katalog Produk</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> **Payment Gateway Integration**</li>
-                                    <li class="small d-flex align-items-start gap-2 text-muted ms-4">(Midtrans, Xendit, Duitku, dll)</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> **Dedicated Hosting**</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Bantu Upload 20 Produk</li>
-                                </ul>
-                                <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan Paket Toko Bisnis (3.5jt)." target="_blank" class="btn btn-outline-dark rounded-pill fw-bold py-2 mt-auto">{{ __('messages.price_btn') }}</a>
-                            </div>
-                        </div>
-                        {{-- Paket Toko High (Best Choice) --}}
-                        <div class="col-lg-4">
-                            <div class="card h-100 rounded-4 border-0 pricing-card pricing-featured shadow-lg p-4 bg-dark text-white position-relative overflow-hidden">
-                                <div class="position-absolute top-0 start-0 w-100 py-1 text-center bg-warning text-dark fw-bold" style="font-size: 0.7rem;">BEST CHOICE</div>
-                                <span class="text-white-50 section-label mb-3 pt-2">Pro E-Commerce</span>
-                                <h4 class="fw-bold mb-1 text-white">Toko High</h4>
-                                <div class="my-3">
-                                    <span class="fs-2 fw-black" style="color: var(--sharesa-green);">Rp 7.5 Jt</span>
-                                    <p class="text-white-50 small mb-0">Rp 3.500.000 di tahun berikutnya</p>
-                                </div>
-                                <ul class="list-unstyled d-grid gap-2 mb-4 flex-grow-1">
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> 30+ Halaman Website</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Payment Gateway & dedicated Hosting</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> **Multi Bahasa & Live Chat**</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Bantu Upload 40 Produk</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Custom Design Premium</li>
-                                </ul>
-                                <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan Paket Toko High (7.5jt)." target="_blank" class="btn btn-success rounded-pill fw-bold text-dark py-2 mt-auto">{{ __('messages.price_btn') }}</a>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
-                </div>
+                @endforeach
 
                 {{-- TAB 4: Custom --}}
                 <div class="tab-pane fade" id="pills-custom" role="tabpanel">
@@ -259,19 +150,23 @@
                                 <div class="mb-4 rounded-circle d-inline-flex align-items-center justify-content-center mx-auto" style="width: 80px; height: 80px; background: rgba(0,255,140,0.1);">
                                     <i class="bi bi-tools fs-1 text-success"></i>
                                 </div>
-                                <span class="text-muted section-label mb-2">Special Request</span>
-                                <h4 class="fw-bold mb-3">Custom Fitur Website</h4>
+                                <span class="text-muted section-label mb-2">{{ __('messages.pkg_10_tag') }}</span>
+                                <h4 class="fw-bold mb-3">{{ __('messages.pkg_10_name') }}</h4>
                                 <div class="my-3">
-                                    <span class="fs-2 fw-black text-dark">Hubungi Kami</span>
+                                    <span class="fs-2 fw-black text-dark">{{ __('messages.pkg_10_price') }}</span>
                                 </div>
-                                <p class="text-muted mb-4 small">Cocok untuk website dengan fitur spesifik seperti LMS, Donasi, Booking Hotel, Job Listing, atau Marketplace.</p>
-                                <ul class="list-unstyled d-grid gap-2 mb-5 text-start mx-auto" style="max-width: 300px;">
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> LMS / Online Class</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Donation System</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Hotel Booking + Payment</li>
-                                    <li class="small d-flex align-items-start gap-2"><i class="bi bi-check-circle-fill text-success mt-1"></i> Job Listing + Profile Builder</li>
+                                <p class="text-muted mb-4 small">{{ __('messages.pkg_10_desc') }}</p>
+                                <ul class="list-unstyled d-grid gap-2 mb-5 text-start mx-auto" style="max-width: 350px;">
+                                    @foreach(__('messages.pkg_10_feat') as $feat)
+                                        <li class="small d-flex align-items-start gap-2">
+                                            <i class="bi bi-check-circle-fill text-success mt-1"></i>
+                                            <span>{{ $feat }}</span>
+                                        </li>
+                                    @endforeach
                                 </ul>
-                                <a href="{{ url('/contact') }}" class="btn btn-dark rounded-pill fw-bold py-3 px-5 shadow-lg">{{ __('messages.price_btn') }}</a>
+                                <a href="{{ url('/contact') }}" class="btn btn-sharesa-primary rounded-pill fw-bold py-3 px-5 shadow-lg">
+                                    {{ __('messages.price_btn') }}
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -282,7 +177,7 @@
     </section>
 
     {{-- ========================================== --}}
-    {{-- SECTION 3: FAQ (Min. 7 Items)              --}}
+    {{-- SECTION 3: FAQ                             --}}
     {{-- ========================================== --}}
     <section class="py-5 bg-white">
         <div class="container py-5">
@@ -290,7 +185,7 @@
                 <div class="col-lg-8">
                     <div class="text-center mb-5" data-aos="fade-up">
                         <span class="section-label text-success d-block mb-3">FAQ</span>
-                        <h2 class="fw-bold text-dark" style="letter-spacing: -0.5px;">Pertanyaan Seputar Harga</h2>
+                        <h2 class="fw-bold text-dark" style="letter-spacing: -0.5px;">{{ __('messages.price_title') }}</h2>
                     </div>
 
                     <div class="accordion" id="faqAccordion" data-aos="fade-up" data-aos-delay="80">
@@ -314,7 +209,7 @@
                     {{-- CTA --}}
                     <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="100">
                         <p class="text-muted mb-4">Butuh penawaran custom atau diskon khusus?</p>
-                        <a href="https://wa.me/6287752458894" target="_blank" class="btn btn-success rounded-pill px-5 py-3 fw-bold shadow-lg">
+                        <a href="https://wa.me/6287752458894" target="_blank" class="btn btn-sharesa-primary rounded-pill px-5 py-3 fw-bold shadow-lg">
                             <i class="bi bi-whatsapp me-2"></i> Konsultasi Gratis Sekarang
                         </a>
                     </div>
@@ -328,25 +223,35 @@
 @section('styles')
 <style>
     /* Tabs styling */
-    .pricing-tabs .nav-link { color: #64748b; transition: 0.3s; }
+    .pricing-tabs .nav-link { color: #64748b; transition: 0.3s; border: 1px solid transparent; }
     .pricing-tabs .nav-link.active { 
         background-color: var(--sharesa-dark) !important; 
         color: var(--sharesa-green) !important; 
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    .pricing-tabs .nav-link:hover:not(.active) {
+        color: var(--sharesa-dark);
+        background: #f1f5f9;
     }
 
     /* Card styling */
     .pricing-card { 
         transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); 
         border: 1px solid #f1f5f9 !important;
+        position: relative;
     }
     .pricing-card:hover { 
         transform: translateY(-12px); 
         box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important; 
     }
     .pricing-featured { 
-        border: 1px solid var(--sharesa-green) !important; 
+        border: 2px solid var(--sharesa-green) !important; 
     }
     .pricing-featured:hover { transform: scale(1.03) translateY(-12px) !important; }
+
+    /* Extra Features */
+    .feature-extras .btn-link { font-size: 0.85rem; color: #64748b !important; }
+    .feature-extras .btn-link:hover { color: var(--sharesa-green-dim) !important; }
 
     /* FAQ accordion custom arrow */
     .accordion-button::after {
