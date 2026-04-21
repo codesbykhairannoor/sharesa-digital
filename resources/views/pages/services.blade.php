@@ -126,10 +126,10 @@
 
                 @foreach($categories as $id => $pkgs)
                     <div class="tab-pane fade {{ $loop->first ? 'show active' : '' }}" id="pills-{{ $id }}" role="tabpanel">
-                        <div class="row g-4 justify-content-center">
+                        <div class="row g-4 justify-content-center align-items-start">
                             @foreach($pkgs as $pIdx)
                                 <div class="col-lg-4">
-                                    <div class="card h-100 rounded-4 border-0 pricing-card shadow-sm p-4 {{ $pIdx == 2 || $pIdx == 5 || $pIdx == 9 ? 'pricing-featured border-success' : '' }}">
+                                    <div class="card rounded-4 border-0 pricing-card shadow-sm p-4 {{ $pIdx == 2 || $pIdx == 5 || $pIdx == 9 ? 'pricing-featured border-success' : '' }}">
                                         @if($pIdx == 2 || $pIdx == 5 || $pIdx == 9)
                                             <div class="position-absolute top-0 start-0 w-100 py-1 text-center bg-success text-dark fw-bold" style="font-size: 0.7rem; border-top-left-radius: 12px; border-top-right-radius: 12px;">
                                                 {{ __('messages.pkg_'.$pIdx.'_tag') }}
@@ -143,7 +143,6 @@
                                             
                                             <div class="mb-4">
                                                 <span class="fs-2 fw-black text-dark">Rp {{ __('messages.pkg_'.$pIdx.'_price') }}</span>
-                                                <p class="text-muted extra-small mb-0 mt-1" style="font-size: 0.75rem;">Rp {{ __('messages.pkg_'.$pIdx.'_renewal') }}</p>
                                             </div>
                                         </div>
 
@@ -167,10 +166,11 @@
                                             <div class="collapse" id="extraFeats{{ $pIdx }}">
                                                 <ul class="list-unstyled d-grid gap-2 ps-1">
                                                     @php
-                                                        $extraKeys = ['dashboard', 'wa', 'gallery', 'sosmed', 'analytic'];
-                                                        if($pIdx >= 2) $extraKeys = array_merge($extraKeys, ['email', 'seo', 'google_ads']);
-                                                        if($pIdx >= 3) $extraKeys = array_merge($extraKeys, ['gmap', 'indexing']);
-                                                        if($pIdx >= 4) $extraKeys[] = 'maintenance';
+                                                        // More curated, "sweet" extra features logic
+                                                        $extraKeys = ['dashboard', 'wa', 'sosmed'];
+                                                        if($pIdx >= 2) $extraKeys = array_merge($extraKeys, ['analytic', 'email']);
+                                                        if($pIdx >= 4) $extraKeys = array_merge($extraKeys, ['seo']);
+                                                        if($pIdx >= 8) $extraKeys = array_merge($extraKeys, ['google_ads', 'maintenance']);
                                                     @endphp
                                                     @foreach($extraKeys as $eKey)
                                                         <li class="extra-small d-flex align-items-center gap-2 opacity-75" style="font-size: 0.78rem;">
