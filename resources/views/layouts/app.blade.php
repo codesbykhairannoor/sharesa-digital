@@ -158,6 +158,61 @@
             background-color: var(--sharesa-dark);
             padding: 15px 0;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1050;
+        }
+
+        /* Mobile Menu Tweak (Glassmorphism) */
+        @media (max-width: 991.98px) {
+            .navbar-sharesa .navbar-collapse {
+                background: rgba(30, 42, 57, 0.95);
+                backdrop-filter: blur(20px);
+                -webkit-backdrop-filter: blur(20px);
+                position: fixed;
+                top: 85px; /* Navbar height approx */
+                left: 0;
+                right: 0;
+                height: calc(100vh - 85px);
+                padding: 40px 30px;
+                border-top: 1px solid rgba(255, 255, 255, 0.05);
+                transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+                overflow-y: auto;
+            }
+
+            .navbar-sharesa .nav-link {
+                font-size: 1.5rem !important;
+                padding: 15px 0 !important;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+                width: 100%;
+                opacity: 0.8;
+            }
+            .navbar-sharesa .nav-link.active {
+                opacity: 1;
+                color: var(--sharesa-green) !important;
+            }
+            .navbar-sharesa .nav-link.active::after {
+                display: none; /* Hide horizontal line in mobile */
+            }
+
+            .navbar-sharesa .navbar-nav {
+                margin-bottom: 40px !important;
+            }
+
+            /* Dropdown and Buttons in Mobile View */
+            .navbar-sharesa .dropdown-menu {
+                background: rgba(255, 255, 255, 0.05) !important;
+                border: 1px solid rgba(255, 255, 255, 0.1) !important;
+                box-shadow: none !important;
+                margin-top: 10px !important;
+                border-radius: 12px;
+            }
+            .navbar-sharesa .dropdown-item {
+                color: rgba(255, 255, 255, 0.7) !important;
+                padding: 12px 20px !important;
+            }
+            .navbar-sharesa .dropdown-item:hover, .navbar-sharesa .dropdown-item.active {
+                background: rgba(0, 255, 140, 0.1) !important;
+                color: var(--sharesa-green) !important;
+            }
         }
 
         /* Scroll state — glass blur */
@@ -473,10 +528,10 @@
                                 </ul>
                             </li>
                         @else
-                            <li class="nav-item d-none d-lg-block ms-2">
+                            <li class="nav-item ms-lg-2 mt-3 mt-lg-0">
                                 <a href="{{ url('/contact') }}"
-                                    class="btn btn-sm text-dark fw-bold rounded-pill px-4"
-                                    style="background-color: var(--sharesa-green); box-shadow: 0 4px 15px rgba(0,255,140,0.3); transition: all 0.3s;">
+                                    class="btn btn-sharesa-primary w-100 w-lg-auto rounded-pill px-4 shadow-lg py-2 py-lg-1"
+                                    style="font-size: 0.9rem;">
                                     {{ __('messages.hubungi_kami') }}
                                 </a>
                             </li>
