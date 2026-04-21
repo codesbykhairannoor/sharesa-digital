@@ -17,8 +17,8 @@ return [
     'rights' => 'Hak cipta dilindungi undang-undang.',
     
     // HOME PAGE
-    'hero_badge' => '🚀 Transformasi Digital Bisnis Anda',
-    'hero_title' => 'JASA PEMBUATAN WEBSITE TERBAIK UNTUK UMKM DAN BISNIS',
+    'hero_badge' => '🚀 Transformasi Digital untuk Bisnis Anda',
+    'hero_title' => 'Jasa Pembuatan Website Terbaik untuk UMKM dan Bisnis',
     'hero_desc' => 'Sharesa Space adalah studio digital yang berfokus pada Desain UI/UX, Pengembangan Web, dan Branding. Kami membantu bisnis Anda mendominasi era digital dengan solusi teknologi yang presisi dan estetis.',
     'hero_cta' => 'Mulai Proyek Bersama',
     'hero_secondary' => 'Lihat Karya Kami',

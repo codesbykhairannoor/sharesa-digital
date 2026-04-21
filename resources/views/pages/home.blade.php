@@ -2,6 +2,44 @@
 
 @section('title', __('messages.home'))
 
+@section('styles')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Sharesa Space",
+  "image": "{{ asset('images/logoku.png') }}",
+  "@id": "{{ url('/') }}",
+  "url": "{{ url('/') }}",
+  "telephone": "+62-877-5245-8894",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jakarta Selatan",
+    "addressLocality": "Jakarta",
+    "postalCode": "12000",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -6.2088,
+    "longitude": 106.8456
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday"
+    ],
+    "opens": "09:00",
+    "closes": "18:00"
+  }
+}
+</script>
+@endsection
+
 @section('content')
 
     {{-- ========================================== --}}
@@ -29,7 +67,7 @@
                         <span class="rounded-circle me-2 d-inline-flex align-items-center justify-content-center" style="width:20px; height:20px; background: var(--sharesa-green);">
                             <i class="bi bi-lightning-charge-fill" style="color: var(--sharesa-dark); font-size: 0.6rem;"></i>
                         </span>
-                        <small class="fw-bold tracking-wide text-white" style="letter-spacing: 1px; font-size: 0.75rem;">{{ __('messages.hero_badge') }}</small>
+                        <small class="fw-bold tracking-wide" style="letter-spacing: 1px; font-size: 0.75rem; color: var(--sharesa-green);">{{ __('messages.hero_badge') }}</small>
                     </div>
 
                     {{-- Title --}}

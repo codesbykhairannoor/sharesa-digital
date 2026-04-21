@@ -6,7 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Sharesa Spacce | @yield('title', 'Modern Digital Agency')</title>
+    <title>Sharesa Space | @yield('title', 'Modern Digital Agency')</title>
+
+    {{-- SEO & Global Meta --}}
+    <meta name="description" content="Sharesa Space - Jasa Pembuatan Website Terbaik untuk UMKM dan Bisnis. Solusi Desain UI/UX Profesional, Web Development, dan Digital Branding Terpercaya.">
+    <meta name="keywords" content="jasa pembuatan website, buat website umkm, digital agency jakarta, digital agency banjarmasin, website developer indonesia, ui/ux design, branding bisnis">
+    <meta name="author" content="Khairan Noor - Sharesa Space">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="{{ url()->current() }}">
+
+    {{-- Geo-Targeting (Jakarta/Indonesia) --}}
+    <meta name="geo.region" content="ID-JK">
+    <meta name="geo.placename" content="South Jakarta">
+    <meta name="geo.position" content="-6.2088;106.8456">
+    <meta name="ICBM" content="-6.2088, 106.8456">
+
+    {{-- JSON-LD Global Schema (Organization & WebSite) --}}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Sharesa Space",
+      "url": "{{ url('/') }}",
+      "logo": "{{ asset('images/logoku.png') }}",
+      "sameAs": [
+        "https://www.linkedin.com/in/khairannoorfadhlillah/",
+        "https://github.com/codesbykhairannoor"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+62-877-5245-8894",
+        "contactType": "customer service",
+        "areaServed": "ID",
+        "availableLanguage": ["id", "en"]
+      }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "Sharesa Space",
+      "url": "{{ url('/') }}",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "{{ url('/') }}/search?q={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    }
+    </script>
 
     {{-- Favicon --}}
     <link rel="icon" type="image/png" href="{{ asset('images/logoku.png') }}?v=1">
@@ -174,6 +222,16 @@
             background-color: var(--sharesa-green);
             color: var(--sharesa-dark) !important;
             box-shadow: 0 0 15px rgba(0, 255, 140, 0.4);
+        }
+
+        /* Tabs styling */
+        .pricing-tabs .nav-link { color: var(--sharesa-dark) !important; opacity: 0.6; transition: 0.3s; border: 1px solid transparent; }
+        .pricing-tabs .nav-link:hover:not(.active) { opacity: 1; background: #f1f5f9; }
+        .pricing-tabs .nav-link.active { 
+            background-color: var(--sharesa-dark) !important; 
+            color: var(--sharesa-green) !important; 
+            opacity: 1 !important;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
         }
 
         .btn-sharesa-primary {
@@ -384,7 +442,7 @@
                                 <ul class="dropdown-menu dropdown-menu-end shadow-lg border-0 mt-3 rounded-3 p-2"
                                     style="width: 200px;">
                                     <li>
-                                        <h6 class="dropdown-header text-uppercase small fw-bold text-muted">Admin Access</h6>
+                                        <h6 class="dropdown-header small fw-bold text-muted">Admin Access</h6>
                                     </li>
                                     <li>
                                         <a class="dropdown-item rounded-2 mb-1" href="{{ route('admin.dashboard') }}">

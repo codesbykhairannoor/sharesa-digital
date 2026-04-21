@@ -2,6 +2,69 @@
 
 @section('title', __('messages.services'))
 
+@section('styles')
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    @for($i = 1; $i <= 7; $i++)
+    {
+      "@type": "Question",
+      "name": "{{ __('messages.price_faq_' . $i . '_q') }}",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "{{ __('messages.price_faq_' . $i . '_a') }}"
+      }
+    }{{ $i < 7 ? ',' : '' }}
+    @endfor
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Web Development",
+  "provider": {
+    "@type": "Organization",
+    "name": "Sharesa Space"
+  },
+  "areaServed": {
+    "@type": "State",
+    "name": "Indonesia"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Website Development Packages",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Paket Hemat UMKM"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "UMKM Package"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Business Package"
+        }
+      }
+    ]
+  }
+}
+</script>
+@endsection
+
 @section('content')
 
     {{-- ========================================== --}}
@@ -222,17 +285,7 @@
 
 @section('styles')
 <style>
-    /* Tabs styling */
-    .pricing-tabs .nav-link { color: #64748b; transition: 0.3s; border: 1px solid transparent; }
-    .pricing-tabs .nav-link.active { 
-        background-color: var(--sharesa-dark) !important; 
-        color: var(--sharesa-green) !important; 
-        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-    }
-    .pricing-tabs .nav-link:hover:not(.active) {
-        color: var(--sharesa-dark);
-        background: #f1f5f9;
-    }
+    /* Tabs styling removed - using global styles from app.blade.php */
 
     /* Card styling */
     .pricing-card { 

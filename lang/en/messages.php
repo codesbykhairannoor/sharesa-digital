@@ -18,7 +18,7 @@ return [
     
     // HOME PAGE
     'hero_badge' => '🚀 Digital Transformation for Your Business',
-    'hero_title' => 'THE BEST WEBSITE DEVELOPMENT SERVICES FOR MSMEs AND BUSINESSES',
+    'hero_title' => 'The Best Website Development Service for MSMEs and Businesses',
     'hero_desc' => 'Sharesa Space is a digital studio specializing in UI/UX Design, Web Development, and Branding. We empower businesses to dominate the digital landscape with precise and aesthetic technology solutions.',
     'hero_cta' => 'Start a Project',
     'hero_secondary' => 'View Our Work',
