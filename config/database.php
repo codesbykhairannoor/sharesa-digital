@@ -49,7 +49,7 @@ return [
     'prefix_indexes' => true,
     'search_path' => 'public',
     'sslmode' => 'prefer', // Ubah dari require ke prefer
-    'attributes' => [      // Tambahkan blok ini
+    'options' => [      // Menggunakan 'options' agar dibaca oleh Laravel
         PDO::ATTR_EMULATE_PREPARES => true,
     ], 
         ],
