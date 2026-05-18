@@ -14,8 +14,9 @@ export default defineConfig({
     css: {
         preprocessorOptions: {
             scss: {
+                api: 'modern-compiler',
                 quietDeps: true,
-                silenceDeprecations: ['color-functions', 'import'],
+                silenceDeprecations: ['color-functions', 'import', 'legacy-js-api'],
             },
         },
     },
