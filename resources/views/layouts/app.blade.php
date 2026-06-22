@@ -35,7 +35,7 @@
       ],
       "contactPoint": {
         "@type": "ContactPoint",
-        "telephone": "+62-877-5245-8894",
+        "telephone": "0823-9512-3470",
         "contactType": "customer service",
         "areaServed": "ID",
         "availableLanguage": ["id", "en"]
@@ -575,7 +575,7 @@
                             class="footer-social-icon" aria-label="LinkedIn">
                             <i class="bi bi-linkedin"></i>
                         </a>
-                        <a href="https://wa.me/6287752458894" target="_blank" class="footer-social-icon"
+                        <a href="https://wa.me/6282395123470" target="_blank" class="footer-social-icon"
                             style="color: #25d366 !important;" aria-label="WhatsApp">
                             <i class="bi bi-whatsapp"></i>
                         </a>
@@ -630,10 +630,10 @@
                             <i class="bi bi-envelope-fill text-success flex-shrink-0"></i>
                             <span>hello@sharesa.id</span>
                         </a>
-                        <a href="https://wa.me/6287752458894" target="_blank"
+                        <a href="https://wa.me/6282395123470" target="_blank"
                             class="footer-link d-flex align-items-center gap-2">
                             <i class="bi bi-whatsapp text-success flex-shrink-0"></i>
-                            <span>+62 877-5245-8894</span>
+                            <span>0823-9512-3470</span>
                         </a>
                         <div class="d-flex align-items-center gap-2 text-white-50 small">
                             <i class="bi bi-geo-alt-fill text-success flex-shrink-0"></i>
@@ -710,7 +710,7 @@
             btn.addEventListener('click', function (e) {
                 e.preventDefault();
                 const msg = this.getAttribute('data-msg');
-                const url = `https://wa.me/6287752458894?text=${encodeURIComponent(msg)}`;
+                const url = `https://wa.me/6282395123470?text=${encodeURIComponent(msg)}`;
 
                 if (window.trackingService) {
                     window.trackingService.track('Contact', {

@@ -78,7 +78,7 @@
                                         style="font-size: 0.82rem;">
                                         <i class="bi bi-eye-fill me-1"></i> View Site
                                     </a>
-                                    <a href="https://wa.me/6287752458894?text=Halo%20Sharesa!%20Saya%20tertarik%20dengan%20project%20{{ $item->title }}."
+                                    <a href="https://wa.me/6282395123470?text=Halo%20Sharesa!%20Saya%20tertarik%20dengan%20project%20{{ $item->title }}."
                                         target="_blank"
                                         class="btn btn-success rounded-pill fw-bold shadow px-4 wa-portfolio-track"
                                         data-project="{{ $item->title }}"
@@ -113,13 +113,13 @@
 
                             <div class="mt-auto pt-3 border-top">
                                 <div class="d-flex gap-2 mb-3">
-                                    <a href="https://wa.me/6287752458894?text=Halo%20Sharesa!%20Saya%20ingin%20tanya%20estimasi%20harga%20untuk%20project%20{{ $item->title }}."
+                                    <a href="https://wa.me/6282395123470?text=Halo%20Sharesa!%20Saya%20ingin%20tanya%20estimasi%20harga%20untuk%20project%20{{ $item->title }}."
                                         target="_blank"
                                         class="btn btn-sm btn-outline-dark rounded-pill px-3 fw-bold flex-grow-1 wa-portfolio-track"
                                         data-project="{{ $item->title }}" data-type="Req Harga">
                                         Req Harga
                                     </a>
-                                    <a href="https://wa.me/6287752458894?text=Halo%20Sharesa!%20Saya%20ingin%20konsultasi%20mengenai%20project%20{{ $item->title }}."
+                                    <a href="https://wa.me/6282395123470?text=Halo%20Sharesa!%20Saya%20ingin%20konsultasi%20mengenai%20project%20{{ $item->title }}."
                                         target="_blank"
                                         class="btn btn-sm btn-sharesa-primary rounded-pill px-3 fw-bold flex-grow-1 wa-portfolio-track"
                                         data-project="{{ $item->title }}" data-type="Hubungi WA">

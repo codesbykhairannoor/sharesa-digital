@@ -114,7 +114,7 @@
                         </div>
                         <h5 class="fw-bold mb-2" style="font-size: 0.95rem;">{{ __('messages.phone_title') }}</h5>
                         <p class="text-muted small mb-0" style="line-height: 1.75;">
-                            +62 877-5245-8894<br>
+                            0823-9512-3470<br>
                             <span style="font-size: 0.78rem;">Mon–Fri, 9AM – 6PM WIB</span>
                         </p>
                     </div>
@@ -214,7 +214,7 @@
             <i class="bi bi-whatsapp fs-1 mb-3 d-block" style="color: #25d366;"></i>
             <h2 class="fw-bold text-white mb-2" style="letter-spacing: -0.5px;">Need a faster response?</h2>
             <p class="text-white-50 mb-4">Chat directly with our team via WhatsApp. Response time &lt; 1 hour.</p>
-            <a href="https://wa.me/6287752458894?text=Halo%20Sharesa%20Digital,%20saya%20tertarik%20dengan%20jasa%20Anda."
+            <a href="https://wa.me/6282395123470?text=Halo%20Sharesa%20Digital,%20saya%20tertarik%20dengan%20jasa%20Anda."
                 target="_blank" class="btn btn-lg rounded-pill px-5 fw-bold"
                 style="background: #25d366; color: white; box-shadow: 0 10px 30px rgba(37,211,102,0.35); transition: all 0.3s;">
                 <i class="bi bi-whatsapp me-2"></i> Chat on WhatsApp
@@ -336,7 +336,7 @@
             }
         }
 
-        const phoneNumber = '6287752458894';
+        const phoneNumber = '6282395123470';
         const text = `Halo Sharesa Space! Saya ${name} dari ${company}. Saya tertarik dengan layanan ${service} dengan estimasi budget ${budget}. Mari diskusikan bagaimana kita bisa berkolaborasi!`;
         window.location.href = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(text)}`;
     });

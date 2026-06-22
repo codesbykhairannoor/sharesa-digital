@@ -11,7 +11,7 @@
   "image": "{{ asset('images/logoku.png') }}",
   "@id": "{{ url('/') }}",
   "url": "{{ url('/') }}",
-  "telephone": "+62-877-5245-8894",
+  "telephone": "0823-9512-3470",
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Jakarta Selatan",
@@ -510,7 +510,7 @@
         btn.addEventListener('click', function (e) {
             e.preventDefault();
             const msg = this.getAttribute('data-msg');
-            const url = `https://wa.me/6287752458894?text=${encodeURIComponent(msg)}`;
+            const url = `https://wa.me/6282395123470?text=${encodeURIComponent(msg)}`;
 
             if (window.trackingService) {
                 window.trackingService.track('Contact', {

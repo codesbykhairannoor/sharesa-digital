@@ -193,7 +193,7 @@
                                             </div>
                                         </div>
 
-                                        <a href="https://wa.me/6287752458894?text=Halo Sharesa! Saya tertarik dengan {{ __('messages.pkg_'.$pIdx.'_name') }}." 
+                                        <a href="https://wa.me/6282395123470?text=Halo Sharesa! Saya tertarik dengan {{ __('messages.pkg_'.$pIdx.'_name') }}." 
                                            target="_blank" 
                                            class="btn w-100 rounded-pill fw-bold py-2 mt-auto {{ $pIdx == 2 || $pIdx == 5 || $pIdx == 9 ? 'btn-sharesa-primary' : 'btn-outline-dark' }}">
                                             {{ __('messages.price_btn') }}
@@ -272,7 +272,7 @@
                     {{-- CTA --}}
                     <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="100">
                         <p class="text-muted mb-4">Butuh penawaran custom atau diskon khusus?</p>
-                        <a href="https://wa.me/6287752458894" target="_blank" class="btn btn-sharesa-primary rounded-pill px-5 py-3 fw-bold shadow-lg">
+                        <a href="https://wa.me/6282395123470" target="_blank" class="btn btn-sharesa-primary rounded-pill px-5 py-3 fw-bold shadow-lg">
                             <i class="bi bi-whatsapp me-2"></i> Konsultasi Gratis Sekarang
                         </a>
                     </div>
